@@ -4,7 +4,16 @@
 <mapper namespace="BookMapper">
 
 	<resultMap type="Book" id="bookResultMap">
+		<id property="bkNo" column="BK_NO"/>
+		<result property="memberName" column="MEMBER_NAME"/>
+		<result property="bkDate" column="BK_DATE"/>
+		<result property="bkTime" column="BK_TIME"/>
+		<result property="bkPhone" column="BK_PHONE"/>
 		
 	</resultMap>
+	
+	<insert id="insertBook">
+		INSERT INTO BOOKING_TBL VALUES(SEQ_BKNO.NEXTVAL, #{memberName}, DEFAULT, DEFAULT, #{bkPhone})
+	</insert>
 
 </mapper>

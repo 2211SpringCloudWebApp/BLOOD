@@ -4,3 +4,4 @@
 .springBeans
 .DS_Store
 target/*
+bin/*

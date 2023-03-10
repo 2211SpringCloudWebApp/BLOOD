@@ -7,6 +7,16 @@
 		<title>개인정보수집동의 페이지</title>
 	</head>
 	<body>
+		<!-- header -->
+		<jsp:include page="../layout/header.jsp"></jsp:include>
+		
+		<!-- main -->
+		<form action="">
+			<input type="text">
+		</form>
+		
+		<!-- footer -->
+		<jsp:include page="../layout/footer.jsp"></jsp:include>
 	
 	</body>
 </html>

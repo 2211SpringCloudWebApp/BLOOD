@@ -7,6 +7,12 @@
 		<title>헌혈의집 선택 페이지</title>
 	</head>
 	<body>
-	
+		<!-- header -->
+		<jsp:include page="../layout/header.jsp"></jsp:include>
+		
+		<!-- main -->
+		
+		<!-- footer -->
+		<jsp:include page="../layout/footer.jsp"></jsp:include>
 	</body>
 </html>
