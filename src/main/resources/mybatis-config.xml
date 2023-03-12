@@ -6,8 +6,10 @@
 	</settings>
 	<typeAliases>
 <!-- 		<typeAlias type="com.kh.blood.board.domain.Board" alias="Board"/> -->
+		<typeAlias type="com.kh.blood.booking.domain.Book" alias="Book"/>
 	</typeAliases>
 	<mappers>
 <!-- 		<mapper resource="mappers/board-mapper.xml"/> -->
+		<mapper resource="mappers/book-mapper.xml"/>
 	</mappers>
 </configuration>

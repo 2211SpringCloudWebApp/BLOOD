@@ -15,7 +15,7 @@
 		<meta property="og:description" content="의사가 아니어도 생명을 구할 수 있는 방법" />
 		<meta property="og:description" content="./resources/images/bg.png">
 		
-		<link rel="icon" href="./resources/images/favicon.png" />
+		<link rel="icon" href="../../../resources/images/favicon.png" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet" />
@@ -24,29 +24,50 @@
 		
 		<link rel="stylesheet" href="../../../resources/css/booking.css" />
 	</head>
+	
+
+	
 	<body>
 		<!-- header -->
-		<jsp:include page="../layout/header.jsp"></jsp:include>
+		<%-- <jsp:include page="../layout/header.jsp"></jsp:include> --%>
 	
 		<!-- main -->
 		<main>
-			<h2>헌혈의집 헌혈예약</h2>
+			<h1>헌혈의집 헌혈예약</h1>
 			
 			<form action="/book/register.bld" accept-charset="utf-8" name="register" method="post">
-				<fieldset>
-					예약자 : <input type="text" name="memberName">
-					헌혈의집 : <input type="text" name="pNo">
-					예약날짜 : <input type="text" name="bkDate">
-					예약시간 : <input type="text" name="bkTime">
-					<input type="submit" value="예약하기">
-					<!-- <input type="reset" value="취소"> -->
-
-				</fieldset>
+				예약자 <input type="text" name="memberName"><br>
+				<label for="booking_local">헌혈의집</label>
+				<select name="pNo" class="booking_place">
+					<option value="">선택하세요</option>
+				</select><br>
+				<label for="booking_day">예약날짜 </label>
+				<input type="date" name="bkDate" id="Date" class="booking-date" onchange="checkPrice()"><br>
+				<%-- <jsp:include page="./calendar.jsp"></jsp:include> --%>
+				예약시간 <input type="text" name="bkTime"><br>
+				
+				<input type="submit" value="예약하기">
+				<input type="reset" value="취소">
+	
 			</form>
-		
 		</main>
 		
+
+		
 		<!-- footer -->
-		<jsp:include page="../layout/footer.jsp"></jsp:include>
+		<%-- <jsp:include page="../layout/footer.jsp"></jsp:include> --%>
 	</body>
+	
+	
+	<script type="text/javascript">
+		var now_utc = Date.now() // 지금 날짜를 밀리초로
+		// getTimezoneOffset()은 현재 시간과의 차이를 분 단위로 반환
+		var timeOff = new Date().getTimezoneOffset()*60000; // 분단위를 밀리초로 변환
+		// new Date(now_utc-timeOff).toISOString()은 '2022-05-11T18:09:38.134Z'를 반환
+		var today = new Date(now_utc-timeOff).toISOString().split("T")[0];
+		document.getElementById("Date").setAttribute("min", today);
+		alter("현재시간 이후로는 선택 불가능합니다.");
+	</script>
+	
+	
 </html>

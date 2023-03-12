@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="BookMapper">
+
+	<resultMap type="Book" id="bookResultMap">
+		<id property="bkNo" column="BK_NO"/>
+		<result property="memberId" column="MEMBER_ID"/>
+		<result property="memberName" column="MEMBER_NAME"/>
+		<result property="bkDate" column="BK_DATE"/>
+		<result property="bkTime" column="BK_TIME"/>
+		<result property="bkPhone" column="BK_PHONE"/>
+		<result property="dnCheck" column="DN_CHECK"/>
+		<result property="pNo" column="P_NO"/>
+		
+	</resultMap>
+	
+	<!-- 헌혈예약 등록 -->
+	<insert id="insertBook">
+		INSERT INTO BOOKING_TBL VALUES(SEQ_BKNO.NEXTVAL, #{memberId}, #{memberName}, DEFAULT, DEFAULT, #{bkPhone}, DEFAULT, SEQ_PNO.NEXTVAL)
+	</insert>
+
+</mapper>
