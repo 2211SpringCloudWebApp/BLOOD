@@ -17,6 +17,6 @@ public interface BookService {
 	 * 헌혈예약 목록 조회 Service
 	 * @return List<Book>
 	 */
-	public List<Book> selectBookList();
+	public List<Book> selectBookList(String memberId);
 
 }

@@ -43,12 +43,9 @@
 				<label for="booking_local">헌혈의집</label>
 				<select name="pNo" id="pNo" class="booking_place">
 					<option value="12">선택하세요</option>
-					<option value="13">Seoul</option>
-					<option value="14">Gyunggi</option>
-					<option value="15" name="">Gyungbuk</option>
 				</select><br>
 				<label for="booking_day">예약날짜 </label>
-				<input type="date" name="bkDate" id="Date" class="booking-date"><br>
+				<input type="date" name="bkDate" id="Date" class="booking_date"><br>
 				<%-- <jsp:include page="./calendar.jsp"></jsp:include> --%>
 				예약시간 <input type="time" name="bkTime" min="12:00" max="18:00"><br>
 				
@@ -74,8 +71,8 @@
 		
 		// window창으로 시군구 장소 입력받기 가능
 		const pNoEl = document.querySelector("#pNo");
-		pNoEl.addEventListener("change", function() {
-			window.open("");
+		pNoEl.addEventListener("click", function() {
+			window.open("../../../resources/html/searchPlace.html","newplace","width=500, height=600");
 		});
 		
 		/* $(document).ready(function () {

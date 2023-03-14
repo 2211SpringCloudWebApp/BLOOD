@@ -27,8 +27,8 @@ public class BookServiceImpl implements BookService{
 	
 	/* 헌혈예약 목록 조회 ServiceImpl */
 	@Override
-	public List<Book> selectBookList() {
-		List<Book> bList = bStore.selectBookList(session);
+	public List<Book> selectBookList(String memberId) {
+		List<Book> bList = bStore.selectBookList(session, memberId);
 		return bList;
 	}
 	

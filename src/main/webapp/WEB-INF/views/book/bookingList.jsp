@@ -30,15 +30,17 @@
 					</tr>
 				</thead>
 				<tbody>
+					<c:forEach items="${bList }" var="book">
 					<tr>
-						<td>1</td>
-						<td>2023.03.07</td>
-						<td>23/05/10 15:00</td>
-						<td>서울역센터</td>
-						<td>서울 중구 한강대로 405 서울역사 지하1층 B05호</td>
-						<td>02-752-9020</td>
-						<td>Y</td>
+						<td>${book.bkNo }</td>
+						<td>${book.bkDate }</td>
+						<td>${book.bkTime }</td>
+						<td>${book.pNo }</td>
+						<td>${place.pAddr }</td>
+						<td>${book.bkPhone }</td>
+						<td>${book.dnCheck }</td>
 					</tr>
+					</c:forEach>
 				</tbody>
 			</table>
 		</main>

@@ -20,8 +20,8 @@ public class BookStoreLogic implements BookStore{
 
 	/* 헌혈예약 목록 조회 StoreLogic */
 	@Override
-	public List<Book> selectBookList(SqlSession session) {
-		List<Book> bList = session.selectList("BookMapper.selectBookList");
+	public List<Book> selectBookList(SqlSession session, String memberId) {
+		List<Book> bList = session.selectList("BookMapper.selectBookList", memberId);
 		return bList;
 	}
 

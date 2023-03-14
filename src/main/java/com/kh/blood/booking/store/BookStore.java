@@ -22,6 +22,6 @@ public interface BookStore {
 	 * @param session
 	 * @return List<Book>
 	 */
-	List<Book> selectBookList(SqlSession session);
+	public List<Book> selectBookList(SqlSession session, String memberId);
 
 }
