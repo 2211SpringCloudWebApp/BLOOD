@@ -5,9 +5,9 @@
 		<setting name="jdbcTypeForNull" value="NULL"/>
 	</settings>
 	<typeAliases>
-		<typeAlias type="com.kh.blood.board.domain.Board" alias="Board"/>
+		<typeAlias type="com.kh.blood.faq.domain.Faq" alias="Faq"/>
 	</typeAliases>
 	<mappers>
-		<mapper resource="mappers/board-mapper.xml"/>
+		<mapper resource="mappers/faq-mapper.xml"/>
 	</mappers>
 </configuration>

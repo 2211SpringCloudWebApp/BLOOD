@@ -1,0 +1,27 @@
+package com.kh.blood.faq.store;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.kh.blood.faq.domain.Faq;
+
+public interface FaqStore {
+
+	List<Faq> selectFaq(SqlSession session);
+
+	
+	int deleteFaq(SqlSession session, int faqNo);
+
+
+	int insertFaq(SqlSession session, Faq faq);
+
+
+	Faq selectOneById(SqlSession session, int faqNo);
+
+
+	List<Faq> selectListByKeyword(SqlSession session, String keyword);
+
+	
+
+}
