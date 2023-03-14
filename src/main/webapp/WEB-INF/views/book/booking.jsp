@@ -21,6 +21,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 		
 		<link rel="stylesheet" href="../../../resources/css/booking.css" />
 	</head>
@@ -29,22 +30,27 @@
 	
 	<body>
 		<!-- header -->
-		<%-- <jsp:include page="../layout/header.jsp"></jsp:include> --%>
+		<jsp:include page="../layout/header.jsp"></jsp:include>
+
 	
 		<!-- main -->
 		<main>
 			<h1>헌혈의집 헌혈예약</h1>
 			
-			<form action="/book/register.bld" accept-charset="utf-8" name="register" method="post">
+			<form action="/book/reserve.bld" accept-charset="utf-8" name="reserve" method="post">
 				예약자 <input type="text" name="memberName"><br>
+				전화번호 <input type="text" name="bkPhone"><br>
 				<label for="booking_local">헌혈의집</label>
-				<select name="pNo" class="booking_place">
-					<option value="">선택하세요</option>
+				<select name="pNo" id="pNo" class="booking_place">
+					<option value="12">선택하세요</option>
+					<option value="13">Seoul</option>
+					<option value="14">Gyunggi</option>
+					<option value="15" name="">Gyungbuk</option>
 				</select><br>
 				<label for="booking_day">예약날짜 </label>
-				<input type="date" name="bkDate" id="Date" class="booking-date" onchange="checkPrice()"><br>
+				<input type="date" name="bkDate" id="Date" class="booking-date"><br>
 				<%-- <jsp:include page="./calendar.jsp"></jsp:include> --%>
-				예약시간 <input type="text" name="bkTime"><br>
+				예약시간 <input type="time" name="bkTime" min="12:00" max="18:00"><br>
 				
 				<input type="submit" value="예약하기">
 				<input type="reset" value="취소">
@@ -55,9 +61,8 @@
 
 		
 		<!-- footer -->
-		<%-- <jsp:include page="../layout/footer.jsp"></jsp:include> --%>
+		<jsp:include page="../layout/footer.jsp"></jsp:include>
 	</body>
-	
 	
 	<script type="text/javascript">
 		var now_utc = Date.now() // 지금 날짜를 밀리초로
@@ -66,7 +71,23 @@
 		// new Date(now_utc-timeOff).toISOString()은 '2022-05-11T18:09:38.134Z'를 반환
 		var today = new Date(now_utc-timeOff).toISOString().split("T")[0];
 		document.getElementById("Date").setAttribute("min", today);
-		alter("현재시간 이후로는 선택 불가능합니다.");
+		
+		// window창으로 시군구 장소 입력받기 가능
+		const pNoEl = document.querySelector("#pNo");
+		pNoEl.addEventListener("change", function() {
+			window.open("");
+		});
+		
+		/* $(document).ready(function () {
+			$('input.timepicker').timepicker({
+				timeFormat : 'HH:mm',
+				interval : 30,
+				startTime: '09:00',
+				dynamic: false,
+				dropdown: true,
+				scrollbar: true
+			});
+		}) */
 	</script>
 	
 	

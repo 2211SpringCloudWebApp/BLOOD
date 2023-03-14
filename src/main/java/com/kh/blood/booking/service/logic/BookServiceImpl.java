@@ -1,5 +1,7 @@
 package com.kh.blood.booking.service.logic;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +15,7 @@ public class BookServiceImpl implements BookService{
 	
 	@Autowired
 	private BookStore bStore;
-//	@Autowired
+	@Autowired
 	private SqlSession session;
 	
 	/* 헌혈예약 등록 ServiceImpl */
@@ -21,5 +23,15 @@ public class BookServiceImpl implements BookService{
 	public int insertBook(Book book) {
 		return bStore.insertBook(session, book);
 	}
+
+	
+	/* 헌혈예약 목록 조회 ServiceImpl */
+	@Override
+	public List<Book> selectBookList() {
+		List<Book> bList = bStore.selectBookList(session);
+		return bList;
+	}
+	
+	
 
 }

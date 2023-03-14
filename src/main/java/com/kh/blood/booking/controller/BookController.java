@@ -1,5 +1,7 @@
 package com.kh.blood.booking.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,21 +22,23 @@ public class BookController {
 	private BookService bService;
 	
 	/* 헌혈예약 등록화면 */
-	@RequestMapping(value="/book/registerView.bld", method=RequestMethod.GET)
+	@RequestMapping(value="/book/reserveView.bld", method=RequestMethod.GET)
 	public String bookView() {
 		return "book/booking";
 	}
 	
 	/* 헌혈예약 등록 */
-	@RequestMapping(value="/book/register.bld", method=RequestMethod.POST)
+	@RequestMapping(value="/book/reserve.bld", method=RequestMethod.POST)
 	public String bookRegister(
 			@ModelAttribute Book book
 			, HttpServletRequest request
 			, Model model) {
 		try {
+			book.setMemberId("khuser01"); // replace this.
+			book.setpNo(11);
 			int result = bService.insertBook(book);
 			if(result > 0) {
-				return "redirect:/book/bookingList.bld";
+				return "redirect:/book/reservelistView.bld";
 			}else {
 				model.addAttribute("msg", "예약 등록에 실패하였습니다.");
 				return "common/error";
@@ -45,4 +49,22 @@ public class BookController {
 			return "common/error";
 		}
 	}
+	
+	
+	
+	/* 헌혈예약 목록 조회 */
+	@RequestMapping(value="/book/reservelistView.bld", method=RequestMethod.GET)
+	public String bookListView(
+			Model model) {
+		List<Book> bList = bService.selectBookList();
+		model.addAttribute("bList", bList);
+		return "book/bookingList";
+		
+	}
+	
+	
+	
+	
+	
+	
 }
