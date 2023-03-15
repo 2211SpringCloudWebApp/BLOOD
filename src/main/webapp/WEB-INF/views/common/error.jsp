@@ -11,6 +11,6 @@
 	<fieldset>
 		<h2>${msg}</h2>
 	</fieldset>
-<jsp:include page="../layout/header.jsp"></jsp:include>
+<jsp:include page="../layout/footer.jsp"></jsp:include>
 </body>
 </html>

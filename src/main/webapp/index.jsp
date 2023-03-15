@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -103,7 +102,6 @@
         </div>
       </section>
 
-
       <!--     CARD                                               -->
       <section class="cards">
         <div class="inner">
@@ -118,12 +116,9 @@
             <p style="font-size: medium; text-align: center; font-weight: 900;">
               Join us. You won’t just make a difference, you’ll make all the difference.
             </p>
-
           </div>
           <div class="cards_container">
-
             <section class="cards_layer1">
-
               <div class="single_card">
                 <div class="card_top">
                   <img src="./resources/images/card1.png" alt="firstCard">
@@ -168,11 +163,8 @@
                   </a>
                 </div>
               </div>
-
             </section>
-
             <section class="cards_layer2">
-
               <div class="single_card">
                 <section class="card_top">
                   <img src="./resources/images/card4.png" alt="firstCard">
@@ -203,7 +195,6 @@
                   </a>
                 </div>
               </div>
-
               <div class="single_card">
                 <div class="card_top">
                   <img src="./resources/images/card6.png" alt="firstCard">
@@ -223,18 +214,10 @@
 
             </section>
           </div>
-
-
-
         </div>
       </section>
     </section>
   </main>
-
 <jsp:include page="./WEB-INF/views/layout/footer.jsp"></jsp:include>
-
-
-
 </body>
-
 </html>

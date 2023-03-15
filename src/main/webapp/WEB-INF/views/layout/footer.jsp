@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-	<body>
 		<!--     FOOTER                                               -->
 		<section class="bumper">
 			<img src="/resources/images/footer.png" class="fimage" alt="dd">
@@ -40,6 +37,3 @@
 			</div>
 	
 		</footer>
-	
-	</body>
-</html>

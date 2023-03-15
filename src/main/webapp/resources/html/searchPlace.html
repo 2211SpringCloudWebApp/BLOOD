@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>헌혈의집 선택</title>
+    </head>
+    <body>
+        <label for="booking_local">헌혈의집 헌혈예약</label><br>
+        지역선택
+        <select name="pCity" id="pCity" class="place_city">
+            <option value="0">시</option>
+            <option value="1">서울특별시</option>
+        </select>
+        <select name="pCountry" id="pCountry" class="place_country">
+            <option value="0">군/구</option>
+            <option value="1">종로구</option>
+        </select> <br>
+        키워드 검색 <input type="text" name="keyword" id="kInput" class="search_keyword">
+        <input type="submit" value="검색"><br>
+        
+        <!-- 검색한 결과를 리스트(place_tbl)로 출력하고, 선택하고자 하는 헌혈의집을 선택한 후 확인클릭 -->
+        <input type="button" value="선택"><br>
+        
+        <input type="button" value="확인" onclick="checkPlace()">
+        <input type="reset" value="취소">
+        
+        
+        <script type="text/javascript">
+        	function checkPlace() {
+        		opener.document.getElementbyId("pNo").value = document.getElementById("kInput").value;
+        	}
+        </script>
+    </body>
+</html>
