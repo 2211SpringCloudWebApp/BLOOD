@@ -4,10 +4,14 @@
 	<settings>
 		<setting name="jdbcTypeForNull" value="NULL"/>
 	</settings>
-	<typeAliases>
-		<typeAlias type="com.kh.blood.board.domain.Board" alias="Board"/>
-	</typeAliases>
-	<mappers>
-		<mapper resource="mappers/board-mapper.xml"/>
-	</mappers>
+	<typeAliases> 
+		<typeAlias type="com.kh.blood.faq.domain.Faq" alias="Faq"/>
+		<typeAlias type="com.kh.blood.notice.domain.Notice" alias="Notice"/>
+ 		<typeAlias type="com.kh.blood.member.domain.Member" alias="Member"/>
+	</typeAliases> 
+ 	<mappers> 
+ 		<mapper resource="mappers/faq-mapper.xml"/>
+		<mapper resource="mappers/notice-mapper.xml"/>
+ 		<mapper resource="mappers/member-mapper.xml"/>
+ 	</mappers>
 </configuration>
