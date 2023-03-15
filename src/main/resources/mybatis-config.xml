@@ -6,8 +6,10 @@
 	</settings>
 	<typeAliases>
 		<typeAlias type="com.kh.blood.faq.domain.Faq" alias="Faq"/>
+		<typeAlias type="com.kh.blood.notice.domain.Notice" alias="Notice"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappers/faq-mapper.xml"/>
+		<mapper resource="mappers/notice-mapper.xml"/>
 	</mappers>
 </configuration>

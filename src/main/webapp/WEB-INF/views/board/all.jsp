@@ -41,7 +41,7 @@
 					<a href="/board/faq.bld"><img src="../../../resources/images/칠판.png"/></a>
 				</div>
 				<div>
-					<a href="/board/free.bld"><img src="../../../resources/images/칠판.png"/></a>
+					<a href="/notice/free.bld"><img src="../../../resources/images/칠판.png"/></a>
 				</div>				
 			</section>
 		</main>

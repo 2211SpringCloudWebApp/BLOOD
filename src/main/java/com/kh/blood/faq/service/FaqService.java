@@ -8,7 +8,7 @@ import com.kh.blood.faq.domain.Faq;
 
 public interface FaqService {
 
-	// FAQ 목록
+	// FAQ 목록(첫화면)
 	List<Faq> selectFaq();
 
 	// FAQ 삭제

@@ -21,15 +21,10 @@ public class FaqController {
 	@Autowired
 	private FaqService fService;
 	
+	// 커뮤니티 클릭 시 이동화면
 	@RequestMapping(value="/board/allChoice.bld", method=RequestMethod.GET)
 	public String allChoice() {
 		return "board/all";
-	}
-	
-	// 자유게시판 목록
-	@RequestMapping(value="/board/free.bld", method=RequestMethod.GET)
-	public String free() {
-		return "board/free";
 	}
 	
 	// FAQ 목록
