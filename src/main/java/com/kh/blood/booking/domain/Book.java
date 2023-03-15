@@ -9,9 +9,9 @@ public class Book {
 	private String bkPhone;
 	private String dnCheck;
 	private int pNo;
+	private String pAddr;
+	private String pPhone;
 	
-	
-	// getter/setter 메소드
 	public int getBkNo() {
 		return bkNo;
 	}
@@ -60,14 +60,23 @@ public class Book {
 	public void setpNo(int pNo) {
 		this.pNo = pNo;
 	}
-	
-	
-	// toString()
+	public String getpAddr() {
+		return pAddr;
+	}
+	public void setpAddr(String pAddr) {
+		this.pAddr = pAddr;
+	}
+	public String getpPhone() {
+		return pPhone;
+	}
+	public void setpPhone(String pPhone) {
+		this.pPhone = pPhone;
+	}
 	@Override
 	public String toString() {
 		return "Book [bkNo=" + bkNo + ", memberId=" + memberId + ", memberName=" + memberName + ", bkDate=" + bkDate
-				+ ", bkTime=" + bkTime + ", bkPhone=" + bkPhone + ", dnCheck=" + dnCheck + ", pNo=" + pNo + "]";
+				+ ", bkTime=" + bkTime + ", bkPhone=" + bkPhone + ", dnCheck=" + dnCheck + ", pNo=" + pNo + ", pAddr="
+				+ pAddr + ", pPhone=" + pPhone + "]";
 	}
-
 	
 }

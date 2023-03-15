@@ -72,7 +72,7 @@
 		// window창으로 시군구 장소 입력받기 가능
 		const pNoEl = document.querySelector("#pNo");
 		pNoEl.addEventListener("click", function() {
-			window.open("../../../resources/html/searchPlace.html","newplace","width=500, height=600");
+			window.open("/book/placelistView.bld?searchArea=","newplace","width=500, height=600");
 		});
 		
 		/* $(document).ready(function () {

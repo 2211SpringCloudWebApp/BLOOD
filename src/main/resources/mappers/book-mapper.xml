@@ -12,16 +12,18 @@
 		<result property="bkPhone" column="BK_PHONE"/>
 		<result property="dnCheck" column="DN_CHECK"/>
 		<result property="pNo" column="P_NO"/>
-	</resultMap>
-	
-	<resultMap type="Place" id="PlaceResultMap">
-		<id property="pNo" column="P_NO"/>
-		<result property="pLocal" column="P_LOCAL"/>
-		<result property="pHome" column="P_HOME"/>
-		<result property="pCity" column="P_CITY"/>
-		<result property="pCountry" column="P_COUNTRY"/>
 		<result property="pAddr" column="P_ADDR"/>
 		<result property="pPhone" column="P_PHONE"/>
+	</resultMap>
+	
+	<resultMap type="Place" id="PlaceListResultMap">
+	
+	</resultMap>
+	
+	<resultMap type="Search" id="SearchResultMap">
+		<result property="pCity" column="P_CITY"></result>
+		<result property="pCountry" column="P_COUNTRY"></result>
+		<result property="pHome" column="P_HOME"></result>
 	</resultMap>
 	
 	<!-- 헌혈예약 등록 -->
@@ -36,8 +38,17 @@
 	
 
 	<!-- 헌혈의집 목록 조회 -->
-	<select id="selectPlaceList" resultMap="PlaceResultMap">
-		SELECT P_HOME P_ADDR FROM PLACE_TBL
-	</select>	
+	<select id="selectPlaceList" resultMap="PlaceListResultMap">
+		SELECT * FROM PLACE_TBL
+	</select>
+	<!-- resultType="string" -->
+	<!-- 선택된 시 조회 -->
+	<select id="selectSiList" resultType="string">
+		SELECT DISTINCT(P_CITY) AS "P_CITY" FROM PLACE_TBL ORDER BY 1 ASC
+	</select>
+	<!-- 선택된 시의 군/구 조회 -->
+	<select id="selectGunGuList" resultType="string">
+		SELECT DISTINCT(P_COUNTRY) AS "P_COUNTRY" FROM PLACE_TBL WHERE P_CITY = #{searchArea} ORDER BY 1 ASC
+	</select>
 
 </mapper>

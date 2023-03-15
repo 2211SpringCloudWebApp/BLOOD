@@ -36,8 +36,8 @@
 						<td>${book.bkDate }</td>
 						<td>${book.bkTime }</td>
 						<td>${book.pNo }</td>
-						<td>${place.pAddr }</td>
-						<td>${book.bkPhone }</td>
+						<td>${book.pAddr }</td>
+						<td>${book.pPhone }</td>
 						<td>${book.dnCheck }</td>
 					</tr>
 					</c:forEach>

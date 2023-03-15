@@ -11,10 +11,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+//import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kh.blood.booking.domain.Book;
 import com.kh.blood.booking.domain.Place;
+import com.kh.blood.booking.domain.Search;
 import com.kh.blood.booking.service.BookService;
 import com.kh.blood.booking.service.PlaceService;
 
@@ -23,7 +25,7 @@ public class BookController {
 
 	@Autowired
 	private BookService bService;
-	//@Autowired
+	@Autowired
 	private PlaceService pService;
 	
 	/* 헌혈예약 등록화면 */
@@ -76,10 +78,16 @@ public class BookController {
 	@RequestMapping(value="/book/placelistView.bld", method=RequestMethod.GET)
 	public String placeListView(
 			HttpSession session
+			, @RequestParam String searchArea
 			, Model model) {
 		List<Place> pList = pService.selectPlaceList();
+		List<String> siList = pService.selectSiList();
+		List<String> gunGuList = pService.selectGunguList(searchArea);
 		model.addAttribute("pList", pList);
+		model.addAttribute("siList", siList);
+		model.addAttribute("gunGuList", gunGuList);
 		return "book/placeList";
+		
 	}
 	
 	
