@@ -30,6 +30,13 @@ public class PlaceStoreLogic implements PlaceStore{
 		List<String> gunguList = session.selectList("BookMapper.selectGunGuList", searchArea);
 		return gunguList;
 	}
+	
+	/* 헌혈의집 검색 StoreLogic */
+	@Override
+	public List<Place> selectListByKeyword(SqlSession session, Search search) {
+		List<Place> searchList = session.selectList("BookMapper.selectListByKeyword", search);
+		return searchList;
+	}
 
 	
 }

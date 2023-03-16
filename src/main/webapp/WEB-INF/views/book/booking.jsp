@@ -74,17 +74,7 @@
 		pNoEl.addEventListener("click", function() {
 			window.open("/book/placelistView.bld?searchArea=","newplace","width=500, height=600");
 		});
-		
-		/* $(document).ready(function () {
-			$('input.timepicker').timepicker({
-				timeFormat : 'HH:mm',
-				interval : 30,
-				startTime: '09:00',
-				dynamic: false,
-				dropdown: true,
-				scrollbar: true
-			});
-		}) */
+
 	</script>
 	
 	

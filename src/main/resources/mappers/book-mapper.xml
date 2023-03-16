@@ -50,5 +50,18 @@
 	<select id="selectGunGuList" resultType="string">
 		SELECT DISTINCT(P_COUNTRY) AS "P_COUNTRY" FROM PLACE_TBL WHERE P_CITY = #{searchArea} ORDER BY 1 ASC
 	</select>
+	
+	<!-- 헌혈의집 검색 -->
+	<select id="selectListByKeyword" resultMap="PlaceListResultMap">
+		<!-- SELECT * FROM PLACE_TBL
+		<if test="searchCondition == 'pCity'">
+		WHERE P_CITY LIKE '%' || #{searchValue} || '%'
+		</if>
+		<if test="searchCondition == 'pCounty'">
+		WHERE P_COUNTRY LIKE '%' || #{searchValue} }|| '%'
+		</if>
+		ORDER BY 1 ASC -->
+		SELECT * FROM PLACE_TBL WHERE P_ADDR LIKE '%' || #{pAddr} || '%'
+	</select>
 
 </mapper>

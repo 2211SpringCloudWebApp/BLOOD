@@ -28,5 +28,14 @@ public interface PlaceStore {
 	 * @return List<Search>
 	 */
 	List<String> selectGunguList(SqlSession session, String searchArea);
+	
+	
+	/**
+	 * 헌혈의집 검색 Store
+	 * @param session 
+	 * @param search
+	 * @return List<Place>
+	 */
+	List<Place> selectListByKeyword(SqlSession session, Search search);
 
 }
