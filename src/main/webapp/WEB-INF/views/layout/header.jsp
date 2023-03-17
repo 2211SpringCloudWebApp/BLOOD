@@ -48,7 +48,7 @@
 	          </div>
 	        </li>
 	        <li class="item">
-	          <div class="item__name"><a href="#">전자문진</a></div>
+	          <div class="item__name"><a href="/munjin/intro.bld">전자문진</a></div>
 	          <div class="item__contents">
 	            <div class="contents__menu">
 	              <ul class="inner">

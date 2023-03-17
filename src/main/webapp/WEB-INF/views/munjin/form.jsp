@@ -1,7 +1,7 @@
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+
 <html lang="ko">
 <head>
     <meta charset="UTF-8" />
@@ -25,21 +25,17 @@
     <link rel="stylesheet" href="../../../resources/css/munjin/form.css" />
 </head>
 <body>
-
 <!--     HEADER                                                 -->
 <header>
-
 </header>
-
 <!--     MAIN                                                    -->
 <main>
     <div class="inner">
-
-        <div class="roa_header">
-            <div class="roa_header_name">전자문진</div>
+        <div class="ros_header">
+            <div class="ros_header_name">전자문진</div>
         </div>
         <!--     정보  -->
-        <div class="roa">
+        <div class="ros">
             <h2>2. 최근 3일 이내</h2>
             <pre>
         아래와 같은 경험을 해당 기간안에 하신 분 중 일부는 일정기간 동안 헌혈할 수 없습니다.
@@ -47,22 +43,124 @@
       </pre>
 
         </div>
-        <div class="roa_checkbox">
-            <form method="POST" action="<c:url value="/munjin/thanks"/>">
+        <div class="ros_checkbox">
+            <form method="POST" action="<c:url value="/munjin/thanks.bld"/>">
                 <!-- 해당없음 체크박스        -->
-                <div class="roa_no">
+                <div class="ros_no">
                     <div>해당사항 없음</div>
                     <div>
-                        <input type="checkbox" name="roaNo" value="true" />
+                        <input type="checkbox" name="rosYesOrNO" value="true" />
                     </div>
                 </div>
                 <!-- 상세사항  체크박스        -->
-                <div class="roa_yes">
+                <div class="ros_yes">
                     <div>있음</div>
-                    <div class="roa_yes__itmes">
-                        <c:forEach var="roa" items="${roaCheckboxes}">
-                            ${roa}<input type="checkbox" name="roaCheckboxes" value="${roa}" />
-                        </c:forEach>
+                    <div class="ros_yes__itmes">
+                        발열<input type="checkbox">
+                        인후통<input type="checkbox">
+                        설사<input type="checkbox">
+                        <%--                        <c:forEach var="ros" items="${rosCheckboxes}">--%>
+                        <%--                            ${ros}<input type="checkbox" name="rosCheckboxes" value="${ros}" />--%>
+                        <%--                        </c:forEach>--%>
+                    </div>
+                </div>
+                <div class="ros_yes">
+                    <div>있음</div>
+                    <div class="ros_yes__itmes">
+                        발열<input type="checkbox">
+                        인후통<input type="checkbox">
+                        설사<input type="checkbox">
+                        <%--                        <c:forEach var="ros" items="${rosCheckboxes}">--%>
+                        <%--                            ${ros}<input type="checkbox" name="rosCheckboxes" value="${ros}" />--%>
+                        <%--                        </c:forEach>--%>
+                    </div>
+                </div>
+                <div class="ros_yes">
+                    <div>있음</div>
+                    <div class="ros_yes__itmes">
+                        발열<input type="checkbox">
+                        인후통<input type="checkbox">
+                        설사<input type="checkbox">
+                        <%--                        <c:forEach var="ros" items="${rosCheckboxes}">--%>
+                        <%--                            ${ros}<input type="checkbox" name="rosCheckboxes" value="${ros}" />--%>
+                        <%--                        </c:forEach>--%>
+                    </div>
+                </div>
+                <div class="ros_yes">
+                    <div>있음</div>
+                    <div class="ros_yes__itmes">
+                        발열<input type="checkbox">
+                        인후통<input type="checkbox">
+                        설사<input type="checkbox">
+                        <%--                        <c:forEach var="ros" items="${rosCheckboxes}">--%>
+                        <%--                            ${ros}<input type="checkbox" name="rosCheckboxes" value="${ros}" />--%>
+                        <%--                        </c:forEach>--%>
+                    </div>
+                </div>
+                <div class="ros_yes">
+                    <div>있음</div>
+                    <div class="ros_yes__itmes">
+                        발열<input type="checkbox">
+                        인후통<input type="checkbox">
+                        설사<input type="checkbox">
+                        <%--                        <c:forEach var="ros" items="${rosCheckboxes}">--%>
+                        <%--                            ${ros}<input type="checkbox" name="rosCheckboxes" value="${ros}" />--%>
+                        <%--                        </c:forEach>--%>
+                    </div>
+                </div>
+                <div class="ros_yes">
+                    <div>있음</div>
+                    <div class="ros_yes__itmes">
+                        발열input type="checkbox">
+                        인후통<input type="checkbox">
+                        설사<input type="checkbox">
+                        <%--                        <c:forEach var="ros" items="${rosCheckboxes}">--%>
+                        <%--                            ${ros}<input type="checkbox" name="rosCheckboxes" value="${ros}" />--%>
+                        <%--                        </c:forEach>--%>
+                    </div>
+                </div>
+                <div class="ros_yes">
+                    <div>있음</div>
+                    <div class="ros_yes__itmes">
+                        발열input type="checkbox">
+                        인후통<input type="checkbox">
+                        설사<input type="checkbox">
+                        <%--                        <c:forEach var="ros" items="${rosCheckboxes}">--%>
+                        <%--                            ${ros}<input type="checkbox" name="rosCheckboxes" value="${ros}" />--%>
+                        <%--                        </c:forEach>--%>
+                    </div>
+                </div>
+                <div class="ros_yes">
+                    <div>있음</div>
+                    <div class="ros_yes__itmes">
+                        발열<input type="checkbox">
+                        인후통<input type="checkbox">
+                        설사<input type="checkbox">
+                        <%--                        <c:forEach var="ros" items="${rosCheckboxes}">--%>
+                        <%--                            ${ros}<input type="checkbox" name="rosCheckboxes" value="${ros}" />--%>
+                        <%--                        </c:forEach>--%>
+                    </div>
+                </div>
+                <div class="ros_yes">
+                    <div>있음</div>
+                    <div class="ros_yes__itmes">
+                        발열<input type="checkbox">
+                        인후통<input type="checkbox">
+                        설사<input type="checkbox">
+                        <%--                        <c:forEach var="ros" items="${rosCheckboxes}">--%>
+                        <%--                            ${ros}<input type="checkbox" name="rosCheckboxes" value="${ros}" />--%>
+                        <%--                        </c:forEach>--%>
+                    </div>
+                </div>
+                <div class="ros_yes">
+                    <div>있음</div>
+                    <div class="ros_yes__itmes">
+                        발열<input type="checkbox">
+                        인후통<input type="checkbox">
+                        설사<input type="checkbox">
+                        <%--                        <c:forEach var="ros" items="${rosCheckboxes}">--%>
+                        <%--                            ${ros}<input type="checkbox" name="rosCheckboxes" value="${ros}" />--%>
+                        <%--                        </c:forEach>--%>
                     </div>
                 </div>
                 <div>
@@ -73,14 +171,14 @@
 
         <!-- 기타사항  인풋텍스트        -->
 
-        <div  class="roa_detail">
+        <div  class="ros_detail">
             <textarea name="content" cols="40" rows="8"></textarea>
         </div>
 
         <!--  //////////////  이하 생략  ///////////////////////////////////////////    -->
 
         <div class="post">
-            <button>다음
+            <button type="button" onclick="location.href='success.html'">다음
                 <div class="star-1">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
                 </div>
