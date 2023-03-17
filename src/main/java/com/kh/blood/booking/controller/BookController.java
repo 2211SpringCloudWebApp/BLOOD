@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-//import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kh.blood.booking.domain.Book;
@@ -43,7 +42,6 @@ public class BookController {
 		try {
 			request.setCharacterEncoding("UTF-8");
 			book.setMemberId("khuser01"); // replace this.
-			book.setpNo(11);
 			int result = bService.insertBook(book);
 			if(result > 0) {
 				return "redirect:/book/reservelistView.bld";
@@ -90,7 +88,31 @@ public class BookController {
 		
 	}
 	
-	
+	/* 헌혈의집 검색 */
+	@RequestMapping(value="/book/searchView.bld", method=RequestMethod.GET)
+	public String placeSearchView(
+			HttpSession session
+			, @ModelAttribute Search search
+			, Model model) {
+		try {
+			// 동적 쿼리
+			System.out.println(search.toString());
+			
+			List<Place> searchResult = pService.selectListByKeyowrd(search);
+			if(!searchResult.isEmpty()) {
+				model.addAttribute("search", search);
+				model.addAttribute("searchResult", searchResult);
+				return "book/placeList";
+			}else {
+				 model.addAttribute("msg", "조회에 실패하였습니다."); return "common/error";
+
+				/*alert("해당 정보가 존재하지 않습니다.");*/
+			}
+		}catch (Exception e) {
+			model.addAttribute("msg", e.getMessage());
+			return "common/error";
+		}
+	}
 	
 	
 	

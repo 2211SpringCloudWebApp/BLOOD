@@ -9,6 +9,7 @@ public class Book {
 	private String bkPhone;
 	private String dnCheck;
 	private int pNo;
+	private String pHome;
 	private String pAddr;
 	private String pPhone;
 	
@@ -60,6 +61,12 @@ public class Book {
 	public void setpNo(int pNo) {
 		this.pNo = pNo;
 	}
+	public String getpHome() {
+		return pHome;
+	}
+	public void setpHome(String pHome) {
+		this.pHome = pHome;
+	}
 	public String getpAddr() {
 		return pAddr;
 	}
@@ -72,11 +79,12 @@ public class Book {
 	public void setpPhone(String pPhone) {
 		this.pPhone = pPhone;
 	}
+	
 	@Override
 	public String toString() {
 		return "Book [bkNo=" + bkNo + ", memberId=" + memberId + ", memberName=" + memberName + ", bkDate=" + bkDate
-				+ ", bkTime=" + bkTime + ", bkPhone=" + bkPhone + ", dnCheck=" + dnCheck + ", pNo=" + pNo + ", pAddr="
-				+ pAddr + ", pPhone=" + pPhone + "]";
+				+ ", bkTime=" + bkTime + ", bkPhone=" + bkPhone + ", dnCheck=" + dnCheck + ", pNo=" + pNo + ", pHome="
+				+ pHome + ", pAddr=" + pAddr + ", pPhone=" + pPhone + "]";
 	}
 	
 }

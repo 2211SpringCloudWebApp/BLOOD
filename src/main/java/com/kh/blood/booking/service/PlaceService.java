@@ -23,5 +23,12 @@ public interface PlaceService {
 	 * @return List<String>
 	 */
 	public List<String> selectGunguList(String searchArea);
+	
+	/**
+	 * 헌혈의집 검색
+	 * @param search
+	 * @return List<Place>
+	 */
+	public List<Place> selectListByKeyowrd(Search search);
 
 }
