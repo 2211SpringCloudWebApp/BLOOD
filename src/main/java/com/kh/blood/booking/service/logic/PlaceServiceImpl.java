@@ -37,5 +37,13 @@ public class PlaceServiceImpl implements PlaceService{
 		List<String> gunguList = pStore.selectGunguList(session, searchArea);
 		return gunguList;
 	}
+	
+	
+	/* 헌혈의집 검색 */
+	@Override
+	public List<Place> selectListByKeyowrd(Search search) {
+		List<Place> searchList = pStore.selectListByKeyword(session, search);
+		return searchList;
+	}
 
 }

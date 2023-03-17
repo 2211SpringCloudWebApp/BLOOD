@@ -17,14 +17,21 @@
 	</resultMap>
 	
 	<resultMap type="Place" id="PlaceListResultMap">
-	
+		<id property="pNo" column="P_NO"/>
+		<result property="pLocal" column="P_LOCAL"/>
+		<result property="pHome" column="P_HOME"/>
+		<result property="pCity" column="P_CITY"/>
+		<result property="pCountry" column="P_COUNTRY"/>
+		<result property="pAddr" column="P_ADDR"/>
+		<result property="pPhone" column="P_PHONE"/>
 	</resultMap>
 	
 	<resultMap type="Search" id="SearchResultMap">
 		<result property="pCity" column="P_CITY"></result>
 		<result property="pCountry" column="P_COUNTRY"></result>
-		<result property="pHome" column="P_HOME"></result>
+		<result property="pAddr" column="P_ADDR"></result>
 	</resultMap>
+	
 	
 	<!-- 헌혈예약 등록 -->
 	<insert id="insertBook">
@@ -49,6 +56,19 @@
 	<!-- 선택된 시의 군/구 조회 -->
 	<select id="selectGunGuList" resultType="string">
 		SELECT DISTINCT(P_COUNTRY) AS "P_COUNTRY" FROM PLACE_TBL WHERE P_CITY = #{searchArea} ORDER BY 1 ASC
+	</select>
+	
+	<!-- 헌혈의집 검색 -->
+	<select id="selectListByKeyword" resultMap="PlaceListResultMap">
+		<!-- SELECT * FROM PLACE_TBL
+		<if test="searchCondition == 'pCity'">
+		WHERE P_CITY LIKE '%' || #{searchValue} || '%'
+		</if>
+		<if test="searchCondition == 'pCounty'">
+		WHERE P_COUNTRY LIKE '%' || #{searchValue} }|| '%'
+		</if>
+		ORDER BY 1 ASC -->
+		SELECT * FROM PLACE_TBL WHERE P_ADDR LIKE '%' || #{pAddr} || '%'
 	</select>
 
 </mapper>

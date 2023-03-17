@@ -90,7 +90,30 @@ public class BookController {
 		
 	}
 	
-	
+	/* 헌혈의집 검색 */
+	@RequestMapping(value="/book/searchView.bld", method=RequestMethod.GET)
+	public String placeSearchView(
+			HttpSession session
+			, @ModelAttribute Search search
+			, Model model) {
+		try {
+			// 동적 쿼리
+			System.out.println(search.toString());
+			
+			List<Place> searchResult = pService.selectListByKeyowrd(search);
+			if(!searchResult.isEmpty()) {
+				model.addAttribute("search", search);
+				model.addAttribute("searchResult", searchResult);
+				return "book/search";
+			}else {
+				model.addAttribute("msg", "조회에 실패하였습니다.");
+				return "common/error";
+			}
+		}catch (Exception e) {
+			model.addAttribute("msg", e.getMessage());
+			return "common/error";
+		}
+	}
 	
 	
 	
