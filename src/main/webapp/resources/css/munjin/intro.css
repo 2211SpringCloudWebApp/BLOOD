@@ -304,6 +304,8 @@ header .main-menu .item .item__contents .contents__menu>ul>li ul li:hover {
   color: #ff6f00;
 }
 
+
+
 /*BADGES*/
 header .badges {
   position: absolute;
@@ -485,6 +487,6 @@ main .munjin .inner .munjin3 button{
   position:relative;
   height:20vh;
   text-align:center;
-  background-color: rgb(255, 95, 21, 0.8);
+  background-color:rgb(255, 100, 50, 1);
   border-top: 0px;
 }

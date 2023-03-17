@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+	<typeAliases> 
+		<typeAlias type="com.kh.blood.faq.domain.Faq" alias="Faq"/>
+		<typeAlias type="com.kh.blood.notice.domain.Notice" alias="Notice"/>
+ 		<typeAlias type="com.kh.blood.member.domain.Member" alias="Member"/>
+ 		<typeAlias type="com.kh.blood.booking.domain.Book" alias="Book"/>
+		<typeAlias type="com.kh.blood.booking.domain.Place" alias="Place"/>
+		<typeAlias type="com.kh.blood.booking.domain.Search" alias="Search"/>
+		<typeAlias type="com.kh.blood.munjin.domain.MunjinMember" alias="MunjinMember"/>
+	</typeAliases>
+ 	<mappers>
+ 		<mapper resource="mappers/faq-mapper.xml"/>
+		<mapper resource="mappers/notice-mapper.xml"/>
+ 		<mapper resource="mappers/member-mapper.xml"/>
+ 		<mapper resource="mappers/book-mapper.xml"/>
+ 		<mapper resource="mappers/munjin-mapper.xml"/>
+
+ 	</mappers>
+</configuration>

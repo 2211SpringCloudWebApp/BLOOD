@@ -1,16 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
-<html>
-<head>
-  <title>Spring MVC checkbox</title>
-</head>
-
-<body>
-
-</body>
-</html>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
@@ -31,7 +22,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
-  <link rel="stylesheet" href="../../../resources/css/munjin/munjin_thanks.css" />
+  <link rel="stylesheet" href="../../../resources/css/munjin/thanks.css" />
 </head>
 <body>
 
@@ -44,29 +35,24 @@
 <main>
   <div class="inner">
 
-    <div class="roa_header">
-      <div class="roa_header_name">전자문진</div>
+    <div class="ros_header">
+      <div class="ros_header_name">전자문진</div>
     </div>
     <!--     감사인사  -->
-    <div class="roa">
+    <div class="ros">
+      <h2>${msg }</h2>
     </div>
     <!-- 범퍼 -  해당없음 체크박스        -->
-    <div class="roa_no">
+    <div class="ros_no">
     </div>
     <!-- 체크박스 선택 내역서         -->
-    <div class="roa_radio">
+    <div class="ros_radio">
 
-      <h2>체크박스 선택 내역서 </h2>
-      <br>
-      <c:out value="${form.name}" />님은 다음과 같은 증상을 보이고 있습니다:<br />
-
-      <c:forEach items="${form.roaCheckboxes}" var="roaCheckbox">
-        - <c:out value="${roaCheckbox}" /><br />
-      </c:forEach>
     </div>
 
 
-    <div  class="roa_detail">
+    <div  class="ros_detail">
+
     </div>
 
 
