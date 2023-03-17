@@ -1,14 +1,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8"%>
 
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>munjin</title>
+  <title>NOTICE</title>
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="heartbeat" />
@@ -27,16 +27,11 @@ pageEncoding="UTF-8"%>
 </head>
 
 <body>
-
-<!--     HEADER                                                 -->
-<header>
-
-</header>
-
-<!--     MAIN                                                    -->
+<!-- HEADER                                                 -->
+<header></header>
+<!-- MAIN                                                    -->
 <main>
   <div class="inner">
-
     <div class="notice__checkbox">
       <div class="no_drug">헌혈 금지약물 및 예방접종 안내문</div>
       <div class="no_zrug">감염병 및 vCJD 안내문</div>

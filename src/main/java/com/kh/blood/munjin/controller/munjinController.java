@@ -104,9 +104,9 @@ public class munjinController
      * @param result
      * @return
      */
-//    @PostMapping(value = "/munjin/thanks.bld")
-//    public String submitForm(Model model, Form form, BindingResult result) {
-//        model.addAttribute("form", form);
-//        return "success.html";
-//    }
+    @GetMapping(value = "munjin/thanks.bld")
+    public String submitForm(Model model) {
+        return "munjin/success";
+    }
+
 }

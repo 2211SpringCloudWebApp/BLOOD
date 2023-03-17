@@ -113,7 +113,7 @@
   }
   function validateResidentNumber2() {
     var kn2 = document.getElementById("id_num2");
-    var id2RegExp = /^\d{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/g;
+    var id2RegExp = /[1-4][0-9]{6}$/g;
 
     if (!id2RegExp.test(kn2.value)) {
       alert("주민등록번호가 유효하지 않습니다.");
