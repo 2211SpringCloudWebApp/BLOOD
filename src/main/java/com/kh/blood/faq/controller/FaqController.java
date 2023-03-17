@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kh.blood.faq.domain.Faq;
+import com.kh.blood.faq.domain.Find;
 import com.kh.blood.faq.service.FaqService;
 
 @Controller
@@ -73,15 +74,22 @@ public class FaqController {
 	}
 		// 공지사항 키워드 검색
 		@RequestMapping(value="/faq/search.bld", method=RequestMethod.GET)
-		public String faqSearchView(@RequestParam("searchValue") String keyword, Model model) {
+		public String faqSearchView(
+				@ModelAttribute Find find
+//				@RequestParam("searchValue") String keyword
+//				, @RequestParam("searchCondition") String condition
+				, Model model) {
+			
 			try {
-				List<Faq> searchList = fService.seleListByKeyword(keyword);
+				List<Faq> searchList = fService.seleListByKeyword(find);
+				
 				if(!searchList.isEmpty()) {
+					model.addAttribute("find", find);
 					model.addAttribute("sList", searchList);
 					return "board/faqSearch";
 				}else {
 					model.addAttribute("msg", "조회에 실패하였습니다.");
-					return "";
+					return "board/faq";
 				}
 			} catch (Exception e) {
 				model.addAttribute("msg", e.getMessage());

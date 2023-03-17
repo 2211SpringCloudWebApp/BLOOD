@@ -21,11 +21,20 @@
 	
 	<select id="selectOneById" resultMap="FaqResultMap">
 		SELECT * FROM FAQ_TBL WHERE FAQ_NO = #{faqNo}
-		
 	</select>
 	
 	<select id="selectListByKeyword" resultMap="FaqResultMap">
-		SELECT * FROM FAQ_TBL WHERE FAQ_TITLE LIKE '%' || #{keyword} || '%' OR FAQ_CONTENT LIKE '%' || #{keyowrd} || '%'
+		SELECT * FROM FAQ_TBL 
+		<if test="searchCondition  == 'all'">
+			WHERE FAQ_TITLE LIKE '%' || #{searchValue} || '%' OR FAQ_CONTENT LIKE '%' || #{searchValue} || '%'
+		</if>
+		<if test="searchCondition == 'title'">
+			WHERE FAQ_TITLE LIKE '%' || #{searchValue} || '%'
+		</if>
+		<if test="searchCondition == 'content'">
+			WHERE FAQ_CONTENT LIKE '%' || #{searchValue} || '%'
+		</if>
+		ORDER BY FAQ_NO DESC
 	</select>
 	
 	<delete id="deleteFaq">

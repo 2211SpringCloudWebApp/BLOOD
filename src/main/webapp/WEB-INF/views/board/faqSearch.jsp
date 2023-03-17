@@ -56,17 +56,17 @@
 				<tr>
 					<td>
 						<form action="/faq/search.bld" method="get">
-<!-- 							<select name="searchCondition">
+							<select name="searchCondition">
 								<option value="all">전체</option>
 								<option value="title">제목</option>
 								<option value="content">내용</option>
-							</select> -->
-							<input type="text" name="searchValue" placeholder="검색어를 입력하세요">						
+							</select>
+							<input type="text" name="searchValue" value="${find.searchValue }" placeholder="검색어를 입력하세요">						
 							<input type="submit" value="검색">
 						</form>
-					</td>
-					<td>
-						<button onclick="location.href='/board/faqWriteView.bld'">글쓰기</button>
+						<c:if test="${loginUser.memberType eq 0 }">
+							<button onclick="location.href='/board/faqWriteView.bld'">글쓰기</button>
+						</c:if>						
 					</td>
 				</tr>
 			</tfoot>
@@ -78,4 +78,7 @@
 	
 		<%-- <jsp:include page="../layout/footer.jsp"></jsp:include> --%>
 	</body>
+	<script>
+		document.querySelector("[value=${find.searchCondition}]").selected = true;
+	</script>
 </html>

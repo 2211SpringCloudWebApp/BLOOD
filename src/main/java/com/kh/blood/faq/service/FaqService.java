@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.kh.blood.faq.domain.Faq;
+import com.kh.blood.faq.domain.Find;
 
 public interface FaqService {
 
@@ -21,7 +22,7 @@ public interface FaqService {
 	Faq selectOneById(int faqNo);
 	
 	// FAQ 검색 목록
-	List<Faq> seleListByKeyword(String keyword);
+	List<Faq> seleListByKeyword(Find find);
 	
 	
 }

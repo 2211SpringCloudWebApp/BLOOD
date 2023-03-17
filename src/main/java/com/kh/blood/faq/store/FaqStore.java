@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.kh.blood.faq.domain.Faq;
+import com.kh.blood.faq.domain.Find;
 
 public interface FaqStore {
 
@@ -20,7 +21,7 @@ public interface FaqStore {
 	Faq selectOneById(SqlSession session, int faqNo);
 
 
-	List<Faq> selectListByKeyword(SqlSession session, String keyword);
+	List<Faq> selectListByKeyword(SqlSession session, Find find);
 
 	
 

@@ -14,8 +14,9 @@
 		<br>
 		내용 : ${faq.faqContent }
 		<br>
-
-		<a href="javascript:void(0);" onclick="removeCheck(${faq.faqNo});">삭제하기</a>
+		<c:if test="${loginUser.memberType eq 0 && loginUser ne null}">
+			<a href="javascript:void(0);" onclick="removeCheck(${faq.faqNo});">삭제하기</a>
+		</c:if>
 		<script>
 			function removeCheck(faqNo) {
 				if(confirm("정말 삭제하시겠습니까?")) {

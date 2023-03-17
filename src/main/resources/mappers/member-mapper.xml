@@ -12,13 +12,14 @@
    		<result property="memberEmail" column="MEMBER_EMAIL"/> 
    		<result property="memberAddr" column="MEMBER_ADDR"/> 
    		<result property="memberPhone" column="MEMBER_PHONE"/> 
+   		<result property="memberType" column="MEMBER_TYPE"/> 
   	</resultMap>
   	<insert id="insertMember">
   		INSERT INTO MEMBER_TBL
   		VALUES(#{memberId}, #{memberPw},#{memberName},#{memberKn},#{bloodType},#{memberEmail},#{memberAddr},#{memberPhone},DEFAULT)
   	</insert>
   	<select id="checkMemberLogin" resultMap="memberResultMap">
-  		SELECT MEMBER_ID, MEMBER_NAME FROM MEMBER_TBL WHERE MEMBER_ID = #{memberId} AND MEMBER_PW = #{memberPw}
+  		SELECT MEMBER_ID, MEMBER_NAME, MEMBER_TYPE FROM MEMBER_TBL WHERE MEMBER_ID = #{memberId} AND MEMBER_PW = #{memberPw}
   	</select>
   	<select id="selectOneById" resultMap="memberResultMap">
   		SELECT * FROM MEMBER_TBL WHERE MEMBER_ID = #{memberId}

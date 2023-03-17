@@ -46,10 +46,10 @@
 						<tr>
 							<td>${i.count }</td>
 							<td><a href="/notice/detail.bld?noticeNo=${notice.noticeNo }">${notice.noticeTitle }</a></td>
-							<td>${notice.memberId }</td>
+							<td>${loginUser.memberId }</td>
 							<td>${notice.nCreateDate }</td>
 							<td>
-								${notice.viewCount }
+								조회수 동적쿼리
 							</td>
 						</tr>
 						</c:forEach>
@@ -58,8 +58,10 @@
 						<tr align="center">
 							<td colspan="5">
 								<c:forEach begin="${pi.startNavi }" end="${pi.endNavi }" var="p">
-									<c:url var="pageUrl" value="/notice/free.bld">
+									<c:url var="pageUrl" value="/notice/search.bld">
 										<c:param name="page" value="${p }"></c:param>
+										<c:param name="searchValue" value="${search.searchValue }"></c:param>										
+										<c:param name="searchCondition" value="${search.searchCondition }"></c:param>
 									</c:url>
 									<a href="${pageUrl }">${p }</a>&nbsp;
 								</c:forEach>
@@ -70,7 +72,7 @@
 								<form action="/notice/search.bld" method="get">
 									<select name="searchCondition">
 										<option value="all">전체</option>
-										<option value="id">작성자id</option>
+										<option value="id">작성자Id</option>
 										<option value="title">제목</option>
 										<option value="content">내용</option>
 									</select>

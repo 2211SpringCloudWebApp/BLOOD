@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.kh.blood.faq.domain.Faq;
+import com.kh.blood.faq.domain.Find;
 import com.kh.blood.faq.store.FaqStore;
 
 @Repository
@@ -37,9 +38,8 @@ public class FaqStoreLogic implements FaqStore{
 	}
 
 	@Override
-	public List<Faq> selectListByKeyword(SqlSession session, String keyword) {
-		List<Faq> searchList = session.selectList("FaqMapper.selectListByKeyword", keyword);
-		System.out.println(searchList);
+	public List<Faq> selectListByKeyword(SqlSession session, Find find) {
+		List<Faq> searchList = session.selectList("FaqMapper.selectListByKeyword", find);
 		return searchList;
 	}
 

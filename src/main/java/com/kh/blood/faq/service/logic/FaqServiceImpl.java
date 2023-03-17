@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kh.blood.faq.domain.Faq;
+import com.kh.blood.faq.domain.Find;
 import com.kh.blood.faq.service.FaqService;
 import com.kh.blood.faq.store.FaqStore;
 
@@ -43,8 +44,8 @@ public class FaqServiceImpl implements FaqService {
 	}
 
 	@Override
-	public List<Faq> seleListByKeyword(String keyword) {
-		List<Faq> searchList = fStore.selectListByKeyword(session, keyword);
+	public List<Faq> seleListByKeyword(Find find) {
+		List<Faq> searchList = fStore.selectListByKeyword(session, find);
 		return searchList;
 	}
 }
