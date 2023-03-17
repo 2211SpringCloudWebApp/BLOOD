@@ -42,14 +42,16 @@
 					</tr>
 				</thead>
 				<tbody>
+					<!-- 검색 결과가 존재하면 리스트 출력 -->
 					<c:forEach items="${pList }" var="place">
-					<tr>
-						<td>${place.pHome }</td>
-						<td>${place.pAddr }</td>
-						<td>${place.pPhone }</td>
-						<td><input type="button" value="선택" onclick="choosePlace()"></td>
+					<tr>						
+						<td id="cInput_home">${place.pHome }</td>
+						<td id="cInput_addr">${place.pAddr }</td>
+						<td id="cInput_phone">${place.pPhone }</td>
+						<td><input type="button" value="선택" onclick="choosePlace(${place.pNo}, this)"></td>
 					</tr>
 					</c:forEach>
+					
 				</tbody>
 			</table>
 
@@ -82,9 +84,17 @@
 			}
 
 	
-			function choosePlace() {
-				alert('선택함');
-				/* return "/book/booking";*/
+			/* 선택 클릭 시 해당 열에 해당하는 pNo를 booking.jsp로 전달 */
+			function choosePlace(pNo, obj) {
+				console.log(obj);
+				/* window.opener.document.getElementById("chooseBtn").value; */
+				opener.document.getElementById("pInput_home").value = obj.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+				opener.document.getElementById("pInput_addr").value = obj.parentElement.previousElementSibling.previousElementSibling.innerText;
+				opener.document.getElementById("pInput_phone").value = obj.parentElement.previousElementSibling.innerText;
+				opener.document.getElementById("pInput_num").value = pNo;
+				window.close();
+				/* alert('선택함'); */
+
 			}
 
 			

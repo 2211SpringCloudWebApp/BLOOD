@@ -40,7 +40,7 @@
 	
 	<!-- 헌혈예약 내역 조회 -->
 	<select id="selectBookList" resultMap="bookResultMap">
-		SELECT BK_NO, BK_DATE, BK_TIME, BOOK.P_NO, P_ADDR, P_PHONE, DN_CHECK FROM BOOKING_TBL BOOK LEFT JOIN PLACE_TBL PLACE ON BOOK.P_NO = PLACE.P_NO WHERE MEMBER_ID = #{memberId}
+		SELECT * FROM BOOKING_TBL JOIN PLACE_TBL USING(P_NO) WHERE MEMBER_ID = #{memberId}
 	</select>
 	
 
@@ -68,7 +68,7 @@
 		WHERE P_COUNTRY LIKE '%' || #{searchValue} }|| '%'
 		</if>
 		ORDER BY 1 ASC -->
-		SELECT * FROM PLACE_TBL WHERE P_ADDR LIKE '%' || #{pAddr} || '%'
+		SELECT * FROM PLACE_TBL WHERE P_ADDR LIKE '%' || #{searchValue} || '%'
 	</select>
 
 </mapper>

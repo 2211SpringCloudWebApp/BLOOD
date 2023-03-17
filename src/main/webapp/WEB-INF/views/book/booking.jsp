@@ -38,16 +38,25 @@
 			<h1>헌혈의집 헌혈예약</h1>
 			
 			<form action="/book/reserve.bld" accept-charset="utf-8" name="reserve" method="post">
-				예약자 <input type="text" name="memberName"><br>
-				전화번호 <input type="text" name="bkPhone"><br>
-				<label for="booking_local">헌혈의집</label>
-				<select name="pNo" id="pNo" class="booking_place">
-					<option value="12">선택하세요</option>
-				</select><br>
-				<label for="booking_day">예약날짜 </label>
-				<input type="date" name="bkDate" id="Date" class="booking_date"><br>
-				<%-- <jsp:include page="./calendar.jsp"></jsp:include> --%>
-				예약시간 <input type="time" name="bkTime" min="12:00" max="18:00"><br>
+				예약자<br>
+				<input type="text" name="memberName">
+				<br>
+				전화번호<br>
+				<input type="text" name="bkPhone">
+				<br>
+				<label for="booking_local">헌혈의집<input type="button" id="search" value="search"></label><br>
+				(헌혈의집)<input type="text" id="pInput_home"><br>
+				(주소)<input type="text" id="pInput_addr"><br>
+				(전화번호)<input type="text" id="pInput_phone">
+				<input type="hidden" id="pInput_num">
+				<br>
+				<label for="booking_day">예약날짜 </label><br>
+				<input type="date" name="bkDate" id="Date" class="booking_date">
+				<br>
+				예약시간<br>
+				<input type="time" name="bkTime" min="12:00" max="18:00">
+				
+				<br><br><br><br>
 				
 				<input type="submit" value="예약하기">
 				<input type="reset" value="취소">
@@ -62,6 +71,8 @@
 	</body>
 	
 	<script type="text/javascript">
+		let openWin;
+		
 		var now_utc = Date.now() // 지금 날짜를 밀리초로
 		// getTimezoneOffset()은 현재 시간과의 차이를 분 단위로 반환
 		var timeOff = new Date().getTimezoneOffset()*60000; // 분단위를 밀리초로 변환
@@ -70,10 +81,11 @@
 		document.getElementById("Date").setAttribute("min", today);
 		
 		// window창으로 시군구 장소 입력받기 가능
-		const pNoEl = document.querySelector("#pNo");
+		const pNoEl = document.querySelector("#search");
 		pNoEl.addEventListener("click", function() {
 			window.open("/book/placelistView.bld?searchArea=","newplace","width=500, height=600");
 		});
+		
 
 	</script>
 	

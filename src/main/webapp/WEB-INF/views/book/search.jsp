@@ -16,24 +16,6 @@
 			헌혈의집 선택<br>
 			검색 결과<br>
         <!-- 검색한 결과를 리스트(place_tbl)로 출력하고, 선택하고자 하는 헌혈의집을 선택 -->
-			<%-- <form action="/book/searchView.bld" accept-charset="utf-8" name="placelist" method="post" >
-				지역선택
-		        <select name="place_city" id="pCity">
-		            <option value="0">전체</option>
-		            <c:forEach items="${siList }" var="sido">
-			            <option value="${sido }">${sido}</option>
-					</c:forEach>
-		        </select>
-		        <select name="place_country" id="pCountry">
-		            <option value="0">군/구</option>
-					<c:forEach items="${gunGuList }" var="gungu">
-			            <option value="${gungu }">${gungu}</option>
-					</c:forEach>
-		        </select> <br>
-		        키워드 검색
-		        <input type="text" name="searchValue" value="${search.searchValue }" placeholder="검색어를 입력해주세요">
-		        <input type="submit" value="검색" ><br>
-			</form> --%>
 			<table>
 				<thead>
 					<tr>
@@ -93,6 +75,7 @@
 
 			
 			function choosePlace() {
+				window.opener.document.getElementById("chooseBtn").value = #{pNo};
 				alert('선택함');
 
 			}
