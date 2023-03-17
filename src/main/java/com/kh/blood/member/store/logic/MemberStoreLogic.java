@@ -50,5 +50,6 @@ public class MemberStoreLogic implements MemberStore{
 		Member member = session.selectOne("MemberMapper.findPw" , mParam);
 		return member;
 	}
-	 
+
+	
 }

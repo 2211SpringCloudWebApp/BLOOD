@@ -34,6 +34,6 @@
   		SELECT MEMBER_ID FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberName} AND MEMBER_KN = #{memberKn}
   	</select>
   	<select id="findPw" resultMap="memberResultMap">
-  		SELECT MEMBER_PW FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberNAME} AND MEMBER_ID = #{memberId} AND MEMBER_KN = #{memberKn}
+  		SELECT MEMBER_PW FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberName} AND MEMBER_ID = #{memberId} AND MEMBER_KN = #{memberKn}
   	</select>
   </mapper>

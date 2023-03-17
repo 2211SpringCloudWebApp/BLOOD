@@ -28,19 +28,24 @@
 </head>
 <body>
 	<jsp:include page="../layout/header.jsp" ></jsp:include>
-	<form action="/member/modify.bld" method="post">
+	<form action="/member/modify.bld" method="post" style="margin-top:200px">
 		아이디: <input type= "text" 								value="${member.memberId }" 	readonly><br>
-		비밀번호 : <input type= "password"  	name="memberPw" 	value="${member.memberPw }"><br>
+		비밀번호 : <input type= "password"  	name="memberPw" 	value=""><br>
 		이름 : <input type="text" 								value="${member.memberName }"	readonly><br>
 		주민번호: <input type="text" 								value="${member.memberKn }"		readonly>-
-					<input type="text" 							value="${member.memberKn }"		readonly><br>
+					<input type="password" 							value="${member.memberKn }"		readonly><br>
 		이메일 : <input type="text" 			name="memberEmail" 	value="${member.memberEmail }"	><br>
 		주소 : <input type="text" 			name="memberAddr" 	value="${member.memberAddr }"><br>
 		전화번호 : <input type="text" 		name="memberPhone" 	value="${member.memberPhone }"><br>			
 		<input type="submit" value="수정">
-		<input type="submit" value="예약확인">
-		<button type="button" onclick="location.href='/member/out.bld?memberId=${member.memberId }'">회원 탈퇴</button>
+<!-- 		<input type="submit" value="내역 조회"> -->
+		<button type="button" onclick="removeMember();">회원 탈퇴</button>
 	</form>
 	<jsp:include page="../layout/footer.jsp"></jsp:include>
+	<script>
+	function removeMember() {
+		location.href='/member/out.bld';
+	}
+	</script>
 </body>
 </html>

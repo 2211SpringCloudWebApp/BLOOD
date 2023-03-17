@@ -12,7 +12,7 @@
 	    <form action="/member/findPw.bld" method="post">
 		    <input type="text" name="memberId" placeholder="아이디"> <br>
 		    <input type="text" name="memberName" placeholder="이름"> <br>
-		    <input type="password" name="memberKn" placeholder="주민번호">- <input type="password" name="memberKn" placeholder="주민번호"> <br>
+		    <input type="text" name="memberKn" placeholder="주민번호">- <input type="password" name="memberKn" placeholder="주민번호"> <br>
 		   
 		    <button type="submit">비밀번호 찾기</button>
 	    </form>

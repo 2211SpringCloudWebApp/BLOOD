@@ -48,6 +48,7 @@ public interface MemberService {
 	 * @param mParam
 	 * @return
 	 */
-	public Member findPw(Member mParam); 
+	public Member findPw(Member mParam);
+
 	
 }
