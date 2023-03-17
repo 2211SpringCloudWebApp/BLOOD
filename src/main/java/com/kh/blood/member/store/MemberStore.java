@@ -57,5 +57,6 @@ public interface MemberStore {
 		 * @return
 		 */
 		public Member findPw(SqlSession session, Member mParam);
+	
 }
 

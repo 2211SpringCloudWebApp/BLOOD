@@ -50,13 +50,13 @@ public class MemberController {
 				return "redirect:/index.jsp";
 			}else {
 				model.addAttribute("msg","회원가입이 완료되지않았습니다");
-				return "common/error.jsp";
+				model.addAttribute("url", "/member/register.bld");
+				return "common/alert";
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			model.addAttribute("msg", e.getMessage());
-			return "common/error";
+			return "common/alert";
 		}
 	}
 	
@@ -83,13 +83,14 @@ public class MemberController {
 				return "redirect:/index.jsp";
 			}else {
 				model.addAttribute("msg", "로그인정보가 존재하지않습니다");
-				return "common/error";
+				model.addAttribute("url", "/member/login.bld");
+				return "common/alert";
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 			model.addAttribute("msg", e.getMessage());
-			return "common/error";
+			return "common/alert";
 		}
 	}
 		
@@ -122,29 +123,46 @@ public class MemberController {
 					return "redirect:/index.jsp";
 				}else {
 					model.addAttribute("msg","정보 수정이 완료되지 않았습니다.");
-					return "common/error";
+					model.addAttribute("url", "/member/mypage.bld");
+					return "common/alert";
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
-				model.addAttribute("msg", e.getMessage());
-				return "common/error";
+				model.addAttribute("msg", "정보 수정이 완료되지 않았습니다.");
+				model.addAttribute("url", "/member/mypage.bld");
+				return "common/alert";
 			} 
 		}
-		//회원탈퇴
 		@RequestMapping(value="/member/out.bld", method=RequestMethod.GET)
-		public String memberRemove(HttpSession session, @RequestParam("memberId") String memberId, Model model) {
+		public String memberRemove() {
+			return "member/outcheck";
+		}
+		//회원탈퇴
+		@RequestMapping(value="/member/out.bld", method=RequestMethod.POST)
+		public String memberRemove(HttpSession session, @RequestParam("member-pw") String memberPw, Model model) {
 			try {
-				int result = mService.deleteMember(memberId);
-				if(result > 0) {
-					session.invalidate();
-					return "redirect:/index.jsp";
+				Member mOne = (Member)session.getAttribute("loginUser");
+				String memberId = mOne.getMemberId();
+				Member mParam = new Member(memberId, memberPw);
+				Member member = mService.checkMemberLogin(mParam);
+				if(member != null) {					
+					int result = mService.deleteMember(memberId);
+					if(result > 0) {
+						session.invalidate();
+						return "redirect:/index.jsp";
+					}else {
+						model.addAttribute("msg","탈퇴가 완료되지 않았습니다.");
+						model.addAttribute("url", "/member/mypage.bld");
+						return "common/alert";
+					}
 				}else {
-					model.addAttribute("msg","탈퇴가 완료되지 않았습니다.");
-					return "common/error";
+					model.addAttribute("msg","비밀번호가 틀립니다!");
+					model.addAttribute("url", "/member/mypage.bld");
+					return "common/alert";
 				}
 			} catch (Exception e) {
 				model.addAttribute("msg", e.getMessage());
-				return "common/error";
+				return "common/alert";
 			} 
 		}
 		// 멤버 아이디 찾기 페이지 이동
@@ -166,7 +184,7 @@ public class MemberController {
 				mParam.setMemberKn(memberKn);
 				Member member = mService.findId(mParam);
 				model.addAttribute("member" , member);
-					return "member/findIdAfter";
+					return "member/findIdsuc";
 			} catch (Exception e) {
 				e.printStackTrace();
 				model.addAttribute("message",e.getMessage());
@@ -192,7 +210,7 @@ public class MemberController {
 				Member member = mService.findPw(mParam);
 				//System.out.println(member);
 				model.addAttribute("member", member);
-					return "member/login";
+					return "member/findPwsuc";
 			} catch (Exception e) {
 				e.printStackTrace();
 				model.addAttribute("message" ,e.getMessage());

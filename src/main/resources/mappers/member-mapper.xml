@@ -11,7 +11,8 @@
    		<result property="bloodType" column="BLOOD_TYPE"/> 
    		<result property="memberEmail" column="MEMBER_EMAIL"/> 
    		<result property="memberAddr" column="MEMBER_ADDR"/> 
-   		<result property="memberPhone" column="MEMBER_PHONE"/> 
+   		<result property="memberPhone" column="MEMBER_PHONE"/>
+   		<result property="memberType" column="MEMBER_TYPE"/>
   	</resultMap>
   	<insert id="insertMember">
   		INSERT INTO MEMBER_TBL
@@ -33,6 +34,6 @@
   		SELECT MEMBER_ID FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberName} AND MEMBER_KN = #{memberKn}
   	</select>
   	<select id="findPw" resultMap="memberResultMap">
-  		SELECT MEMBER_PW FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberNAME} AND MEMBER_ID = #{memberId} AND MEMBER_KN = #{memberKn}
+  		SELECT MEMBER_PW FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberName} AND MEMBER_ID = #{memberId} AND MEMBER_KN = #{memberKn}
   	</select>
   </mapper>

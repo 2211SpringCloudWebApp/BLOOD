@@ -18,7 +18,6 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public int insertMember(Member member) {
 		int result = mStore.insertMember(session, member);
-		session.close();
 		return result;
 	}
 
@@ -57,5 +56,7 @@ public class MemberServiceImpl implements MemberService{
 		Member member = mStore.findPw(session, mParam);
 		return member;
 	}
+
+
 	
 }

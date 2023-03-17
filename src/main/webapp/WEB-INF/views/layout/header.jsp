@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 		<!--     HEADER                                -->
 	  <header>
 	    <div class="inner">
@@ -11,25 +12,37 @@
 	        </div>
 	      </a>
 	      <div class="sub-menu">
-	        <ul class="menu">
-	          <li>
-	            <a href="/signin">Sign In</a>
-	          </li>
-	          <li>
-	            <a href="javascript:void(0)">My Page</a>
-	          </li>
-	        </ul>
-	        <div class="search">
-	          <input type="text" />
-	          <span class="material-icons">
-	            <div class="loader">
-	              <div></div>
-	            </div>
-	          </span>
-	
-	
-	        </div>
-	      </div>
+        <ul class="menu">
+          <c:if test="${loginUser ne null }">
+          <li>
+            <a href="/member/logout.bld">logout</a>
+          </li>
+          <li>
+            <a href="/member/mypage.bld">My Page</a>
+          </li>
+            </c:if>
+        </ul>
+        	<c:if test="${loginUser eq null }">
+        <ul class="menu">
+          <li>
+            <a href="/member/login.bld">login</a>
+          </li>
+          <li>
+            <a href="/member/register.bld">join</a>
+          </li>
+        </ul>
+        	</c:if>
+        <div class="search">
+          <input type="text" />
+          <span class="material-icons">
+            <div class="loader">
+              <div></div>
+            </div>
+          </span>
+
+
+        </div>
+      </div>
 	
 	      <ul class="main-menu">
 	        <li class="item">

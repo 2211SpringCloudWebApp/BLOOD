@@ -26,41 +26,115 @@
 	<body>
 		<jsp:include page="../layout/header.jsp"></jsp:include>
 		<form action="/member/register.bld" method="post" style="margin-top:200px">
-			아이디 : <input type="text"  name="member-id"><br>
-			비밀번호 : <input type="password" name="member-pw"><br>
-			이름 : <input type="text" name="member-name"><br>
-			주민번호: <input type="text" id="kn1" name="member-kn">-
-					<input type="password" id="kn2" name="member-kn"><br>
+			아이디 : <input type="text" id="id" name="member-id" onchange="validateId()"><br>
+			비밀번호 : <input type="password" id="pw" name="member-pw"onchange="validatePw()"><br>
+			이름 : <input type="text" id="name" name="member-name"onchange="validateName()"><br>
+			주민번호: <input type="text" id="kn1" name="member-kn"onchange="validateResidentNumber1()">-
+					<input type="password" id="kn2" name="member-kn"onchange="validateResidentNumber2()"><br>
 			혈액형 : <input type="radio" name="bloodtype" value="A">A형
 					<input type="radio" name="bloodtype" value="B">B형
 					<input type="radio" name="bloodtype" value="O">O형
 					<input type="radio" name="bloodtype" value="AB">AB형<br>
-			E-MAIL : <input type="text" name="member-email"><br>
+			E-MAIL : <input type="text" id="email" name="member-email"onchange="validateEmail()"><br>
 			주소 : <input type="text" id="sample4_postcode" name="member-addr">
 			<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
 			전화번호 : <input type="text" name="member-phone"><br>
-			<input type="submit" value="등록">
+			<input type="submit" value="등록" onclick="return check()">
 			<input type="reset" value="취소">
 		</form>
 		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 		<script>
+			//아이디 유효성 검사
+			function validateId() {
+ 	 			var id = document.getElementById("id");
+  				var regExp = /^[a-zA-Z0-9]+$/;  // 영문과 숫자만 가능한 정규식
+  
+  				if (!regExp.test(id.value)) {
+    				alert("아이디는 영문과 숫자만 입력해주세요.");
+    				id.value = "";
+    				return false;
+  					}
+  					return true;
+				}
+			//비밀번호 유효성 6글자이상 한글 사용못하게
+				function validatePw() {
+  					var pw = document.getElementById("pw");
+  					var regExp = /^[a-zA-Z0-9!@#$%^&*()_+|{}[\]:'"<>,.?/`~\\-]+$/;  // 비밀번호 정규식
+  					
+  					if (pw.value.length < 6) {
+   			 			alert("비밀번호는 6글자 이상 입력해주세요.");
+   			 			pw.value = "";
+    					return false;
+  						} 
+  						return true;
+				}
+			//이름한글만 적게 유효성
+			function validateName() {
+  				var name = document.getElementById("name");
+  				var regExp = /^[가-힣]+$/;  // 한글만 가능한 정규식
+  
+  				if (!regExp.test(name.value)) {
+    			alert("이름은 한글로만 입력해주세요.");
+    			name.value = "";
+    				return false;
+  					}
+  					return true;
+				}
+			//email 유효성
+			function validateEmail() {
+  				var email = document.getElementById("email");
+  				var regExp = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+$/;  // 이메일 주소 정규식
+  
+  				if (!regExp.test(email.value)) {
+    			alert("유효한 이메일 주소를 입력해주세요.");
+    			email.value = "";
+    					return false;
+  					}
+  						return true;
+				}	
+			// 주민번호 유효성검사
+			function validateResidentNumber1() {
+ 				var kn1 = document.getElementById("kn1");
+  				var regExp1 = /^\d{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/g;  // 6자리 숫자만 가능한 정규식
+  
+  				if (!regExp1.test(kn1.value)) {
+    			alert("주민등록번호가 유효하지 않습니다.");
+    			kn1.value = "";
+   					return false;
+  					}
+  					return true;
+				}
+			function validateResidentNumber2() {
+  				var kn2 = document.getElementById("kn2");
+ 				var regExp2 = /[1-4][0-9]{6}$/g;  // 3자리 숫자-4자리 숫자만 가능한 정규식
+  
+  				if (!regExp2.test(kn2.value)) {
+    			alert("주민등록번호가 유효하지 않습니다.");
+    			kn2.value = "";
+   					return false;
+  					}
+  					return true;
+				}
+
 			//주소 api 스크립트
 			function sample4_execDaumPostcode() {
 				new daum.Postcode(
 				{
 					oncomplete : function(data) {
 						console.log(data);
-						document.getElementById("sample4_postcode").value = data.zonecode+ ","+ data.autoJibunAddress+ ","+ data.buildingName;
+						document.getElementById("sample4_postcode").value = data.zonecode+ ","+ data.roadAddress+","+ data.buildingName;
 					}
 				}).open();
 			}
-			// 주민번호 유효성검사
-			function isValidResidentRegistrationNumber(residentRegistrationNumber) {
-			    if (residentRegistrationNumber === null || residentRegistrationNumber.length !== 13) {
-			        return false;
-			    }
-			    var regex = /^[0-9]{6}-?[1-4]\d{6}$/;
-			    return regex.test(residentRegistrationNumber);
+			// 제출 유효성 검사
+			function check(){
+				var valid = true;
+				valid = valid && validateId();
+				valid = valid && validatePw();
+				valid = valid && validateName();
+				valid = valid && validateEmail();
+				valid = valid && validateResidentNumber();
+				return valid;
 			}
 			
 		</script>

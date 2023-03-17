@@ -8,8 +8,8 @@
 	</head>
 	<body>
 			<h1>공지글 등록페이지</h1>
-			<form action="/board/faqWrite.bld" method="post" enctype="multipart/form-data">
-				제목 : <input type="text" name=faqTitle> <br>
+			<form action="/board/faqWrite.bld" method="post">
+				제목 : <input type="text" name="faqTitle"> <br>
 				내용 : <textarea name="faqContent"></textarea> <br>
 				<input type="submit" value="등록">
 				<input type="reset" value="취소">
