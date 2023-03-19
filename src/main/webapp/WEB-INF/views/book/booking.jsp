@@ -23,7 +23,7 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 		
-		<link rel="stylesheet" href="../../../resources/css/booking.css" />
+		<link rel="stylesheet" href="../../../resources/css/book/booking.css" />
 	</head>
 	
 
@@ -35,33 +35,44 @@
 	
 		<!-- main -->
 		<main>
-			<h1>헌혈의집 헌혈예약</h1>
+			<h1 class="pageTitle">헌혈의집 헌혈예약</h1>
 			
-			<form action="/book/reserve.bld" accept-charset="utf-8" name="reserve" method="post">
-				예약자<br>
-				<input type="text" name="memberName">
-				<br>
-				전화번호<br>
-				<input type="text" name="bkPhone">
-				<br>
-				<label for="booking_local">헌혈의집<input type="button" id="search" value="search"></label><br>
-				(헌혈의집)<input type="text" id="pInput_home"><br>
-				(주소)<input type="text" id="pInput_addr"><br>
-				(전화번호)<input type="text" id="pInput_phone">
-				<input type="hidden" id="pInput_num">
-				<br>
-				<label for="booking_day">예약날짜 </label><br>
-				<input type="date" name="bkDate" id="Date" class="booking_date">
-				<br>
-				예약시간<br>
-				<input type="time" name="bkTime" min="12:00" max="18:00">
+			<div class="divTags">
+			
+				<section class="form_section">
+					<form action="/book/reserve.bld" accept-charset="utf-8" name="reserve" method="post">
+						<label class="label">예약자</label><br>
+						<input type="text" name="memberName" class="inputBtn" placeholder="예약자 성명 입력"><br>
+						
+						<label class="label">휴대폰번호</label><br>
+						<input type="text" name="bkPhone" class="inputBtn" placeholder="휴대폰번호 입력"><br>
+						
+						<label for="booking_local" id="home" class="label">헌혈의집</label>
+						<input type="button" id="search" class="clickBtn" value="찾기"><br>
+						<input type="text" id="pInput_home" class="homeInfo" placeholder="헌혈의집" readonly><br>
+						<input type="text" id="pInput_addr" class="homeInfo" placeholder="헌혈의집 주소" readonly><br>
+						<input type="text" id="pInput_phone" class="homeInfo" placeholder="헌혈의집 전화번호" readonly>
+						<input type="hidden" id="pInput_num"><br>
+						
+						<label for="booking_day" class="label">예약날짜 </label><br>
+						<input type="date" name="bkDate" id="Date" class="inputBtn"><br>
+						
+						<label class="label">예약시간</label><br>
+						<input type="time" name="bkTime" min="09:00" max="20:00" class="inputBtn">
+						
+						<br><br>
+						
+						<input type="submit" value="예약하기" class="reserveBtn">
+						<input type="reset" value="취소" class="reserveBtn">
+			
+					</form>
+				</section>
+				<section class="img_section">
+					<img alt="헌혈권장" src="../../../resources/images/card_img1.png" style="width:auto; height:auto;">
 				
-				<br><br><br><br>
-				
-				<input type="submit" value="예약하기">
-				<input type="reset" value="취소">
-	
-			</form>
+				</section>
+			</div>
+			
 		</main>
 		
 
@@ -83,7 +94,7 @@
 		// window창으로 시군구 장소 입력받기 가능
 		const pNoEl = document.querySelector("#search");
 		pNoEl.addEventListener("click", function() {
-			window.open("/book/placelistView.bld?searchArea=","newplace","width=500, height=600");
+			window.open("/book/placelistView.bld?searchArea=","newplace","width=800, height=600");
 		});
 		
 

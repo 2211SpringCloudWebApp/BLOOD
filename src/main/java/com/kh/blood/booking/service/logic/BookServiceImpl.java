@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.kh.blood.booking.domain.Book;
 import com.kh.blood.booking.service.BookService;
 import com.kh.blood.booking.store.BookStore;
+import com.kh.blood.member.domain.Member;
 
 @Service
 public class BookServiceImpl implements BookService{
@@ -17,6 +18,14 @@ public class BookServiceImpl implements BookService{
 	private BookStore bStore;
 	@Autowired
 	private SqlSession session;
+	
+	/* 헌혈자 인증 ServiceImpl */
+	@Override
+	public Member selectBookCertify(Member mParam) {
+		Member member = bStore.selectBookCertify(session, mParam);
+		return member;
+	}
+	
 	
 	/* 헌혈예약 등록 ServiceImpl */
 	@Override
@@ -31,6 +40,8 @@ public class BookServiceImpl implements BookService{
 		List<Book> bList = bStore.selectBookList(session, memberId);
 		return bList;
 	}
+
+
 	
 	
 

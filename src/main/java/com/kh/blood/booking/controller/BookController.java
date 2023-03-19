@@ -18,6 +18,7 @@ import com.kh.blood.booking.domain.Place;
 import com.kh.blood.booking.domain.Search;
 import com.kh.blood.booking.service.BookService;
 import com.kh.blood.booking.service.PlaceService;
+import com.kh.blood.member.domain.Member;
 
 @Controller
 public class BookController {
@@ -26,6 +27,71 @@ public class BookController {
 	private BookService bService;
 	@Autowired
 	private PlaceService pService;
+	
+	
+	/* 헌혈자인증 화면 */
+	@RequestMapping(value="/book/identityView.bld", method=RequestMethod.GET)
+	public String certifyView() {
+		return "book/certify";
+	}
+	
+	/* 헌혈자 인증 */
+	@RequestMapping(value="book/identity.bld", method=RequestMethod.POST)
+    public String bookCertify(
+    		String memberName
+    		, String memberKn
+            , Model model) {
+        try {
+        	Member mParam = new Member(memberName, memberKn);
+        	System.out.println(mParam.toString());
+        	Member member = bService.selectBookCertify(mParam);
+        	if(member != null) {
+        		model.addAttribute("member", member);
+        		return "book/booking";
+        	}else {
+        		model.addAttribute("msg", "조회에 실패하였습니다.");
+        		return "common/error";
+        	}
+
+        } catch (Exception e) {
+            // 콘솔창에 에러 출력
+            e.printStackTrace();
+            // 에러 페이지에 에러 출력
+            model.addAttribute("msg", e.getMessage());
+            return "common/error";
+        }
+    }
+	
+	/* 헌혈자 인증 */
+	/*
+	@RequestMapping(value="book/identity.bld", method=RequestMethod.POST)
+	public String bookCertify(
+			@ModelAttribute Member member
+            , @RequestParam String idNum1
+            , @RequestParam String idNum2
+			, Model model) {
+		try {
+			String memberKn = idNum1+"-"+idNum2;
+			member.setMemberKn(memberKn);
+			
+			int result = bService.selectBookCertify(member);
+			if (result > 0) {
+				return "redirect:/book/reserveView.bld";
+			} else {
+				model.addAttribute("msg", "정확한 이름과 주민번호를 입력해 주세요 ");
+				return "common/error";
+			}
+		} catch (Exception e) {
+			// 콘솔창에 에러 출력
+			e.printStackTrace();
+			// 에러 페이지에 에러 출력
+			model.addAttribute("msg", e.getMessage());
+			return "common/error";
+		}
+	}
+	*/
+    
+	
 	
 	/* 헌혈예약 등록화면 */
 	@RequestMapping(value="/book/reserveView.bld", method=RequestMethod.GET)
@@ -41,7 +107,8 @@ public class BookController {
 			, Model model) {
 		try {
 			request.setCharacterEncoding("UTF-8");
-			book.setMemberId("khuser01"); // replace this.
+			//book.setMemberId("khuser01"); // replace this.
+			book.setMemberId("${memberId}");
 			int result = bService.insertBook(book);
 			if(result > 0) {
 				return "redirect:/book/reservelistView.bld";
@@ -63,10 +130,19 @@ public class BookController {
 	public String bookListView(
 			HttpSession session
 			, Model model) {
-		String memberId = "khuser01";	// Member When Completed
+		//String memberId = "khuser01";	// Member When Completed
+		String memberId = "${memberId}";
 		List<Book> bList = bService.selectBookList(memberId);
-		model.addAttribute("bList", bList);
-		return "book/bookingList";
+		if(bList != null) {
+			model.addAttribute("bList", bList);
+			return "book/bookingList";
+		}else {
+			model.addAttribute("msg", "예약내역이 존재하지 않습니다.");
+			return "common/error";
+		}
+		/*
+		 * model.addAttribute("bList", bList); return "book/bookingList";
+		 */
 		
 	}
 	
@@ -104,7 +180,8 @@ public class BookController {
 				model.addAttribute("searchResult", searchResult);
 				return "book/placeList";
 			}else {
-				 model.addAttribute("msg", "조회에 실패하였습니다."); return "common/error";
+				 model.addAttribute("msg", "조회에 실패하였습니다.");
+				 return "common/error";
 
 				/*alert("해당 정보가 존재하지 않습니다.");*/
 			}
