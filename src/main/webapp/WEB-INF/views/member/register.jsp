@@ -1,49 +1,93 @@
++
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>회원가입 페이지</title>
 
- <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="heartbeat" />
-  <meta property="og:title" content="Heart Beat" />
-  <meta property="og:description" content="의사가 아니어도 생명을 구할 수 있는 방법" />
-  <meta property="og:description" content="./resources/images/bg.png">
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="heartbeat" />
+<meta property="og:title" content="Heart Beat" />
+<meta property="og:description" content="의사가 아니어도 생명을 구할 수 있는 방법" />
+<meta property="og:description" content="./resources/images/bg.png">
+<link rel="stylesheet" href="/resources/css/member/register.css">
+<link rel="icon" href="./resources/images/favicon.png" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap"
+	rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="stylesheet" href="/resources/css/main.css" />
+<script defer src="/resources/js/youtube.js"></script>
+<script defer src="/resources/js/main.js"></script>
 
-  <link rel="icon" href="./resources/images/favicon.png" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <link rel="stylesheet" href="/resources/css/main.css" />
-  <script defer src="/resources/js/youtube.js"></script>
-  <script defer src="/resources/js/main.js"></script>
-  
 </head>
-	<body>
-		<jsp:include page="../layout/header.jsp"></jsp:include>
-		<form action="/member/register.bld" method="post" style="margin-top:200px">
-			아이디 : <input type="text" id="id" name="member-id" onchange="validateId()"><br>
-			비밀번호 : <input type="password" id="pw" name="member-pw"onchange="validatePw()"><br>
-			이름 : <input type="text" id="name" name="member-name"onchange="validateName()"><br>
-			주민번호: <input type="text" id="kn1" name="member-kn"onchange="validateResidentNumber1()">-
-					<input type="password" id="kn2" name="member-kn"onchange="validateResidentNumber2()"><br>
-			혈액형 : <input type="radio" name="bloodtype" value="A">A형
-					<input type="radio" name="bloodtype" value="B">B형
-					<input type="radio" name="bloodtype" value="O">O형
-					<input type="radio" name="bloodtype" value="AB">AB형<br>
-			E-MAIL : <input type="text" id="email" name="member-email"onchange="validateEmail()"><br>
-			주소 : <input type="text" id="sample4_postcode" name="member-addr">
-			<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-			전화번호 : <input type="text" name="member-phone"><br>
-			<input type="submit" value="등록" onclick="return check()">
-			<input type="reset" value="취소">
+<body>
+	<jsp:include page="../layout/header.jsp"></jsp:include>
+	<main class="login-form">
+
+		<form action="/member/register.bld" method="post"
+			style="margin-top: 200px">
+
+			<div class="int-area">
+				<input type="text" id="id" name="member-id" onchange="validateId()">
+				<label for="id">아이디</label>
+			</div>
+			<div class="int-area">
+				<input type="password" id="pw" name="member-pw"
+					onchange="validatePw()"> <label for="id">비밀번호</label>
+			</div>
+			<div class="int-area">
+				<input type="text" id="name" name="member-name"
+					onchange="validateName()"> <label for="id">이름</label>
+			</div>
+			<div class="int-area">
+				<input type="text" id="kn1" name="member-kn" placeholder="앞 6자리"
+					onchange="validateResidentNumber1()"> <input
+					type="password" id="kn2" name="member-kn" placeholder="뒤 7자리"
+					onchange="validateResidentNumber2()"> <label for="id">주민번호</label>
+			</div>
+			<div class="bloodtype">
+				<label for="id" class="bldtype">혈액형</label><br> <input
+					type="radio" class="bldtype" name="bloodtype" value="A">A형
+				<input type="radio" class="bldtype" name="bloodtype" value="B">B형
+				<input type="radio" class="bldtype" name="bloodtype" value="O">O형
+				<input type="radio" name="bloodtype" value="AB">AB형<br>
+			</div>
+			<div class="int-area">
+				<input type="text" id="email" name="member-email"
+					onchange="validateEmail()"> <label for="id">이메일</label>
+			</div>
+			<div class="int-area">
+				<input type="text" id="sample4_postcode" name="member-addr">
+				<label for="id">주소</label>
+			</div>
+
+			<input type="button" class="btn-area2"
+				onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
+
+			<div class="int-area">
+				<input type="text" name="member-phone"> <label for="id">전화번호</label>
+			</div>
+			<div class="btn-area">
+				<button type="reset"  onclick="location.href='/'">취소</button>
+				<button type="submit"  onclick="return check()">등록</button>
+			</div>
 		</form>
-		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-		<script>
+	</main>
+
+
+
+	<script
+		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script>
 			//아이디 유효성 검사
 			function validateId() {
  	 			var id = document.getElementById("id");
@@ -138,6 +182,6 @@
 			}
 			
 		</script>
-		<jsp:include page="../layout/footer.jsp"></jsp:include>
-	</body>
+
+</body>
 </html>

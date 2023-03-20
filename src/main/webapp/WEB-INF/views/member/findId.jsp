@@ -12,7 +12,6 @@
 	<h2>아이디는 입력하신 주민등록번호로 찾으실 수 있습니다</h2>
 	<fieldset>
 	<form action="/member/findId.bld" method="post" >
-	
 		   <input type="text" name="memberName" placeholder="이름" > <br>
 		   <input type="text" name="memberKn" placeholder="주민번호" >- <input type="password" name="memberKn" placeholder="주민번호" ><br>  
 	 	   <button type="submit">찾기</button>
