@@ -37,41 +37,37 @@
 		<main>
 			<h1 class="pageTitle">헌혈의집 헌혈예약</h1>
 			
-			<div class="divTags">
-				<%-- ${loginUser } --%>
-				<section class="form_section">
-					<form action="/book/reserve.bld" accept-charset="utf-8" name="reserve" method="post">
-						<label class="label">예약자</label><br>
-						<input type="text" name="memberName" class="inputBtn" placeholder="예약자 성명 입력"><br>
-						
-						<label class="label">휴대폰번호</label><br>
-						<input type="text" name="bkPhone" class="inputBtn" placeholder="휴대폰번호 입력"><br>
-						
-						<label for="booking_local" id="home" class="label">헌혈의집</label>
-						<input type="button" id="search" class="clickBtn" value="찾기"><br>
-						<input type="text" id="pInput_home" class="homeInfo" placeholder="헌혈의집" readonly><br>
-						<input type="text" id="pInput_addr" class="homeInfo" placeholder="헌혈의집 주소" readonly><br>
-						<input type="text" id="pInput_phone" class="homeInfo" placeholder="헌혈의집 전화번호" readonly>
-						<input type="hidden" id="pInput_num" name="pNo"><br>
-						
-						<label for="booking_day" class="label">예약날짜 </label><br>
-						<input type="date" name="bkDate" id="Date" class="inputBtn"><br>
-						
-						<label class="label">예약시간</label><br>
-						<input type="time" name="bkTime" min="09:00" max="20:00" class="inputBtn">
-						
-						<br><br>
-						
-						<input type="submit" value="예약하기" class="reserveBtn">
-						<input type="reset" value="취소" class="reserveBtn">
 			
-					</form>
-				</section>
-				<section class="img_section">
-					<img alt="헌혈권장" src="../../../resources/images/card_img1.png" style="width:auto; height:auto;">
+			<%-- ${loginUser } --%>
+			
+			<form action="/book/reserve.bld" accept-charset="utf-8" name="reserve" method="post">
+				<label class="label">예약자</label><br>
+				<input type="text" name="memberName" class="inputBtn" placeholder="예약자 성명 입력"><br>
 				
-				</section>
-			</div>
+				<label class="label">휴대폰번호</label><br>
+				<input type="text" name="bkPhone" class="inputBtn" placeholder="휴대폰번호 입력"><br>
+				
+				<label for="booking_local" id="home" class="label">헌혈의집</label>
+				<input type="button" id="search" class="clickBtn" value="찾기"><br>
+				<input type="text" id="pInput_home" class="homeInfo" placeholder="헌혈의집" readonly><br>
+				<input type="text" id="pInput_addr" class="homeInfo" placeholder="헌혈의집 주소" readonly><br>
+				<input type="text" id="pInput_phone" class="homeInfo" placeholder="헌혈의집 전화번호" readonly>
+				<input type="hidden" id="pInput_num" name="pNo"><br>
+				
+				<label for="booking_day" class="label">예약날짜 </label><br>
+				<input type="date" name="bkDate" id="Date" class="inputBtn"><br>
+				
+				<label class="label">예약시간</label><br>
+				<input type="time" name="bkTime" min="09:00" max="20:00" class="inputBtn">
+				
+				<br><br>
+				
+				<input type="submit" value="예약하기" class="reserveBtn">
+				<input type="reset" value="취소" class="reserveBtn">
+	
+			</form>
+			<img alt="헌혈권장" src="../../../resources/images/card_img1.png" style="width:auto; height:auto;">
+				
 			
 		</main>
 		

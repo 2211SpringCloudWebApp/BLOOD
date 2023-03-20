@@ -17,7 +17,6 @@ import com.kh.blood.reply.service.ReplyService;
 @Controller
 public class ReplyController {
 	
-	@Autowired
 	private ReplyService rService;
 	
 

@@ -95,7 +95,15 @@ public class BookController {
 	
 	/* 헌혈예약 등록화면 */
 	@RequestMapping(value="/book/reserveView.bld", method=RequestMethod.GET)
-	public String bookView() {
+	public String bookView(
+			HttpSession session
+			, Model model) {
+		Member member = (Member)session.getAttribute("loginUser");
+		if(member == null) {
+			model.addAttribute("msg", "로그인 후 이용해주세요");
+			model.addAttribute("url", "/member/login.bld");
+			return "common/alert";
+		}
 		return "book/booking";
 	}
 	
@@ -132,6 +140,11 @@ public class BookController {
 			, Model model) {
 //		String memberId = "khuser01";	// Member When Completed
 		Member member = (Member)session.getAttribute("loginUser");
+		if (member == null) {
+			model.addAttribute("msg", "로그인 후 이용해주세요");
+			model.addAttribute("url", "/member/login.bld");
+			return "common/alert";
+		}
 		String memberId = member.getMemberId();
 		List<Book> bList = bService.selectBookList(memberId);
 		for(Book bOne : bList) {
@@ -144,9 +157,6 @@ public class BookController {
 			model.addAttribute("msg", "예약내역이 존재하지 않습니다.");
 			return "common/error";
 		}
-		/*
-		 * model.addAttribute("bList", bList); return "book/bookingList";
-		 */
 		
 	}
 	
@@ -184,6 +194,41 @@ public class BookController {
 		return "book/placeList";
 		
 	}
+	
+	/* 헌혈의집 목록 조회 */
+	/*@RequestMapping(value="/book/placelistView.bld", method=RequestMethod.GET)
+	public String placeListView(
+			HttpSession session
+			, @ModelAttribute Search search
+			, @RequestParam("pCity") String pCity
+			, Model model) {
+		List<String> siList = pService.selectSiList();
+		List<String> gunGuList = null;
+		
+		if(search.getpCity() != null && search.getpCountry() != null) {
+			if(pCity.equals("세종시")) {
+				model.addAttribute("pCity", pCity);
+				model.addAttribute("siList", siList);
+				model.addAttribute("gunGuList", gunGuList);
+				return "book/placeList";
+			} else {
+				gunGuList = pService.selectGunguList(search.getpCity());
+				model.addAttribute("pCity", pCity);
+				model.addAttribute("siList", siList);
+				model.addAttribute("gunGuList", gunGuList);
+				return "book/placeList";
+			}
+		}
+		List<Place> pList = pService.selectPlaceList(search);
+		model.addAttribute("pList", pList);
+		//List<String> gunGuList = pService.selectGunguList(search.getpCity());
+		model.addAttribute("siList", siList);
+		model.addAttribute("gunGuList", gunGuList);
+		return "book/placeList";
+		
+	}*/
+	
+	
 	
 	/* 헌혈의집 검색 */
 	@RequestMapping(value="/book/searchView.bld", method=RequestMethod.GET)

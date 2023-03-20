@@ -337,9 +337,9 @@ header .badges {
 	text-align: left;
 }
 
-section {
+/* section {
 	float: left;
-}
+} 
 .form_section {
 	width: 50%;
 }
@@ -348,7 +348,7 @@ section {
 }
 .img_section img{
 	background-image: url(../../images/card_img1.png);
-}
+}*/
 
 form {
 	text-align : center;
@@ -465,13 +465,13 @@ footer {
 	background-position: center;
 	/* background-size: cover;  */ 
 	width: 100%;
-  background-color: #a4152d;
+	background-color: #a4152d;
 
-	position: fixed;
-/* 	top: -300px; */
-  left: 0;
-  bottom: 0;
-  width: 100%;
+	/* position: fixed; */
+	/* 	top: -300px; */
+	left: 0;
+	bottom: 0;
+	width: 100%;
 }
 
 footer .inner {
