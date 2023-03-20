@@ -35,14 +35,17 @@
 		<!-- 메인 스타트 -->
 
 			
-		<main style="margin-top:120px">
+		<main style="margin-top:200px; margin-bottom:80px;">
 			<section>
-				<div>
-					<a href="/board/faq.bld"><img src="../../../resources/images/칠판.png"/></a>
+				<div style="display : flex; justify-content: center;">
+					<div class="main_image">
+						<a href="/board/faq.bld"><img src="../../../resources/images/칠판.png"/><h1 class="main_image_text" style="font-size:50px">dddd</h1></a>
+					</div>
+					
+					<div class="main_image">
+						<a href="/notice/free.bld"><img src="../../../resources/images/칠판.png"/><h1 class="main_image_text" style="font-size:50px">dddd</h1></a>
+					</div>				
 				</div>
-				<div>
-					<a href="/notice/free.bld"><img src="../../../resources/images/칠판.png"/></a>
-				</div>				
 			</section>
 		</main>
 

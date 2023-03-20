@@ -7,7 +7,7 @@
 	<typeAliases> 
 		<typeAlias type="com.kh.blood.faq.domain.Faq" alias="Faq"/>
 		<typeAlias type="com.kh.blood.notice.domain.Notice" alias="Notice"/>
-		<typeAlias type="com.kh.blood.notice.domain.Reply" alias="Reply"/>
+		<typeAlias type="com.kh.blood.reply.domain.Reply" alias="Reply"/>
  		<typeAlias type="com.kh.blood.member.domain.Member" alias="Member"/>
  		<typeAlias type="com.kh.blood.booking.domain.Book" alias="Book"/>
 		<typeAlias type="com.kh.blood.booking.domain.Place" alias="Place"/>

@@ -81,8 +81,8 @@
 	              <ul class="inner">
 	                <li>
 	                  <ul>
-	                    <li>자유게시판</li>
-	                    <li>FAQ</li>
+	                    <li><a href="/board/faq.bld">FAQ</a></li>
+	                    <li><a href="/notice/free.bld">자유게시판</a></li>
 	                  </ul>
 	                </li>
 	              </ul>

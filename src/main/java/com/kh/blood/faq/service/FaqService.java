@@ -2,8 +2,6 @@ package com.kh.blood.faq.service;
 
 import java.util.List;
 
-import org.apache.ibatis.session.SqlSession;
-
 import com.kh.blood.faq.domain.Faq;
 import com.kh.blood.faq.domain.Find;
 

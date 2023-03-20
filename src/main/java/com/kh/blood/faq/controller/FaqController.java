@@ -89,11 +89,13 @@ public class FaqController {
 					return "board/faqSearch";
 				}else {
 					model.addAttribute("msg", "조회에 실패하였습니다.");
-					return "board/faq";
+					model.addAttribute("url", "/faq/search.bld");
+					
+					return "common/alert";
 				}
 			} catch (Exception e) {
 				model.addAttribute("msg", e.getMessage());
-				return "";
+				return "common/error";
 			}
 		}
 	

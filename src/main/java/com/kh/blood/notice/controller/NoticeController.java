@@ -21,6 +21,9 @@ import com.kh.blood.notice.domain.Notice;
 import com.kh.blood.notice.domain.PageIn;
 import com.kh.blood.notice.domain.Search;
 import com.kh.blood.notice.service.NoticeService;
+import com.kh.blood.reply.controller.ReplyController;
+import com.kh.blood.reply.domain.Reply;
+import com.kh.blood.reply.service.ReplyService;
 
 
 
@@ -29,6 +32,9 @@ public class NoticeController {
 
 	@Autowired
 	private NoticeService nService;
+	@Autowired
+	private ReplyService rService;
+	
 	
 	// 자유게시판 목록
 	@RequestMapping(value="/notice/free.bld", method=RequestMethod.GET)
@@ -55,6 +61,8 @@ public class NoticeController {
 			@ModelAttribute Notice notice
 			, HttpServletRequest request
 			, Model model, HttpSession session) {
+		
+		// Member에서 loginUser로 된 key값 가져오기
 		Member member = (Member)session.getAttribute("loginUser");
 		notice.setMemberId(member.getMemberId());
 		
@@ -73,6 +81,10 @@ public class NoticeController {
 	public String faqDetailView(@RequestParam("noticeNo") int noticeNo, Model model) {
 		try {
 			Notice notice = nService.selectOneById(noticeNo);
+			
+			List<Reply> rList = rService.selectReply(noticeNo);
+			
+			model.addAttribute("rList", rList);
 			model.addAttribute("notice", notice);
 			return "notice/noticeDetail";
 			
@@ -138,7 +150,10 @@ public class NoticeController {
 				return "notice/noticeSearch";
 			}else {
 					model.addAttribute("msg", "조회에 실패하였습니다.");
-					return "/notice/free.bld";
+					model.addAttribute("url", "/notice/free.bld");
+					
+					return "common/alert";
+					
 			}
 		} catch (Exception e) {
 			model.addAttribute("msg", e.getMessage());
@@ -171,4 +186,6 @@ public class NoticeController {
 		int result = nService.deleteNotice(noticeNo);
 		return "redirect:/notice/free.bld";
 	}
+	
+	
 }

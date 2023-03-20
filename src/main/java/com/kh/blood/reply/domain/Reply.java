@@ -14,6 +14,14 @@ public class Reply {
 		super();
 	}
 
+	public Reply(String replyContent, String memberId) {
+		super();
+		this.replyContent = replyContent;
+		this.memberId = memberId;
+	}
+
+
+
 	public int getReplyNo() {
 		return replyNo;
 	}
