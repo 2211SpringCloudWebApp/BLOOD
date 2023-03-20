@@ -14,8 +14,8 @@ public class PlaceStoreLogic implements PlaceStore{
 
 	/* 헌혈의집 목록 조회 StoreLogic */
 	@Override
-	public List<Place> selectPlaceList(SqlSession session) {
-		List<Place> pList = session.selectList("BookMapper.selectPlaceList");
+	public List<Place> selectPlaceList(SqlSession session, Search search) {
+		List<Place> pList = session.selectList("BookMapper.selectPlaceList", search);
 		return pList;
 	}
 	// (헌혈의집) '시' 목록 조회 StoreLogic
@@ -34,8 +34,8 @@ public class PlaceStoreLogic implements PlaceStore{
 	/* 헌혈의집 검색 StoreLogic */
 	@Override
 	public List<Place> selectListByKeyword(SqlSession session, Search search) {
-		List<Place> searchList = session.selectList("BookMapper.selectListByKeyword", search);
-		return searchList;
+		List<Place> searchResult = session.selectList("BookMapper.selectListByKeyword", search);
+		return searchResult;
 	}
 
 	

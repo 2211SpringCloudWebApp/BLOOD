@@ -4,9 +4,16 @@
 }
 
 /* --------- COMMON ---------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html, body {
-	width: 100%;
-	height: 100%
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -15,6 +22,10 @@ body {
   font-weight: 900;
   line-height: 1.4;
   color: black;
+}
+
+ul {
+  list-style-type: none;
 }
 
 a {
@@ -33,13 +44,9 @@ img {
 }
 
 
-
-
-
-/* --------- header ---------- */
+/* ----------- header ------------- */
 header {
   width: 100%;
-/*   position: fixed; */
   top: 0;
   z-index: 9;
   background-color:#eceae4;
@@ -238,7 +245,7 @@ header .sub-menu .search.focused .material-icons {
   }
 
   100% {
-    transform: scale(0.9);
+  	transform: scale(0.9);
   }
 }
 
@@ -312,277 +319,84 @@ header .badges {
 
 
 
-/* --------- main ---------- */
+/* -------- main ------------- */
+
+
 main {
 	flex : 1;
+  	text-align: center;
+  	margin: 0 auto;
+}
+
+.pageTitle {
+	position: relative;
+	display: inline-block;
+	padding: 0.95rem 5%;
+	color: #000;
+	font-size: 1.3rem;
+	font-weight: 700;
+}
+
+caption {
+	position: absolute;
+	width:1px;
+	height: 1px;
+	clip: rect(0, 0, 0, 0);
+	overflow: hidden;
+}
+
+colgroup {
+	display: table-column-group;
+}
+col {
+	display: table-column;
 }
 
 
-.intro_photo {
-  margin-top: 120px;
-  background-color: #eaff08;
-  display: flex;
-}
-
-.intro_photo img {
-  width: 100%;
-}
-
-/*     REWARDS                                                           */
-.iconmenu {
-  position: relative;
-}
-
-.iconmenu .bg-left {
-  width: 50%;
-  height: 100%;
-  background-color: #eceae4;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.iconmenu .bg-right {
-  width: 50%;
-  height: 100%;
-  background-color: #eceae4;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.iconmenu .inner {
-  background-color:#eceae4;
-  height: 241px;
-  display: flex;
+.tbl2 table {
+	margin: 0 auto;
+	width: 95%;
+	line-height: 1rem;
+	color: #666;
+	font-size: 0.75rem;
+	text-align: center;
+	border-top: 2px solid #000;
+	border-collapse: separate;
+	border-spacing: 0;
+	display: table;
+	text-indent: initial;
 }
 
 
-.iconmenu .inner .iconmenu__bg {
-  width: 100%;
-  height: 60%;
-  background-color: #ffffff;
-  position: absolute;
-  top: -40px;
-  z-index: 1;
-  display: flex;
-
+.tbl2 table thead tr th {
+	padding: 10px;
+	vertical-align: middle;
+	color: #000;
+	font-size: 0.7rem;
+	font-weight: 600;
+	border-bottom: 1px solid #dad8d9;
+	background: #f6f6f6;
 }
 
-
-.iconmenu .inner .iconmenu__bg button {
-  border: none;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 100%;
-  font-size: 45px;
-  color: #461e01;
-}
-
-
-/*     YOUTUBE VIDEO                                                           */
-
-.youtube {
-  position: relative;
-  height: 700px;
-  background-color: #333;
-  overflow: hidden;
-}
-
-.youtube .youtube__area {
-  width: 1920px;
-  position: absolute;
-  /* 16비율 */
-  left: 50%;
-  margin-left: calc(1920px / -2);
-  /* 9비율 */
-  top: 50%;
-  margin-top: calc(1920px * 9 / 16 / -2);
-}
-
-.youtube .youtube__area::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 0;
-  padding-top: 56.25%;
-}
-
-.youtube .youtube__cover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .3);
-  background-image: url("../images/video_cover_pattern.png");
-}
-
-#player {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.youtube .inner {
-  height: inherit;
-}
-
-
-/*     GET DETALI                                                           */
-
-/* blood drop */
-
-.blood_drop {
-  background-color: rgb(234,254,246);
-}
-
-.blood_drop .inner {
-  height: 400px;
-}
-
-.blood_drop .BLDROP {
-  padding-top: 40px;
-  justify-content: space-between;
-  display: flex;
-  align-items: center;
-}
-
-.BLDROP .span-bl {
-  position: relative;
-  top: 80px;
-  left: 34px;
-}
-
-.BLDROP1 img {
-  transition: all 0.2s linear;
-}
-
-.BLDROP1:hover img {
-  transform: scale(1.5);
-}
-
-.BLDROP2 img {
-  transition: all 0.2s linear;
-}
-
-.BLDROP2:hover img {
-  transform: scale(1.5);
-}
-
-.BLDROP3 img {
-  transition: all 0.2s linear;
-}
-
-.BLDROP3:hover img {
-  transform: scale(1.5);
-}
-
-.BLDROP4 img {
-  transition: all 0.2s linear;
-}
-
-.BLDROP4:hover img {
-  transform: scale(1.5);
-}
-
-
-
-/*     GET DETALI                                                           */
-
-
-/* INFO CARD */
-.cards {
-  height: 1386px;
-  background-color: #eceae4;
-  position: relative;
-  overflow: hidden;
-  transition: height .4s;
-}
-
-.cards .inner {
-  height: 1386px;
-  width: 100%;
-  overflow: hidden;
-}
-
-.cards_container {
-  box-sizing: border-box;
-  margin: 0 auto;
-  max-width: 1100px;
-  width: 100%;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-top: 220px;
-
-}
-
-.cards_layer1 {
-  margin-bottom: 70px;
-  float: left;
-}
-
-.cards_layer2 {
-  float: left;
-}
-
-
-.single_card {
-  width: 300px;
-  height: 400px;
-  background-color: white;
-  float: left;
-  position: relative;
-  margin: 20px;
-
-}
-
-.single_card>.card_top {
-  width: 100%;
-  height: 40%;
-  margin-bottom: 10%;
-}
-
-.card_top img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.single_card>.card_bottom {
-  width: 90%;
-  height: 50%;
-  margin: 0 auto;
-}
-
-h5 {
-  font-size: large;
-  font-weight: 700;
-  color: rgb(20, 6, 6);
-  padding-bottom: 20px;
-}
-
-.card_text {
-  padding-bottom: 20px;
-}
-
-span {
-  font-weight: 600;
-  color: #ca0418;
+.tbl2 table tbody td {
+	display: table-cell;
+	font-size: 0.8rem;
+	font-weight: 500;
+	color: #444;
+	padding: 0.55rem 0.5rem;
+	border-bottom: 1px solid #eaecf1;
+	vertical-align: middle;
 }
 
 
 
 
 
-/* --------- footer ---------- */
+
+/* -------- footer ----------- */
 /*bumper*/
 .bumper {
+  
   background: transparent;
   position: relative;
 
@@ -602,9 +416,8 @@ footer img {
 
 
 footer {
+  /* margin-top: 7vh; */
   background-color: #a4152d;
-  /* 메인 뒤에 푸터 붙이기 */
-  /* position: relative; */
   top: -300px;
 }
 
@@ -631,6 +444,7 @@ footer .menu li::before {
   right: -1px;
   margin: auto;
 }
+
 
 footer .menu li:last-child::before {
   display: none;

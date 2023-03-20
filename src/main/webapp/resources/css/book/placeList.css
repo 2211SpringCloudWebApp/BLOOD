@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+/* --------- COMMON ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.pageTitle {
+	position: relative;
+	display: inline-block;
+	padding: 0.95rem 5%;
+	color: #000;
+	font-size: 1.3rem;
+	font-weight: 700;
+}
+
+caption {
+	position: absolute;
+	width:1px;
+	height: 1px;
+	clip: rect(0, 0, 0, 0);
+	overflow: hidden;
+}
+
+colgroup {
+	display: table-column-group;
+}
+col {
+	display: table-column;
+}
+
+.tbl1 {
+	font-size: 0.8rem;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.tbl1 table {
+	position: relative;
+	width: 90%;
+	margin: 0 auto;
+	border-top: 2px solid #000;
+	border-collapse: separate;
+	border-spacing:0;
+}
+
+
+
+tbody {
+	display: table-row-group;
+	vertical-align: middle;
+}
+
+tr {
+	display: table-row;
+	vertical-align: inherit;
+}
+
+.tbl1 table tbody th {
+	padding: 0.5rem;
+	vertical-align: middle;
+	color: #000;
+	font-size: 0.8rem;
+	font-weight: 600;
+	border-bottom: 1px solid #dad8d9;
+	border-left: 1px solid #dad8d9;
+	background: #f6f6f6;
+}
+.tbl1 table tbody td {
+	text-align: left !important;
+	padding: 0.5rem;
+	border-bottom: 1px solid #dad8d9;
+	border-left: 1px solid#dad8d9;
+	word-break: break-all;
+	vertical-align: middle;
+	color: #333;
+}
+
+table .pLocal {
+	height: 1.7rem;
+	line-height: 1.7rem;
+	border: 1px solid #ccc;
+	padding: 0 0.5rem;
+	color: #444;
+	font-size: 14px;
+	border-radius: 0.2rem;
+	margin: 0.2rem 0.175rem;
+	vertical-align: middle;
+	font-weight: 200;
+}
+
+
+
+
+
+.tbl2 table {
+	margin: 0 auto;
+	width: 90%;
+	line-height: 1rem;
+	color: #666;
+	font-size: 0.75rem;
+	text-align: center;
+	border-top: 2px solid #000;
+	border-collapse: separate;
+	border-spacing: 0;
+	display: table;
+	text-indent: initial;
+}
+
+
+.tbl2 table thead tr th {
+	padding: 20px;
+	vertical-align: middle;
+	color: #000;
+	font-size: 0.9rem;
+	font-weight: 600;
+	border-bottom: 1px solid #dad8d9;
+	background: #f6f6f6;
+}
+
+.tbl2 table tbody td {
+	display: table-cell;
+	font-size: 0.8rem;
+	font-weight: 500;
+	color: #444;
+	padding: 0.55rem 0.5rem;
+	border-bottom: 1px solid #eaecf1;
+	vertical-align: middle;
+}
+
+.pChoose {
+	height: 1.7rem;
+	line-height: 1.7rem;
+	border: 1px solid #b42b2b;
+	background-color: #b42b2b;
+	padding: 0 0.7rem;
+	color: #ffffff;
+	font-size: 12px;
+	border-radius: 0.1rem;
+	margin: 0.2rem 0.175rem;
+	vertical-align: middle;
+	font-weight: 200;
+}

@@ -27,7 +27,7 @@
 				<tbody>
 					<c:forEach items="${searchResult }" var="place">
 					<tr>
-						<td>${place.pHome }</td>
+						<td><a href="/book/placelistView.bld?pNo=${place.pNo}">${place.pHome }</a></td>
 						<td>${place.pAddr }</td>
 						<td>${place.pPhone }</td>
 						<td><input type="button" value="선택"></td>

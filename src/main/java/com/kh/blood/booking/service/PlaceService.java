@@ -9,9 +9,10 @@ public interface PlaceService {
 
 	/**
 	 * 헌혈의집 목록 조회 Service
+	 * @param search 
 	 * @return List<Place>
 	 */
-	public List<Place> selectPlaceList();
+	public List<Place> selectPlaceList(Search search);
 	/**
 	 * (헌혈의집) '시' 목록 조회 Service
 	 * @return List<String>

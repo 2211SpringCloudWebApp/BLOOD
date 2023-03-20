@@ -22,6 +22,9 @@ public class Member {
 		this.memberPw = memberPw;
 	}
 	
+
+
+
 	public Member(String memberName, String memberId, String memberKn) {
 		super();
 		this.memberName = memberName;

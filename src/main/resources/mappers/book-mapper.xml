@@ -14,6 +14,7 @@
 		<result property="pNo" column="P_NO"/>
 		<result property="pAddr" column="P_ADDR"/>
 		<result property="pPhone" column="P_PHONE"/>
+		<result property="pHome" column="P_HOME"/>
 	</resultMap>
 	
 	<resultMap type="Place" id="PlaceListResultMap">
@@ -27,15 +28,33 @@
 	</resultMap>
 	
 	<resultMap type="Search" id="SearchResultMap">
+		<result property="pHome" column="P_HOME"></result>
 		<result property="pCity" column="P_CITY"></result>
 		<result property="pCountry" column="P_COUNTRY"></result>
 		<result property="pAddr" column="P_ADDR"></result>
 	</resultMap>
 	
+	<resultMap type="Member" id="memberResultMap">
+  		<id property="memberId"		column="MEMBER_ID"/>
+  		<result property="memberPw" column="MEMBER_PW"/>
+  		<result property="memberName" column="MEMBER_NAME"/> 
+ 		<result property="memberKn" column="MEMBER_KN"/> 
+   		<result property="bloodType" column="BLOOD_TYPE"/> 
+   		<result property="memberEmail" column="MEMBER_EMAIL"/> 
+   		<result property="memberAddr" column="MEMBER_ADDR"/> 
+   		<result property="memberPhone" column="MEMBER_PHONE"/> 
+   		<result property="memberType" column="MEMBER_TYPE"/> 
+  	</resultMap>
+	
+	
+	<!-- 헌혈자 인증 -->
+	<select id="selectBookCertify" resultMap="memberResultMap">
+		SELECT * FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberName} AND MEMBER_KN = #{memberKn}
+	</select>
 	
 	<!-- 헌혈예약 등록 -->
 	<insert id="insertBook">
-		INSERT INTO BOOKING_TBL VALUES(SEQ_BKNO.NEXTVAL, #{memberId}, #{memberName}, #{bkDate}, #{bkDate}, #{bkPhone}, DEFAULT, #{pNo})
+		INSERT INTO BOOKING_TBL VALUES(SEQ_BKNO.NEXTVAL, #{memberId}, #{memberName}, #{bkDate}, #{bkTime}, #{bkPhone}, DEFAULT, #{pNo})
 	</insert>
 	
 	<!-- 헌혈예약 내역 조회 -->
@@ -44,9 +63,18 @@
 	</select>
 	
 
+
+
+
 	<!-- 헌혈의집 목록 조회 -->
 	<select id="selectPlaceList" resultMap="PlaceListResultMap">
-		SELECT * FROM PLACE_TBL
+		<if test="pCity == '' and pCountry == ''">
+			SELECT * FROM PLACE_TBL WHERE P_HOME LIKE '%' || #{pHome} || '%' 
+		</if>
+		<if test="pCity != '' and pCountry != ''">
+			SELECT * FROM PLACE_TBL WHERE P_CITY = #{pCity} AND P_COUNTRY = #{pCountry} AND P_HOME LIKE '%' || #{pHome} || '%' 
+		</if>
+<!-- 		SELECT * FROM PLACE_TBL WHERE P_NO = #{pNo}  -->
 	</select>
 	<!-- resultType="string" -->
 	<!-- 선택된 시 조회 -->
@@ -55,11 +83,14 @@
 	</select>
 	<!-- 선택된 시의 군/구 조회 -->
 	<select id="selectGunGuList" resultType="string">
-		SELECT DISTINCT(P_COUNTRY) AS "P_COUNTRY" FROM PLACE_TBL WHERE P_CITY = #{searchArea} ORDER BY 1 ASC
+		SELECT DISTINCT(P_COUNTRY) AS "P_COUNTRY" FROM PLACE_TBL WHERE P_CITY = #{pCity} ORDER BY 1 ASC
 	</select>
 	
 	<!-- 헌혈의집 검색 -->
 	<select id="selectListByKeyword" resultMap="PlaceListResultMap">
+		<if test="pCity == '' and pCountry == ''">
+			SELECT * FROM PLACE_TBL WHERE P_HOME LIKE '%' || #{pHome} || '%' 
+		</if>
 		<!-- SELECT * FROM PLACE_TBL
 		<if test="searchCondition == 'pCity'">
 		WHERE P_CITY LIKE '%' || #{searchValue} || '%'
@@ -67,8 +98,7 @@
 		<if test="searchCondition == 'pCounty'">
 		WHERE P_COUNTRY LIKE '%' || #{searchValue} }|| '%'
 		</if>
-		ORDER BY 1 ASC -->
-		SELECT * FROM PLACE_TBL WHERE P_ADDR LIKE '%' || #{searchValue} || '%'
+		ORDER BY 1 ASC -->		
 	</select>
 
 </mapper>
