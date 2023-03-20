@@ -1,30 +1,31 @@
 package com.kh.blood.munjin.controller;
 
-import com.kh.blood.munjin.domain.Form;
 import com.kh.blood.munjin.domain.MunjinMember;
 import com.kh.blood.munjin.service.MunjinService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class munjinController
 {
     @Autowired
     private MunjinService munjinService;
-
+//
     @GetMapping ("/munjin/intro.bld")
     public String munjinRegister() {
         return "munjin/intro";
     }
+
     /**
-     * ⭐ 문진 1단계 ⭐ 이름과 주민번호를 입력받고 저장한다.
+     *  ⭐ 문진 1 단계
      * @param munjinMember
+     * @param idNum1
+     * @param idNum2
      * @param model
      * @return
      */
@@ -53,13 +54,13 @@ public class munjinController
             return "munjin/error";
         }
     }
-    // ⭐ 문진 2단계 ⭐ 안내문을 제공한다.
+    // ⭐ 문진 2단계 ⭐ 안내문 출력.
     @GetMapping(value="/munjin/noti.bld")
     public String showNotice() {
         return "munjin/notice";
     }
     /**
-     * ⭐ 문진 3단계 ⭐ form 양식을 보내 채크한 정보들을 가지고 있는다.
+     * ⭐ 문진 3단계 ⭐ 문진사항 출력.
      * @param model
      * @return
      */
@@ -79,29 +80,27 @@ public class munjinController
         return "munjin/form";
     }
 
-    //⭐ 문진 4단계 ⭐ 동의서를 제공한다.
-    @GetMapping("munjin/agree.bld")
-    public String initAgree(Model model)
-    {
-        Form form = new Form();
-        model.addAttribute("form", form);
-
-        List<String> agreeCheckboxes = new ArrayList<String>();
-        agreeCheckboxes.add("모라모라 동의하시겠습니까");
-        agreeCheckboxes.add("머라머라 동의하시겠습니까");
-        agreeCheckboxes.add("뭐라뭐라 동의하시겠습니까");
-        agreeCheckboxes.add("무라무라 동의하시겠습니까");
-        model.addAttribute("agreeCheckboxes", agreeCheckboxes);
-        form.setAgreeCheckBoxes(agreeCheckboxes);
-
-        return "munjin/agree";
-
-    }
+    //⭐ 문진 4단계 ⭐ 동의서출력.
+//    @GetMapping("munjin/agree.bld")
+//    public String initAgree(Model model)
+//    {
+//        Form form = new Form();
+//        model.addAttribute("form", form);
+//
+//        List<String> agreeCheckboxes = new ArrayList<String>();
+//        agreeCheckboxes.add("모라모라 동의하시겠습니까");
+//        agreeCheckboxes.add("머라머라 동의하시겠습니까");
+//        agreeCheckboxes.add("뭐라뭐라 동의하시겠습니까");
+//        agreeCheckboxes.add("무라무라 동의하시겠습니까");
+//        model.addAttribute("agreeCheckboxes", agreeCheckboxes);
+//        form.setAgreeCheckBoxes(agreeCheckboxes);
+//
+//        return "munjin/success";
+//
+//    }
     /**
-     * ⭐ 문진 5단계 ⭐ 감사인사를 제공하고 고객이 선택한 전자문진 내역을 출력한다. .
+     * ⭐ 문진 5단계 ⭐ 문진 종료. .
      * @param model
-     * @param form
-     * @param result
      * @return
      */
     @GetMapping(value = "munjin/thanks.bld")

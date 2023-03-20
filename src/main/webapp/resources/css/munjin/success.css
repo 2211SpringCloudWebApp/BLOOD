@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Paaji');
+
+html {
+  /* background: -moz-linear-gradient(top, #331d24 0%, #301721 51%, #190917 100%); */
+  /* FF3.6+ */
+  /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #241d33), color-stop(51%, #171930), color-stop(100%, #091119)); */
+  /* Chrome,Safari4+ */
+  /* background: -webkit-linear-gradient(top, #241d33 0%, #171930 51%, #091119 100%); */
+  /* Chrome10+,Safari5.1+ */
+  /* background: -o-linear-gradient(top, #241d33 0%, #171930 51%, #091119 100%); */
+  /* Opera 11.10+ */
+  /* background: -ms-linear-gradient(top, #241d33 0%, #171930 51%, #091119 100%); */
+  /* IE10+ */
+  /* background: linear-gradient(to bottom, #241d33 0%, #171930 51%, #091119 100%); */
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#241d33', endColorstr='#091119', GradientType=0);
+  /* IE6-9 */
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* temp                                                                                    */
+
+:root {
+  --primary-color: #1e90ff;
+  --secondary-color: #ffe221;
+  --tertiary-color: #ffffff;
+}
+
+.container {
+  width: 1100px;
+  height: 220px;
+  position: relative;
+}
+
+h1,
+h2 {
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+h1 span,
+h2 span {
+  width: 100%;
+  padding: 10px;
+  float: left;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  transform: translateY(-50px);
+  opacity: 0;
+  animation-timing-function: ease;
+  font-weight: 900;
+}
+
+h1 span:first-child {
+  animation-delay: 0.7s;
+
+}
+
+h1 span:nth-child(2) {
+  animation-delay: 0.6s;
+  color: rgb(255, 183, 0);
+}
+
+h1 span:last-child {
+  animation-delay: 0.5s;
+}
+
+h2 {
+  top: 0;
+  position: absolute;
+}
+
+h2 span:first-child {
+  animation-delay: 4.2s;
+}
+
+h2 span:nth-child(2) {
+  animation-delay: 4.1s;
+  color: rgb(255, 100, 50, 1);
+}
+
+h2 span:last-child {
+  animation-delay: 4s;
+}
+
+@keyframes titleAnimation {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  }
+
+  20% {
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+  }
+
+  80% {
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+  }
+
+  100% {
+    transform: translateY(50px);
+    opacity: 0;
+    -webkit-clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+    clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+  }
+}
+
+h1 span,
+h2 span {
+  animation-name: titleAnimation;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.usechrome {
+  font-size: 10px;
+  color: #fff;
+  font-family: helvetica, arial;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  left: 0;
+}
+
+/*                                                                                           */
+
+.tohome {
+
+  position: absolute;
+  right: 0;
+  margin-right: 10%;
+}
+
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: rgb(255, 145, 109);
+  width: 45px;
+  height: 65px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: rgb(255, 100, 50, 1);
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
