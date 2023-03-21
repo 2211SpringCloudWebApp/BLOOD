@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <header>
   <div class="inner">
     <a href="/" class="logo">
@@ -33,15 +32,7 @@
 	       </li>
 	     </ul>
      	</c:if>
-     	
-		<div class="search">
-		  <input type="text" />
-		  <span class="material-icons">
-		    <div class="loader"></div>
-		  </span>
-		</div>
    	</div>
-
 	<ul class="main-menu">
 	  <li class="item">
 	    <!-- <div class="item__name"><a href="/book/identityView.bld">헌혈예약</a></div> -->

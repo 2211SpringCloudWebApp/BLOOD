@@ -47,6 +47,7 @@ public class MemberController {
 					memberAddr, memberPhone);
 			int result = mService.insertMember(mParam);
 			if(result > 0) {
+				
 				return "redirect:/index.jsp";
 			}else {
 				model.addAttribute("msg","회원가입이 완료되지않았습니다");
@@ -118,6 +119,7 @@ public class MemberController {
 		@RequestMapping(value="/member/modify.bld", method=RequestMethod.POST)
 		public String memberModify(@ModelAttribute Member member, Model model) {
 			try {
+				
 				int result = mService.updateMember(member);
 				if(result > 0) {
 					return "redirect:/index.jsp";
