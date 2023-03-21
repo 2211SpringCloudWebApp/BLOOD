@@ -36,7 +36,6 @@
 		<!-- main -->
 		<main>
 			<h1 class="pageTitle">헌혈의집 헌혈예약</h1>
-<<<<<<< HEAD
 			<div class="divTags">
 			
 				<section class="form_section">
