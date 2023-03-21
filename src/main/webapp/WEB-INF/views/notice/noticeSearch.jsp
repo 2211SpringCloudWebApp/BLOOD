@@ -23,11 +23,11 @@
 		<jsp:include page="../layout/header.jsp"></jsp:include>
 			
 		<!-- 메인 스타트 -->
-		<main >
+		<main style="margin-top: 150px; width:85%; ">
 			<section>
 
-			<h1 style="margin-top: 150px; text-align:center;">"${search.searchValue }"의 검색 결과</h1>
-			<table class="table table-hover">
+			<h1 style="text-align:center;">"${search.searchValue }"의 검색 결과</h1>
+			<table>
 				<thead>
 					<tr>
 						<th>번호</th>

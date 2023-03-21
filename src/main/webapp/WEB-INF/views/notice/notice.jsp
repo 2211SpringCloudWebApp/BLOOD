@@ -36,7 +36,7 @@
 	<jsp:include page="../layout/header.jsp"></jsp:include>
 
 	<!-- 메인 스타트 -->
-	<main style="margin-top: 150px;">
+	<main style="margin-top: 150px; width:85%; ">
 		<section>
 		
 			<h1 style="text-align:center;">자유게시판</h1>
