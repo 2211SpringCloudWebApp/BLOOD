@@ -1,25 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-
-
-<html>
-<head>
-  <title>Spring MVC checkbox</title>
-</head>
-
-<body>
-
-</body>
-</html>
-
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>munjin</title>
-
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="heartbeat" />
   <meta property="og:title" content="Heart Beat" />
@@ -33,76 +19,36 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
-  <link rel="stylesheet" href="../../../resources/css/munjin/thanks.css" />
+  <link rel="stylesheet" href="../../../resources/css/munjin/success.css" />
 </head>
 <body>
+<div class="container">
+  <h1 class="letter">
+    <span>축하합니다</span>
+    <span>전자문진이</span>
+    <span>모두 끝났습니다</span>
+  </h1>
 
-<!--     HEADER                                                 -->
-<header>
+  <h2 class="letter">
+    <span>메인 홈으로 돌아가시려면 </span>
+    <span>홈으로 </span>
+    <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp를 눌러주세요</span>
+  </h2>
+</div>
 
-</header>
+<script src="./thanks.js"></script>
 
-<!--     MAIN                                                    -->
-<main>
-  <div class="inner">
+<div class="tohome">
+  <button class="cta" type="button" onclick="location.href='/'">
+    <span>홈으로</span>
+    <svg viewBox="0 0 13 10" height="20px" width="15px">
+      <path d="M1,5 L11,5"></path>
+      <polyline points="8 1 12 5 8 9"></polyline>
+    </svg>
+  </button>
+</div>
 
-    <div class="ros_header">
-      <div class="ros_header_name">전자문진</div>
-    </div>
-    <!--     감사인사  -->
-    <div class="ros">
-
-      <h2>체크박스 선택 내역서 </h2>
-      <br>
-      <c:forEach items="${form.rosCheckboxes}" var="rosCheckbox">
-        - <c:out value="${rosCheckbox}" /><br />
-      </c:forEach>
-    </div>
-    <!-- 범퍼 -  해당없음 체크박스        -->
-    <div class="ros_no">
-    </div>
-    <!-- 체크박스 선택 내역서         -->
-    <div class="ros_radio">
-
-    </div>
-
-
-    <div  class="ros_detail">
-
-    </div>
-
-
-    <!--  //////////////  이하 생략  ///////////////////////////////////////////    -->
-
-        <div class="post">
-          <button>다음
-            <div class="star-1">
-              <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
-            </div>
-            <div class="star-2">
-              <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
-            </div>
-            <div class="star-3">
-              <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
-            </div>
-            <div class="star-4">
-              <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
-            </div>
-            <div class="star-5">
-              <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
-            </div>
-            <div class="star-6">
-              <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
-            </div>
-          </button>
-        </div>
-  </div>
-</main>
-<!--     FOOTER                                               -->
-<footer>
-
-</footer>
-
+<script src="../../../resources/js/munjin/success.js"></script>
 </body>
 
 </html>
