@@ -1,80 +1,164 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>      
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Insert title here</title>
-	</head>
-	<body>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>게시글</title>
-  </head>
-  <body>
-    <h1>댓글이 있는 게시글</h1>
-    
-    <h2>제목 : ${notice.noticeTitle }</h2> <br>
-    <p>내용 : ${notice.noticeContent }</p>
-    
-    <hr>
-    
-    <h2>댓글 목록</h2>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../../../resources/css/reply.css" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="heartbeat" />
+<meta property="og:title" content="Heart Beat" />
+<meta property="og:description" content="의사가 아니어도 생명을 구할 수 있는 방법" />
+<meta property="og:description" content="/resources/images/bg.png">
+
+<link rel="icon" href="/resources/images/favicon.png" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap"
+	rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="stylesheet" href="/resources/css/main.css" />
+<script defer src="/resources/js/youtube.js"></script>
+<script defer src="/resources/js/main.js"></script>
+
+<style>
+			table {
+				border : 1px solid black;
+			}
+			thead, tr {
+				border : 1px solid blakc;
+			}
+		</style>
+</head>
+<body>
+
+	<jsp:include page="../layout/header.jsp"></jsp:include>
+
+	<main style="margin-top: 150px; margin-left: 50px;">
+		<section>
+
+			<h1 style="font-size: 45px; text-align: center; color: #FF0080;">"${notice.noticeNo}"번
+				게시글 상세페이지</h1>
+			<c:url var="nModify" value="/notice/modifyView.bld">
+				<c:param name="noticeNo" value="${notice.noticeNo }" />
+			</c:url>
+			<br>
+			<c:if test="${notice.memberId eq loginUser.memberId }">
+				<div style="text-align: right; margin-right: 40px;" >
+					<div style="margin-bottom: 10px;">
+						<a href="${nModify }">Update</a>
+					</div>
+					<div>
+						<a href="javascript:void(0);"
+							onclick="removeCheck(${notice.noticeNo});">삭제</a>
+					</div>
+				</div>
+			</c:if>
+
+			<br>
+			<br>
+			<br>
+			
+			<div style="margin-left: 50px; margin-bottom:50px;">
+			<h2 style="font-size: 25px;">제목 : ${notice.noticeTitle }</h2>
+			<br><br>
+			<textarea style="font-size: 18px;" rows="10" cols="70">${notice.noticeContent }</textarea>			
+			
+			</div>
+
+
+
+			<%--     <h2>댓글 목록</h2>
+    <c:forEach items="${rList }" var="reply" varStatus="i">
     <ul>
       <li>
-        <p><strong>작성자id:</strong> id</p>
-        <p><strong>내용:</strong> 댓글 내용</p>
+        <p><strong>작성자id :</strong> ${reply.memberId }</p>
+        <p><strong>내용 :</strong> ${reply.replyContent }</p>
       </li>
+		<c:if test="${reply.memberId eq loginUser.memberId }">
+		<a href="javascript:void(0);" onclick="removeCheck2(${reply.replyNo});">삭제하기</a>
+		</c:if>  
     </ul>
+    </c:forEach> --%>
 
-<%-- 						<c:forEach items="${nList }" var="notice" varStatus="i">
-						<tr>
-							<td>${i.count }</td>
-							<td><a href="/notice/detail.bld?noticeNo=${notice.noticeNo }">${notice.noticeTitle }</a></td>
-							<td>${notice.memberId }</td>
-							<td>${notice.nCreateDate }</td>
-							<td>
-								${notice.viewCount }
-							</td>
-						</tr>
-						</c:forEach> --%>
-    
-    <hr>
-    
-    <h2>댓글 쓰기</h2>
-    <form>
+
+			<hr>
+
+			<%--     <h2>댓글 쓰기</h2>
+    <form method="post" action="/notice/reply.bld">
       
       <label for="comment">댓글:</label>
-      <textarea id="comment" name="comment" rows="5" cols="50"></textarea><br><br>
-      <c:if test="${loginUser eq null }">
+      <textarea id="comment" name="replyContent" rows="5" cols="50"></textarea><br><br>
+      <input type="hidden" name="memberId" value="${loginUser.memberId }">
+      <input type="hidden" name="noticeNo" value="${notice.noticeNo }">
+      
+     
       <button type="submit">댓글 달기</button>
-      </c:if>
-      <c:if test="${loginUser ne null }">
-      <button type="submit">댓글 달기</button>
-      </c:if>      
-    </form>
-    
+
+    </form> --%>
+
+			<br>
+			<br>
+			<form method="post" action="/notice/reply.bld">
+				<div id="form-commentInfo">
+					<div id="comment-count">댓글</div>
+					<input id="comment-input" name="replyContent"
+						placeholder="댓글을 입력해 주세요."><br> <br> <input
+						type="hidden" name="memberId" value="${loginUser.memberId }">
+					<input type="hidden" name="noticeNo" value="${notice.noticeNo }">
+
+					<button type="submit" id="submit">등록</button>
+				</div>
+
+				<c:forEach items="${rList }" var="reply" varStatus="i">
+					<div id=comments>
+						<div class="eachComment">
+							<div class="name">ID : ${reply.memberId }</div>
+							<div class="inputValue">${reply.replyContent }</div>
+							<c:if test="${reply.memberId eq loginUser.memberId }">
+
+								<a href="javascript:void(0);"
+									onclick="removeCheck2(${reply.replyNo});">삭제하기</a>
+
+							</c:if>
+						</div>
+
+						</ul>
+					</div>
+				</c:forEach>
+			</form>
+		</section>
+	</main>
+
+
+
 	<c:url var="nModify" value="/notice/modifyView.bld">
-		<c:param name="noticeNo" value="${notice.noticeNo }"/>
-	</c:url>					
-	
-	<c:if test="${notice.memberId eq loginUser.memberId }">
-	<a href="${nModify }">수정 페이지로 이동</a>
-	<a href="javascript:void(0);" onclick="removeCheck(${notice.noticeNo});">삭제하기</a>
-	</c:if>    
-		
-		<script>
+		<c:param name="noticeNo" value="${notice.noticeNo }" />
+	</c:url>
+
+
+	<script>
 			function removeCheck(noticeNo) {
 				if(confirm("정말 삭제하시겠습니까?")) {
 					location.href="/notice/freeRemove.bld?noticeNo="+noticeNo;
 				}
 			}
-		</script>    
-    
-  </body>
-</html>
-	</body>
+			
+			function removeCheck2(replyNo) {
+				if(confirm("정말 삭제하시겠습니까?")) {
+					location.href="/reply/Remove.bld?replyNo="+replyNo+"&noticeNo="+${notice.noticeNo};
+				}
+			}
+		</script>
+
+
+</body>
 </html>

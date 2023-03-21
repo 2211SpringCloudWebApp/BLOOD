@@ -6,7 +6,7 @@
 	<head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-<!-- 	<link rel="icon" href="../../../resources/images/favicon.png" />
+	<link rel="icon" href="../../../resources/images/favicon.png" />
 	<link rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -19,26 +19,20 @@
 		href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 	<link rel="stylesheet" href="../../../resources/css/main.css" />
 	<script defer src="../../../resources/js/youtube.js"></script>
-	<script defer src="../../../resources/js/main.js"></script> -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-			<style>
-				table {
-					border : 1px solid black;
-				}
-				th, td {
-					border : 1px solid blakc;
-				}
-			</style>
+	<script defer src="../../../resources/js/main.js"></script>
+	
+	<link rel="stylesheet" href="../../../resources/css/table.css" />
+	
 	</head>
 	<body>
-<%-- 		<jsp:include page="../layout/header.jsp"></jsp:include> --%>
+		<jsp:include page="../layout/header.jsp"></jsp:include>
 	
 		<!-- 메인 스타트 -->
 	
-		<main>
+		<main style="margin-top: 150px;">
 			<section>
 			
-		<h1>FAQ 목록</h1>
+		<h1>FAQ</h1>
 		<table class="table table-hover">
 			<thead>
 				<tr>
