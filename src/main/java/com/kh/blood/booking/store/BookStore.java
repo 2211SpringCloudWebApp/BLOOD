@@ -13,10 +13,10 @@ public interface BookStore {
 	/**
 	 * 헌혈자 인증 Store
 	 * @param session
-	 * @param mParam
+	 * @param memberId
 	 * @return Member
 	 */
-	public int selectBookCertify(SqlSession session, Member mParam);
+	public Member selectBookCertify(SqlSession session, String memberId);
 	
 	
 	/**

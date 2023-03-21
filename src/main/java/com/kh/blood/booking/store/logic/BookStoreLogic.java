@@ -14,12 +14,10 @@ public class BookStoreLogic implements BookStore{
 
 	/* 헌혈자 인증 StoreLogic */
 	@Override
-	public int selectBookCertify(SqlSession session, Member mParam) {
-		int result = session.selectOne("BookMapper.selectBookCertify", mParam);
-		return result;
-		/* int result = session.select("MemberMapper.findPw", member);
-		return result;*/
-	}
+	public Member selectBookCertify(SqlSession session, String memberId) {
+		Member member = session.selectOne("BookMapper.selectBookCertify", memberId);
+		return member;
+	}	
 	
 	
 	/* 헌혈예약 등록 StoreLogic */
@@ -35,6 +33,9 @@ public class BookStoreLogic implements BookStore{
 		List<Book> bList = session.selectList("BookMapper.selectBookList", memberId);
 		return bList;
 	}
+
+
+
 
 
 

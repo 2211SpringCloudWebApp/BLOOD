@@ -28,85 +28,114 @@ public class BookController {
 	private BookService bService;
 	@Autowired
 	private PlaceService pService;
-	@Autowired
-	private MemberService mService;
+
 	
 	
 	/* 헌혈자인증 화면 */
-	/*@RequestMapping(value="/book/identityView.bld", method=RequestMethod.GET)
-	public String certifyView() {
-		return "book/certify";
-	}*/
-	
-	/* 헌혈자 인증 */
-	/*@RequestMapping(value="book/identity.bld", method=RequestMethod.POST)
-    public String bookCertify(
-    		HttpSession session
-    		,@RequestParam("memberName") String memberName
-    		,@RequestParam("memberKn") String memberKn
-            , Model model) {
-        try {
-        	Member mOne = (Member)session.getAttribute("loginUser");
-        	//String memberName = mOne.getMemberName();
-        	Member mParam = new Member(memberId, memberPw);
-        	Member bParam = new Member(memberName, memberKn);
-        	//System.out.println(mParam.toString());
-        	Member member = mService.checkMemberLogin(mParam);
-        	//Member member = mService.selectBookCertify(mParam);
-        	if(member != null) {
-        		int result = bService.selectBookCertify(bParam);
-        		if(result > 0) {
-        			session.invalidate();
-        			return "redirect:/booking.jsp";
-        		}else {
-        			model.addAttribute("msg", "인증에 실패하였습니다");
-        			model.addAttribute("url", "/book/identityView.bld");
-        			return "common/alert";
-        		}
-        		//model.addAttribute("member", member);
-        		//return "book/booking";
-        	}else {
-        		model.addAttribute("msg", "회원 조회에 실패하였습니다.");
-        		return "common/error";
-        	}
-
-        } catch (Exception e) {
-            // 콘솔창에 에러 출력
-            e.printStackTrace();
-            // 에러 페이지에 에러 출력
-            model.addAttribute("msg", e.getMessage());
-            return "common/error";
-        }
-    }*/
-	
-	/* 헌혈자 인증 */
-	/*
-	@RequestMapping(value="book/identity.bld", method=RequestMethod.POST)
-	public String bookCertify(
-			@ModelAttribute Member member
-            , @RequestParam String idNum1
-            , @RequestParam String idNum2
+	@RequestMapping(value="/book/identityView.bld", method=RequestMethod.GET)
+	public String certifyView(
+			HttpSession session
 			, Model model) {
+		Member member = (Member)session.getAttribute("loginUser");
+		if(member == null) {
+			model.addAttribute("msg", "로그인 후 이용해주세요");
+			model.addAttribute("url", "/member/login.bld");
+			return "common/alert";
+		}
+		return "book/certify";
+	}
+	
+	/* 헌혈자 인증 */
+	/*@RequestMapping(value="/book/identity.bld", method=RequestMethod.POST)
+    public String bookCertify(
+    		HttpServletRequest request
+    		,@RequestParam("member-name") String memberName
+    		,@RequestParam("member-kn") String memberKn
+            , Model model) {
 		try {
-			String memberKn = idNum1+"-"+idNum2;
-			member.setMemberKn(memberKn);
+			Member mParam = new Member();
+			mParam.setMemberName(memberName);
+			mParam.setMemberKn(memberKn);
 			
-			int result = bService.selectBookCertify(member);
-			if (result > 0) {
-				return "redirect:/book/reserveView.bld";
-			} else {
-				model.addAttribute("msg", "정확한 이름과 주민번호를 입력해 주세요 ");
+			Member member = bService.selectBookCertify(mParam);
+			//model.addAttribute("member", member);
+			
+			HttpSession session = request.getSession();
+			if(member != null) {
+				session.setAttribute("loginUser", member);
+				return "book/booking";
+			}else {
+				model.addAttribute("msg", "헌혈자인증에 실패하였습니다. 이름과 주민등록번호를 확인해주세요");
 				return "common/error";
 			}
+			
 		} catch (Exception e) {
-			// 콘솔창에 에러 출력
 			e.printStackTrace();
-			// 에러 페이지에 에러 출력
-			model.addAttribute("msg", e.getMessage());
+			model.addAttribute("message",e.getMessage());
 			return "common/error";
 		}
+		
+	}*/
+	
+	
+	/*@RequestMapping(value="/book/identity.bld", method=RequestMethod.POST)
+    public String bookCertify(
+    		HttpServletRequest request
+    		,@RequestParam("member-id") String memberId
+            , Model model) {
+		try {
+			Member mParam = new Member();
+			mParam.setMemberId(memberId);
+			
+			Member member = bService.selectBookCertify(mParam);
+			//model.addAttribute("member", member);
+			
+			HttpSession session = request.getSession();
+			if(member != null) {
+				session.setAttribute("loginUser", member);
+				return "book/booking";
+			}else {
+				model.addAttribute("msg", "헌혈자인증에 실패하였습니다. 이름과 주민등록번호를 확인해주세요");
+				return "common/error";
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("message",e.getMessage());
+			return "common/error";
+		}
+		
+	}*/
+	
+	@RequestMapping(value="/book/identity.bld", method=RequestMethod.POST)
+	public String bookCertify(
+			HttpServletRequest request
+			,String memberId
+			, Model model) {
+		try {
+			Member mParam = new Member();
+			mParam.setMemberId(memberId);
+			
+			Member member = bService.selectBookCertify(memberId);
+			//model.addAttribute("member", member);
+			
+			HttpSession session = request.getSession();
+			if(member != null) {
+				session.setAttribute("loginUser", member);
+				return "book/booking";
+			}else {
+				model.addAttribute("msg", "헌혈자인증에 실패하였습니다. 이름과 주민등록번호를 확인해주세요");
+				return "common/error";
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("message",e.getMessage());
+			return "common/error";
+		}
+		
 	}
-	*/
+		
     
 	
 	

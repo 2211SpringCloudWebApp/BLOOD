@@ -36,7 +36,7 @@
 	<ul class="main-menu">
 	  <li class="item">
 	    <!-- <div class="item__name"><a href="/book/identityView.bld">헌혈예약</a></div> -->
-	    <div class="item__name"><a href="/book/reserveView.bld">헌혈예약</a></div>
+	    <div class="item__name"><a href="/book/identityView.bld">헌혈예약</a></div>
 	    <div class="item__contents">
 	      <div class="contents__menu">
 	        <ul class="inner">

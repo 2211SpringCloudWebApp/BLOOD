@@ -46,19 +46,21 @@
 		          <div class="munjin2__1">
 		            <div class="munjin2__1__top">성명</div>
 		            <div class="munjin2__1__bottom">
-		              <input type="text" id="user_name" name="member-name" placeholder="성명"  onchange="validateName()">
+		              <input type="text" id="user_name" name="member-name" placeholder="성명" value="${member.memberName }" onchange="validateName()">
 		            </div>
 		          </div>
 		          <div class="munjin2__2">
 		            <div class="munjin2__2__top">주민등록번호</div>
 		            <div class="munjin2__2__bottom">
-		              <input type="text" id="kn1" name="member-kn" placeholder="주민등록번호(앞)" onchange="validateResidentNumber1()">
-		              <input type="text" id="kn2" name="member-kn" placeholder="주민등록번호(뒤)" onchange="validateResidentNumber2()">
+		              <input type="text" id="kn1" name="member-kn" placeholder="주민등록번호(앞)" value="${member.memberKn }" onchange="validateResidentNumber1()">
+		              <input type="text" id="kn2" name="member-kn" placeholder="주민등록번호(뒤)" value="${member.memberKn }" onchange="validateResidentNumber2()">
 		            </div>
 		          </div>
 		        </div>
 		        <div class="munjin3">
-		          <button type="submit" onclick="return check()" >헌혈예약</button>
+		          <button type="submit" >
+		          	<a href="/book/reserveView.bld?memberId=${member.memberId }">헌혈예약</a>
+		          </button>
 		        </div>
 		      </form>
 		    </div>
