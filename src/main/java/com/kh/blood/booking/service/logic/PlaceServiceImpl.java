@@ -21,8 +21,8 @@ public class PlaceServiceImpl implements PlaceService{
 
 	/* 헌혈의집 목록 조회 ServiceImpl */
 	@Override
-	public List<Place> selectPlaceList() {
-		List<Place> pList = pStore.selectPlaceList(session);
+	public List<Place> selectPlaceList(Search search) {
+		List<Place> pList = pStore.selectPlaceList(session, search);
 		return pList;
 	}
 	// (헌혈의집) '시' 목록 조회 ServiceImpl
@@ -42,8 +42,8 @@ public class PlaceServiceImpl implements PlaceService{
 	/* 헌혈의집 검색 */
 	@Override
 	public List<Place> selectListByKeyowrd(Search search) {
-		List<Place> searchList = pStore.selectListByKeyword(session, search);
-		return searchList;
+		List<Place> searchResult = pStore.selectListByKeyword(session, search);
+		return searchResult;
 	}
 
 }

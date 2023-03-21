@@ -95,7 +95,15 @@ public class BookController {
 	
 	/* 헌혈예약 등록화면 */
 	@RequestMapping(value="/book/reserveView.bld", method=RequestMethod.GET)
-	public String bookView() {
+	public String bookView(
+			HttpSession session
+			, Model model) {
+		Member member = (Member)session.getAttribute("loginUser");
+		if(member == null) {
+			model.addAttribute("msg", "로그인 후 이용해주세요");
+			model.addAttribute("url", "/member/login.bld");
+			return "common/alert";
+		}
 		return "book/booking";
 	}
 	
@@ -103,12 +111,12 @@ public class BookController {
 	@RequestMapping(value="/book/reserve.bld", method=RequestMethod.POST)
 	public String bookRegister(
 			@ModelAttribute Book book
-			, HttpServletRequest request
+			, HttpSession session
 			, Model model) {
 		try {
-			request.setCharacterEncoding("UTF-8");
-			//book.setMemberId("khuser01"); // replace this.
-			book.setMemberId("${memberId}");
+			Member member = (Member)session.getAttribute("loginUser");
+			String memberId = member.getMemberId();
+			book.setMemberId(memberId); // replace this.
 			int result = bService.insertBook(book);
 			if(result > 0) {
 				return "redirect:/book/reservelistView.bld";
@@ -130,8 +138,14 @@ public class BookController {
 	public String bookListView(
 			HttpSession session
 			, Model model) {
-		//String memberId = "khuser01";	// Member When Completed
-		String memberId = "${memberId}";
+//		String memberId = "khuser01";	// Member When Completed
+		Member member = (Member)session.getAttribute("loginUser");
+		if (member == null) {
+			model.addAttribute("msg", "로그인 후 이용해주세요");
+			model.addAttribute("url", "/member/login.bld");
+			return "common/alert";
+		}
+		String memberId = member.getMemberId();
 		List<Book> bList = bService.selectBookList(memberId);
 		if(bList != null) {
 			model.addAttribute("bList", bList);
@@ -143,26 +157,77 @@ public class BookController {
 		/*
 		 * model.addAttribute("bList", bList); return "book/bookingList";
 		 */
-		
 	}
 	
 	
+/******* 헌혈의집 선택 PART ********/
 	
-	/* 헌혈의집 목록 조회 */
-	@RequestMapping(value="/book/placelistView.bld", method=RequestMethod.GET)
-	public String placeListView(
-			HttpSession session
-			, @RequestParam String searchArea
+	/* 헌혈의집 GunGu 조회 */
+	@RequestMapping(value="/book/gunGulistView.bld", method=RequestMethod.GET)
+	public String gunGulistView(
+			@RequestParam("pCity") String pCity
 			, Model model) {
-		List<Place> pList = pService.selectPlaceList();
 		List<String> siList = pService.selectSiList();
-		List<String> gunGuList = pService.selectGunguList(searchArea);
-		model.addAttribute("pList", pList);
+		List<String> gunGuList = pService.selectGunguList(pCity);
+		model.addAttribute("pCity", pCity);
 		model.addAttribute("siList", siList);
 		model.addAttribute("gunGuList", gunGuList);
 		return "book/placeList";
 		
 	}
+	
+	/* 헌혈의집 목록 조회 */
+	@RequestMapping(value="/book/placelistView.bld", method=RequestMethod.GET)
+	public String placeListView(
+			HttpSession session
+			, @ModelAttribute Search search
+			, Model model) {
+		if(search.getpCity() != null && search.getpCountry() != null) {
+			List<Place> pList = pService.selectPlaceList(search);
+			model.addAttribute("pList", pList);
+		}
+		List<String> siList = pService.selectSiList();
+		List<String> gunGuList = pService.selectGunguList(search.getpCity());
+		model.addAttribute("siList", siList);
+		model.addAttribute("gunGuList", gunGuList);
+		return "book/placeList";
+		
+	}
+	
+	/* 헌혈의집 목록 조회 */
+	/*@RequestMapping(value="/book/placelistView.bld", method=RequestMethod.GET)
+	public String placeListView(
+			HttpSession session
+			, @ModelAttribute Search search
+			, @RequestParam("pCity") String pCity
+			, Model model) {
+		List<String> siList = pService.selectSiList();
+		List<String> gunGuList = null;
+		
+		if(search.getpCity() != null && search.getpCountry() != null) {
+			if(pCity.equals("세종시")) {
+				model.addAttribute("pCity", pCity);
+				model.addAttribute("siList", siList);
+				model.addAttribute("gunGuList", gunGuList);
+				return "book/placeList";
+			} else {
+				gunGuList = pService.selectGunguList(search.getpCity());
+				model.addAttribute("pCity", pCity);
+				model.addAttribute("siList", siList);
+				model.addAttribute("gunGuList", gunGuList);
+				return "book/placeList";
+			}
+		}
+		List<Place> pList = pService.selectPlaceList(search);
+		model.addAttribute("pList", pList);
+		//List<String> gunGuList = pService.selectGunguList(search.getpCity());
+		model.addAttribute("siList", siList);
+		model.addAttribute("gunGuList", gunGuList);
+		return "book/placeList";
+		
+	}*/
+	
+	
 	
 	/* 헌혈의집 검색 */
 	@RequestMapping(value="/book/searchView.bld", method=RequestMethod.GET)

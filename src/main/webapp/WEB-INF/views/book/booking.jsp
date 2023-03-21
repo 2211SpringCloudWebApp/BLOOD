@@ -36,7 +36,7 @@
 		<!-- main -->
 		<main>
 			<h1 class="pageTitle">헌혈의집 헌혈예약</h1>
-			
+<<<<<<< HEAD
 			<div class="divTags">
 			
 				<section class="form_section">
@@ -52,7 +52,7 @@
 						<input type="text" id="pInput_home" class="homeInfo" placeholder="헌혈의집" readonly><br>
 						<input type="text" id="pInput_addr" class="homeInfo" placeholder="헌혈의집 주소" readonly><br>
 						<input type="text" id="pInput_phone" class="homeInfo" placeholder="헌혈의집 전화번호" readonly>
-						<input type="hidden" id="pInput_num"><br>
+						<input type="hidden" id="pInput_num" name="pNo"><br>
 						
 						<label for="booking_day" class="label">예약날짜 </label><br>
 						<input type="date" name="bkDate" id="Date" class="inputBtn"><br>
@@ -69,13 +69,9 @@
 				</section>
 				<section class="img_section">
 					<img alt="헌혈권장" src="../../../resources/images/card_img1.png" style="width:auto; height:auto;">
-				
 				</section>
 			</div>
-			
 		</main>
-		
-
 		
 		<!-- footer -->
 		<jsp:include page="../layout/footer.jsp"></jsp:include>
@@ -94,7 +90,7 @@
 		// window창으로 시군구 장소 입력받기 가능
 		const pNoEl = document.querySelector("#search");
 		pNoEl.addEventListener("click", function() {
-			window.open("/book/placelistView.bld?searchArea=","newplace","width=800, height=600");
+			window.open("/book/placelistView.bld","newplace","width=800, height=600");
 		});
 		
 

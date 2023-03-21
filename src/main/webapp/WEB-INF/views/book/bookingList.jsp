@@ -48,7 +48,7 @@
 							<td>${book.bkNo }</td>
 							<td>${book.bkDate }</td>
 							<td>${book.bkTime }</td>
-							<td>${book.pNo }</td>
+							<td>${book.pHome }</td>
 							<td>${book.pAddr }</td>
 							<td>${book.pPhone }</td>
 							<td>${book.dnCheck }</td>

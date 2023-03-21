@@ -7,7 +7,6 @@
     box-sizing: border-box;
 }
 
-
 .pageTitle {
 	position: relative;
 	display: inline-block;
@@ -46,8 +45,6 @@ col {
 	border-collapse: separate;
 	border-spacing:0;
 }
-
-
 
 tbody {
 	display: table-row-group;
@@ -91,10 +88,6 @@ table .pLocal {
 	vertical-align: middle;
 	font-weight: 200;
 }
-
-
-
-
 
 .tbl2 table {
 	margin: 0 auto;
