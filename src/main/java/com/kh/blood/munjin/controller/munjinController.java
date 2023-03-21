@@ -1,5 +1,6 @@
 package com.kh.blood.munjin.controller;
 
+import com.kh.blood.munjin.domain.Form;
 import com.kh.blood.munjin.domain.MunjinMember;
 import com.kh.blood.munjin.service.MunjinService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,20 +16,13 @@ public class munjinController
 {
     @Autowired
     private MunjinService munjinService;
-//
+
     @GetMapping ("/munjin/intro.bld")
     public String munjinRegister() {
         return "munjin/intro";
     }
 
-    /**
-     *  ⭐ 문진 1 단계
-     * @param munjinMember
-     * @param idNum1
-     * @param idNum2
-     * @param model
-     * @return
-     */
+    //⭐ 문진 1 단계
     @PostMapping("/munjin/intro.bld")
     public String munjinRegister(
             @ModelAttribute MunjinMember munjinMember
@@ -54,33 +48,38 @@ public class munjinController
             return "munjin/error";
         }
     }
+
     // ⭐ 문진 2단계 ⭐ 안내문 출력.
     @GetMapping(value="/munjin/noti.bld")
     public String showNotice() {
         return "munjin/notice";
     }
-    /**
-     * ⭐ 문진 3단계 ⭐ 문진사항 출력.
-     * @param model
-     * @return
-     */
+
+     // ⭐ 문진 3단계 ⭐ 문진사항 선택
     @GetMapping(value="/munjin/form.bld")
     public String showMunjinForm(Model model)
     {
-        //Form form = new Form();
-        //model.addAttribute("form", form);
+//        [ ]의 해당사항 없음 클릭 --  해당 맴버변수 안에 '해당 없음' 결과를 넣어줌
+//        [ ]의 선택사항 저장 -- 리스트로
 
-//        List<String> rosCheckboxes = new ArrayList<String>();
-//        rosCheckboxes.add("발열");
-//        rosCheckboxes.add("인후통");
-//        rosCheckboxes.add("설사");
-//        model.addAttribute("rosCheckboxes", rosCheckboxes);
-        //form.setRoaCheckboxes(rosCheckboxes);
+//        Form form = new Form();
+//        munjinService.formSelection()
+
 
         return "munjin/form";
     }
 
-    //⭐ 문진 4단계 ⭐ 동의서출력.
+     // ⭐ 문진 4단계 ⭐ 문진 종료. .
+    @GetMapping(value = "munjin/thanks.bld")
+    public String submitForm(Model model) {
+        return "munjin/success";
+    }
+
+}
+
+
+
+//⭐ 문진 4단계 ⭐ 동의서출력.
 //    @GetMapping("munjin/agree.bld")
 //    public String initAgree(Model model)
 //    {
@@ -98,14 +97,3 @@ public class munjinController
 //        return "munjin/success";
 //
 //    }
-    /**
-     * ⭐ 문진 5단계 ⭐ 문진 종료. .
-     * @param model
-     * @return
-     */
-    @GetMapping(value = "munjin/thanks.bld")
-    public String submitForm(Model model) {
-        return "munjin/success";
-    }
-
-}

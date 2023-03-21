@@ -17,11 +17,11 @@
     <h1>아래의 사항을 잘 읽고 동의여부를 선택하세요</h1>
     <h3>전자 문진 시작이에요, 레츠 고  !</h3>
     <div class="et-hero-tabs-container">
-        <a class="et-hero-tab" href="#tab-es6">ES6</a>
-        <a class="et-hero-tab" href="#tab-flexbox">Flexbox</a>
+        <a class="et-hero-tab" href="#tab-es6">헌혈 금지 약물</a>
+        <a class="et-hero-tab" href="#tab-flexbox">제한 지역</a>
         <a class="et-hero-tab" href="#tab-react">React</a>
-        <a class="et-hero-tab" href="#tab-angular">Angular</a>
-        <a class="et-hero-tab" href="#tab-other">Other</a>
+        <a class="et-hero-tab" href="#tab-angular">헌혈 후 생길 수 있는 증상</a>
+        <a class="et-hero-tab" href="#tab-other">개인정보 수집,이용 동의 안내</a>
         <span class="et-hero-tab-slider"></span>
     </div>
 </section>
@@ -29,11 +29,11 @@
 <!-- Main -->
 <main class="et-main">
     <section class="et-slide" id="tab-es6">
-        <h1>ES6</h1>
+        <h1>헌혈 금지 약물</h1>
         <h3>something about es6</h3>
     </section>
     <section class="et-slide" id="tab-flexbox">
-        <h1>Flexbox</h1>
+        <h1>제한 지역</h1>
         <h3>something about flexbox</h3>
     </section>
     <section class="et-slide" id="tab-react">
@@ -41,11 +41,11 @@
         <h3>something about react</h3>
     </section>
     <section class="et-slide" id="tab-angular">
-        <h1>Angular</h1>
+        <h1>헌혈 후 생길 수 있는 증상 </h1>
         <h3>something about angular</h3>
     </section>
     <section class="et-slide" id="tab-other">
-        <h1>Other</h1>
+        <h1>개인정보 수집,이용 동의 안내</h1>
         <h3>something about other</h3>
 
         <button type="button" onclick="location.href='/munjin/form.bld'">다음
