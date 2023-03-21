@@ -119,7 +119,7 @@ public class MemberController {
 		@RequestMapping(value="/member/modify.bld", method=RequestMethod.POST)
 		public String memberModify(@ModelAttribute Member member, Model model) {
 			try {
-				System.out.println(member);
+				
 				int result = mService.updateMember(member);
 				if(result > 0) {
 					return "redirect:/index.jsp";
