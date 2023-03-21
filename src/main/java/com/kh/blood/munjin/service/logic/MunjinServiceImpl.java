@@ -1,5 +1,6 @@
 package com.kh.blood.munjin.service.logic;
 
+import com.kh.blood.munjin.domain.Form;
 import com.kh.blood.munjin.domain.MunjinMember;
 import com.kh.blood.munjin.service.MunjinService;
 import com.kh.blood.munjin.store.MunjinStore;
@@ -20,5 +21,13 @@ public class MunjinServiceImpl implements MunjinService
     {
         int result = munjinStore.insertMunjinMember(session, munjinMember);
         return result;
+    }
+
+    @Override
+    public String selections(Form form)
+    {
+
+        munjinStore.selectionsForm(session, form);
+        return null;
     }
 }

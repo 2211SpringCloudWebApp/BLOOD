@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class munjinController
 {
@@ -55,45 +57,49 @@ public class munjinController
         return "munjin/notice";
     }
 
-     // ⭐ 문진 3단계 ⭐ 문진사항 선택
+    // ⭐ 문진 3단계 ⭐ 문진사항 선택
     @GetMapping(value="/munjin/form.bld")
-    public String showMunjinForm(Model model)
+    public String showMunjinForm(@ModelAttribute Form form, Model model)
     {
-//        [ ]의 해당사항 없음 클릭 --  해당 맴버변수 안에 '해당 없음' 결과를 넣어줌
-//        [ ]의 선택사항 저장 -- 리스트로
-
-//        Form form = new Form();
-//        munjinService.formSelection()
-
 
         return "munjin/form";
     }
 
-     // ⭐ 문진 4단계 ⭐ 문진 종료. .
+    @PostMapping(value="/munjin/form.bld")
+    public String registerMunjinData(
+            @RequestParam("rosCondition") List<String> rosCondition
+            , @RequestParam("rosDay") List<String> rosDay
+            , @RequestParam("rosWeek") List<String> rosWeek
+            , @RequestParam("rosMonth") List<String> rosMonth
+            , @RequestParam("rosYear") List<String> rosYear
+            , @RequestParam("rosEE") List<String> rosEE
+            , @RequestParam("rosDrug") List<String> rosDrug
+            , @RequestParam("rosZrug") List<String> rosZrug
+            , @RequestParam("rosMosquito") List<String> rosMosquito
+            , @RequestParam("rosVCJD") List<String> rosVCJD
+            , Model model)
+    {
+//        [ ]의 해당사항 없음 클릭 --  해당 맴버변수 안에 '해당 없음' 결과를 넣어줌
+//        [ ]의 선택사항 저장 -- 리스트로
+        System.out.println(rosCondition);
+        System.out.println(rosDay);
+        System.out.println(rosWeek);
+        System.out.println(rosMonth);
+        System.out.println(rosCondition);
+        System.out.println(rosYear);
+        System.out.println(rosEE);
+        System.out.println(rosDrug);
+        System.out.println(rosZrug);
+        System.out.println(rosMosquito);
+        System.out.println(rosVCJD);
+
+        return "redirect:/munjin/thanks.bld";
+    }
+
+    // ⭐ 문진 4단계 ⭐ 문진 종료. .
     @GetMapping(value = "munjin/thanks.bld")
     public String submitForm(Model model) {
         return "munjin/success";
     }
 
 }
-
-
-
-//⭐ 문진 4단계 ⭐ 동의서출력.
-//    @GetMapping("munjin/agree.bld")
-//    public String initAgree(Model model)
-//    {
-//        Form form = new Form();
-//        model.addAttribute("form", form);
-//
-//        List<String> agreeCheckboxes = new ArrayList<String>();
-//        agreeCheckboxes.add("모라모라 동의하시겠습니까");
-//        agreeCheckboxes.add("머라머라 동의하시겠습니까");
-//        agreeCheckboxes.add("뭐라뭐라 동의하시겠습니까");
-//        agreeCheckboxes.add("무라무라 동의하시겠습니까");
-//        model.addAttribute("agreeCheckboxes", agreeCheckboxes);
-//        form.setAgreeCheckBoxes(agreeCheckboxes);
-//
-//        return "munjin/success";
-//
-//    }
