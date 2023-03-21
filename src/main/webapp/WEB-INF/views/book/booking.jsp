@@ -41,10 +41,10 @@
 				<section class="form_section">
 					<form action="/book/reserve.bld" accept-charset="utf-8" name="reserve" method="post">
 						<label class="label">예약자</label><br>
-						<input type="text" name="memberName" class="inputBtn" placeholder="예약자 성명 입력"><br>
+						<input type="text" name="memberName" id="name" class="inputBtn"  onchange="validateName()" placeholder="예약자 성명 입력"><br>
 						
-						<label class="label">휴대폰번호</label><br>
-						<input type="text" name="bkPhone" class="inputBtn" placeholder="휴대폰번호 입력"><br>
+						<label class="label">전화번호</label><br>
+						<input type="text" name="bkPhone" id="phone" class="inputBtn" onchange="check_phone()" placeholder="휴대폰번호 입력"><br>
 						
 						<label for="booking_local" id="home" class="label">헌혈의집</label>
 						<input type="button" id="search" class="clickBtn" value="찾기"><br>
@@ -77,8 +77,34 @@
 	</body>
 	
 	<script type="text/javascript">
+	
+		// 예약자명 유효성 검사 (한글만 작성 가능)
+		function validateName() {
+			var name = document.getElementById("name");
+			var regExp = /^[가-힣]+$/;  // 한글만 가능한 정규식
+
+			if (!regExp.test(name.value)) {
+				alert("이름은 한글로만 입력해주세요.");
+				name.value = "";
+					return false;
+			}
+			return true;
+		}
+		
+		// 전화번호 유효성 검사 (11자리 입력 가능)
+		function check_phone() {
+			var phone = document.getElementById("phone").value;
+			var regPhone= /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+			if (regPhone.test(phone) != true) {
+			  alert("전화번호를 확인해주세요");
+			}
+		
+		}
+		
+		
 		let openWin;
 		
+		// 예약날짜 (오늘날짜 이전 선택 불가)
 		var now_utc = Date.now() // 지금 날짜를 밀리초로
 		// getTimezoneOffset()은 현재 시간과의 차이를 분 단위로 반환
 		var timeOff = new Date().getTimezoneOffset()*60000; // 분단위를 밀리초로 변환
@@ -86,13 +112,13 @@
 		var today = new Date(now_utc-timeOff).toISOString().split("T")[0];
 		document.getElementById("Date").setAttribute("min", today);
 		
-		// window창으로 시군구 장소 입력받기 가능
+		
+		// 헌혈의집 선택 페이지 window open
 		const pNoEl = document.querySelector("#search");
 		pNoEl.addEventListener("click", function() {
 			window.open("/book/placelistView.bld","newplace","width=800, height=600");
 		});
 		
-
 	</script>
 	
 	

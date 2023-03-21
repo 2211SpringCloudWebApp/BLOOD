@@ -16,7 +16,7 @@ public interface BookStore {
 	 * @param mParam
 	 * @return Member
 	 */
-	public Member selectBookCertify(SqlSession session, Member mParam);
+	public int selectBookCertify(SqlSession session, Member mParam);
 	
 	
 	/**

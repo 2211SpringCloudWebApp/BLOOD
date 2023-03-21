@@ -12,7 +12,7 @@ public interface BookService {
 	 * @param member
 	 * @return
 	 */
-	public Member selectBookCertify(Member mParam);
+	public int selectBookCertify(Member mParam);
 
 	/**
 	 * 헌혈예약 등록 Service

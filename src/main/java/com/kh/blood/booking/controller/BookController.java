@@ -19,6 +19,7 @@ import com.kh.blood.booking.domain.Search;
 import com.kh.blood.booking.service.BookService;
 import com.kh.blood.booking.service.PlaceService;
 import com.kh.blood.member.domain.Member;
+import com.kh.blood.member.service.MemberService;
 
 @Controller
 public class BookController {
@@ -27,29 +28,45 @@ public class BookController {
 	private BookService bService;
 	@Autowired
 	private PlaceService pService;
+	@Autowired
+	private MemberService mService;
 	
 	
 	/* 헌혈자인증 화면 */
-	@RequestMapping(value="/book/identityView.bld", method=RequestMethod.GET)
+	/*@RequestMapping(value="/book/identityView.bld", method=RequestMethod.GET)
 	public String certifyView() {
 		return "book/certify";
-	}
+	}*/
 	
 	/* 헌혈자 인증 */
-	@RequestMapping(value="book/identity.bld", method=RequestMethod.POST)
+	/*@RequestMapping(value="book/identity.bld", method=RequestMethod.POST)
     public String bookCertify(
-    		String memberName
-    		, String memberKn
+    		HttpSession session
+    		,@RequestParam("memberName") String memberName
+    		,@RequestParam("memberKn") String memberKn
             , Model model) {
         try {
-        	Member mParam = new Member(memberName, memberKn);
-        	System.out.println(mParam.toString());
-        	Member member = bService.selectBookCertify(mParam);
+        	Member mOne = (Member)session.getAttribute("loginUser");
+        	//String memberName = mOne.getMemberName();
+        	Member mParam = new Member(memberId, memberPw);
+        	Member bParam = new Member(memberName, memberKn);
+        	//System.out.println(mParam.toString());
+        	Member member = mService.checkMemberLogin(mParam);
+        	//Member member = mService.selectBookCertify(mParam);
         	if(member != null) {
-        		model.addAttribute("member", member);
-        		return "book/booking";
+        		int result = bService.selectBookCertify(bParam);
+        		if(result > 0) {
+        			session.invalidate();
+        			return "redirect:/booking.jsp";
+        		}else {
+        			model.addAttribute("msg", "인증에 실패하였습니다");
+        			model.addAttribute("url", "/book/identityView.bld");
+        			return "common/alert";
+        		}
+        		//model.addAttribute("member", member);
+        		//return "book/booking";
         	}else {
-        		model.addAttribute("msg", "조회에 실패하였습니다.");
+        		model.addAttribute("msg", "회원 조회에 실패하였습니다.");
         		return "common/error";
         	}
 
@@ -60,7 +77,7 @@ public class BookController {
             model.addAttribute("msg", e.getMessage());
             return "common/error";
         }
-    }
+    }*/
 	
 	/* 헌혈자 인증 */
 	/*
@@ -173,14 +190,14 @@ public class BookController {
 		model.addAttribute("siList", siList);
 		model.addAttribute("gunGuList", gunGuList);
 		return "book/placeList";
-		
 	}
-	
-	/* 헌혈의집 목록 조회 */
+
+	/* 헌혈의집 목록 */
 	@RequestMapping(value="/book/placelistView.bld", method=RequestMethod.GET)
 	public String placeListView(
 			HttpSession session
 			, @ModelAttribute Search search
+			//, @RequestParam("pCity") String pCity
 			, Model model) {
 		if(search.getpCity() != null && search.getpCountry() != null) {
 			List<Place> pList = pService.selectPlaceList(search);
@@ -194,38 +211,6 @@ public class BookController {
 		
 	}
 	
-	/* 헌혈의집 목록 조회 */
-	/*@RequestMapping(value="/book/placelistView.bld", method=RequestMethod.GET)
-	public String placeListView(
-			HttpSession session
-			, @ModelAttribute Search search
-			, @RequestParam("pCity") String pCity
-			, Model model) {
-		List<String> siList = pService.selectSiList();
-		List<String> gunGuList = null;
-		
-		if(search.getpCity() != null && search.getpCountry() != null) {
-			if(pCity.equals("세종시")) {
-				model.addAttribute("pCity", pCity);
-				model.addAttribute("siList", siList);
-				model.addAttribute("gunGuList", gunGuList);
-				return "book/placeList";
-			} else {
-				gunGuList = pService.selectGunguList(search.getpCity());
-				model.addAttribute("pCity", pCity);
-				model.addAttribute("siList", siList);
-				model.addAttribute("gunGuList", gunGuList);
-				return "book/placeList";
-			}
-		}
-		List<Place> pList = pService.selectPlaceList(search);
-		model.addAttribute("pList", pList);
-		//List<String> gunGuList = pService.selectGunguList(search.getpCity());
-		model.addAttribute("siList", siList);
-		model.addAttribute("gunGuList", gunGuList);
-		return "book/placeList";
-		
-	}*/
 	
 	
 	
