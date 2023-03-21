@@ -24,7 +24,7 @@
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<link rel="stylesheet" href="/resources/css/main.css" />
+<link rel="stylesheet" href="/resources/css/main2.css" />
 <script defer src="/resources/js/youtube.js"></script>
 <script defer src="/resources/js/main.js"></script>
 
@@ -33,7 +33,7 @@
 	<jsp:include page="../layout/header.jsp"></jsp:include>
 	<main class="login-form">
 
-		<form action="/member/register.bld" method="post"
+		<form action="/member/register.bld" class="main-form" method="post"
 			style="margin-top: 200px">
 
 			<div class="int-area">

@@ -3,12 +3,20 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+.main-form{
+	padding:50px;
+	background-color: #fff;
+	
+	
+}
 body{
 	display:flex;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
-	background-color: pink;
+	background-image:url('../../images/out.jpg');
+	background-repeat : no-repeat;	 
+	background-size : 100% 100%; 
 	
 }
 body::before{
@@ -35,9 +43,9 @@ body::before{
 	padding: 20px 10px 10px;
 	background-color: transparent;
 	border: none;
-	border-bottom: 1px solid #999;
+	border-bottom: 1px solid #000000;
 	font-size: 15px;
-	color: #fff;
+	color: #000000;
 	outline: none;
 }
 .int-area label {
@@ -45,7 +53,7 @@ body::before{
 	left: 10px;
 	top: 15px;
 	font-size: 15px;
-	color: #999;
+	color: #000000;
 	transition: top .5s ease;
 }
 .int-area input:focus +label,
@@ -91,8 +99,8 @@ body::before{
 	justify-content: center;
 }
 .bloodtype{
-	color: #999;
+	color: #000000;
 }
 .bloodtype .bldtype {
-    color: #999;
+    color: #000000;
 }

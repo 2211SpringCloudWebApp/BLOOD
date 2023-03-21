@@ -22,17 +22,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <link rel="stylesheet" href="/resources/css/main.css" />
+  <link rel="stylesheet" href="/resources/css/main2.css" />
   <script defer src="/resources/js/youtube.js"></script>
   <script defer src="/resources/js/main.js"></script>
   <script type="jquery-3.4.1.js"></script>
 </head>
 <body>
 	<jsp:include page="../layout/header.jsp"></jsp:include>
-	
 	<c:if test= "${loginUser eq null }">
+	
 	<section class="login-form">
 		<form action="/member/login.bld" method="post" class="form" >
+				
 				<div class="int-area">
 					<input type="text" name="member-id" id="id"
 					autocomplete="off" required>
@@ -51,6 +52,7 @@
 						<li>아이디를 잊으셨나요?<a href="findId.bld">아이디 찾기</a></li>
 						<li>비밀번호를 잊으셨나요?<a href="findPw.bld">비밀번호 찾기</a></li>
 					</ul>
+					
 	</section>
 	</c:if>
 	<c:if test="${loginUser ne null }">
@@ -58,6 +60,7 @@
 		<a href="/member/mypage.bld">마이페이지</a>
 		<a href="/member/logout.bld">로그아웃</a>
 		</c:if>
+		
 		
 </body>
 </html>

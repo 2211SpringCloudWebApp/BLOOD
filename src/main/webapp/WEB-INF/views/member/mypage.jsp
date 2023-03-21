@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <link rel="stylesheet" href="/resources/css/main.css" />
+  <link rel="stylesheet" href="/resources/css/main2.css" />
   <script defer src="/resources/js/youtube.js"></script>
   <script defer src="/resources/js/main.js"></script>
 
@@ -30,7 +30,7 @@
 <body>
 	<jsp:include page="../layout/header.jsp" ></jsp:include>
 	<section class="login-form">
-	<form action="/member/modify.bld" method="post" style="margin-top:200px">
+	<form action="/member/modify.bld" class="main-form" method="post" style="margin-top:200px">
 		<div class="int-area">
 		<input type= "text" id="id"	name="memberId" value="${member.memberId }" readonly>
 		<label for="id">아이디</label>

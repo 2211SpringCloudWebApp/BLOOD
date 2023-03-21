@@ -4,11 +4,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>탈퇴</title>
+  <link rel="stylesheet" href="../../../resources/css/member/outcheck.css">
 </head>
 <body>
-	<form action="/member/out.bld" method="post" style="margin-top:200px">
-		PW : <input type="password" name="member-pw"><input type="submit" value="회원탈퇴"><br>
+	<form action="/member/out.bld" method="post" style="margin-top:250px">
+		<div class= "int-area">
+		<h1>${member.memberId }</h1>
+		PW : <input type="password" name="member-pw" id="pw" >
+		</div>
+		<div class="btn-area">
+		<button type="submit" onclick="location.href='/'">탈퇴</button>
+		</div>
 	</form>
 </body>
 </html>

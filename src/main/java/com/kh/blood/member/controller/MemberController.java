@@ -136,7 +136,9 @@ public class MemberController {
 			} 
 		}
 		@RequestMapping(value="/member/out.bld", method=RequestMethod.GET)
-		public String memberRemove() {
+		public String memberRemove(Model model, HttpSession session) {
+			Member mOne = (Member)session.getAttribute("loginUser");
+			model.addAttribute("member", mOne);
 			return "member/outcheck";
 		}
 		//회원탈퇴

@@ -3,12 +3,19 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+.main-form{
+	padding:50px;
+	background-color: #fff;
+}
+
 body{
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	height: 50%;
-	background-color: pink;
+	height: 100%;
+	 background-image:url('../../images/mypage back.jpg');
+	background-repeat : no-repeat;	 
+	background-size : 100% 100%; 
 	
 }
 body::before{
@@ -32,23 +39,19 @@ body::before{
 	padding: 20px 10px 10px;
 	background-color: transparent;
 	border: none;
-	border-bottom: 1px solid #999;
+	border-bottom: 1px solid #000000;
 	font-size: 15px;
-	color: #fff;
+	color: #000000;
 	outline: none;
 }
 .int-area label {
-	position: absolute; 
+	 
 	left: 10px;
-	top: 15px;
+	top: 20px;
 	font-size: 15px;
-	color: #999;
-	transition: top .5s ease;
-}
-.int-area input:focus +label,
-.int-area input:valid +label {
-	top: 0;
-}
+	color: #800040;
+	}
+
 .btn-area {
 	margin-top: 30px;
 	display: flex;
@@ -86,8 +89,8 @@ body::before{
 	justify-content: center;
 }
 .bloodtype{
-	color: #999;
+	color: #000000;
 }
 .bloodtype .bldtype {
-    color: #999;
+    color: #000000;
 }
