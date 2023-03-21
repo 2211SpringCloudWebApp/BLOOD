@@ -52,8 +52,8 @@
 		          <div class="munjin2__2">
 		            <div class="munjin2__2__top">주민등록번호</div>
 		            <div class="munjin2__2__bottom">
-		              <input type="text" id="id_num1" name="idNum1" placeholder="주민등록번호(앞)" onchange="validateResidentNumber1()">
-		              <input type="text" id="id_num2" name="idNum2" placeholder="주민등록번호(뒤)" onchange="validateResidentNumber2()">
+		              <input type="text" id="kn1" name="member-kn" placeholder="주민등록번호(앞)" onchange="validateResidentNumber1()">
+		              <input type="text" id="kn2" name="member-kn" placeholder="주민등록번호(뒤)" onchange="validateResidentNumber2()">
 		            </div>
 		          </div>
 		        </div>
@@ -95,6 +95,7 @@
 		
 		<script>
 		
+		  // 이름 유효성 검사
 		  function validateName() {
 		    var name = document.getElementById("user_name");
 		    var nameRegExp = /[ㄱ-힣]+$/;
@@ -106,29 +107,34 @@
 		    }
 		    return true;
 		  }
+		  
+		  
+		  // 주민번호 유효성검사
 		  function validateResidentNumber1() {
-		    var kn1 = document.getElementById("id_num1");
+		    var kn1 = document.getElementById("kn1");
 		    var id1RegExp = /^\d{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/g;
 		
-		    /* if (!id1RegExp.test(kn1.value)) {
+		    if (!id1RegExp.test(kn1.value)) {
 		      alert("주민등록번호가 유효하지 않습니다.");
 		      kn1.value="";
 		      return false;
-		    } */
+		    }
 		    return true;
 		  }
 		  function validateResidentNumber2() {
-		    var kn2 = document.getElementById("id_num2");
-		    var id2RegExp = /^\d{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/g;
+		    var kn2 = document.getElementById("kn2");
+		    var id2RegExp = /[1-4][0-9]{6}$/g;
 		
-		    /* if (!id2RegExp.test(kn2.value)) {
+		    if (!id2RegExp.test(kn2.value)) {
 		      alert("주민등록번호가 유효하지 않습니다.");
 		      kn2.value="";
 		      return false;
-		    } */
+		    }
 		    return true;
 		  }
 		
+		  
+		  
 		  // 제출 유효성 검사
 		  function check(){
 		    var valid = true;

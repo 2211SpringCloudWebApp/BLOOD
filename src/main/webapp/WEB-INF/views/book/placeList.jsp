@@ -10,8 +10,6 @@
 		
 	</head>
 	<body>
-		<!-- header -->
-		<%-- <jsp:include page="../layout/header.jsp"></jsp:include> --%>
 		
 		<!-- main -->
 		<main>
@@ -51,7 +49,7 @@
 								<th>키워드 검색</th>
 								<td class="al">
 									<label for="seachKeyword"></label>
-							        <input type="text" name="pHome" id="seachKeyword" value="${place.pHome }" class="pLocal" placeholder="검색어를 입력해주세요">
+							        <input type="text" name="pHome" id="seachKeyword" value="${place.pHome }" class="pLocal" placeholder="헌혈의집을 입력해주세요">
 							        <input type="submit" class="pLocal" value="검색" >
 								</td>
 							</tr>
@@ -93,13 +91,12 @@
 					</tbody>
 				</table>
 			</div>
+			
 
 		</main>
 		
 		
 	
-		<!-- footer -->
-		<%-- <jsp:include page="../layout/footer.jsp"></jsp:include> --%>
 		
 		
 		<script>
@@ -123,6 +120,7 @@
 			if (selectedCity) {
 			    document.querySelector("#pCity").value = selectedCity;
 			}
+			//var selectedCountry = loaclStorage.set
 			
 			
 			/* 선택 클릭 시 해당 열에 해당하는 pNo를 booking.jsp로 전달 */
@@ -137,7 +135,6 @@
 				/* alert('선택함'); */
 
 			}
-
 			
 		</script>	
 	</body>
