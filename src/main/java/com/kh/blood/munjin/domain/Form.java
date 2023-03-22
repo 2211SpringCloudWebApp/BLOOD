@@ -5,6 +5,7 @@ public class Form
 {
     private List<String> rosCondition;
     private List<String> rosDay;
+    private List<String> rosWeek;
     private List<String> rosMonth;
     private List<String> rosYear;
     private List<String> rosEE;
@@ -12,16 +13,17 @@ public class Form
     private List<String> rosZrug;
     private List<String> rosMosquito;
     private List<String> rosVCJD;
-    private List<String> rosAgree;
 
     public Form()
     {
+        
     }
 
-    public Form(List<String> rosCondition, List<String> rosDay, List<String> rosMonth, List<String> rosYear, List<String> rosEE, List<String> rosDrug, List<String> rosZrug, List<String> rosMosquito, List<String> rosVCJD, List<String> rosAgree)
+    public Form(List<String> rosCondition, List<String> rosDay, List<String> rosWeek, List<String> rosMonth, List<String> rosYear, List<String> rosEE, List<String> rosDrug, List<String> rosZrug, List<String> rosMosquito, List<String> rosVCJD)
     {
         this.rosCondition = rosCondition;
         this.rosDay = rosDay;
+        this.rosWeek = rosWeek;
         this.rosMonth = rosMonth;
         this.rosYear = rosYear;
         this.rosEE = rosEE;
@@ -29,7 +31,6 @@ public class Form
         this.rosZrug = rosZrug;
         this.rosMosquito = rosMosquito;
         this.rosVCJD = rosVCJD;
-        this.rosAgree = rosAgree;
     }
 
     public List<String> getRosCondition()
@@ -50,6 +51,16 @@ public class Form
     public void setRosDay(List<String> rosDay)
     {
         this.rosDay = rosDay;
+    }
+
+    public List<String> getRosWeek()
+    {
+        return rosWeek;
+    }
+
+    public void setRosWeek(List<String> rosWeek)
+    {
+        this.rosWeek = rosWeek;
     }
 
     public List<String> getRosMonth()
@@ -122,22 +133,13 @@ public class Form
         this.rosVCJD = rosVCJD;
     }
 
-    public List<String> getRosAgree()
-    {
-        return rosAgree;
-    }
-
-    public void setRosAgree(List<String> rosAgree)
-    {
-        this.rosAgree = rosAgree;
-    }
-
     @Override
     public String toString()
     {
         return "Form{" +
                 "rosCondition=" + rosCondition +
                 ", rosDay=" + rosDay +
+                ", rosWeek=" + rosWeek +
                 ", rosMonth=" + rosMonth +
                 ", rosYear=" + rosYear +
                 ", rosEE=" + rosEE +
@@ -145,7 +147,6 @@ public class Form
                 ", rosZrug=" + rosZrug +
                 ", rosMosquito=" + rosMosquito +
                 ", rosVCJD=" + rosVCJD +
-                ", rosAgree=" + rosAgree +
                 '}';
     }
 }

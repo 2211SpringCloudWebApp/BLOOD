@@ -7,6 +7,5 @@ import org.apache.ibatis.session.SqlSession;
 public interface MunjinStore
 {
     int insertMunjinMember(SqlSession sqlSession, MunjinMember munjinMember);
-
-    String selectionsForm(SqlSession session, Form form);
+    void insertMunjinForm(SqlSession session, Form form);
 }

@@ -2,9 +2,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,20 +23,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <link rel="stylesheet" href="../../../resources/css/munjin/intro.css" />
 </head>
-
 <body>
-
-<!-- HEADER                                -->
 <jsp:include page="../layout/header.jsp"></jsp:include>
-
-<!--     MAIN                                                       -->
 <main>
   <section class="munjin">
     <div class="inner">
       <div class="munjin1">
         <img src="../../../resources/images/munjin_bike.png" alt="munjin_bike">
       </div>
-
       <form method="post" action="/munjin/intro.bld" >
         <div class="munjin2">
           <div class="munjin2__1">
@@ -60,16 +52,8 @@
         </div>
       </form>
     </div>
-
   </section>
 </main>
-
-
-
-
-
-<!--     FOOTER                                               -->
-
 <div class="wavefooter">
   <div>
     <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none">
@@ -85,14 +69,11 @@
     </svg>
   </div>
 </div>
-
 <div class="content flex"></div>
 <script>
-
   function validateName() {
     var name = document.getElementById("user_name");
     var nameRegExp = /[ㄱ-힣]+$/;
-
     if (!nameRegExp.test(name.value)) {
       alert("이름은 한글로만 입력해주세요");
       name.value="";
@@ -122,8 +103,6 @@
     }
     return true;
   }
-
-  // 제출 유효성 검사
   function check(){
     var valid = true;
     valid = valid && validateName();
@@ -131,7 +110,6 @@
     valid = valid && validateResidentNumber2();
     return valid;
   }
-
 </script>
 </body>
 

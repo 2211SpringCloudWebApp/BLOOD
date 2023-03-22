@@ -24,10 +24,9 @@ public class MunjinServiceImpl implements MunjinService
     }
 
     @Override
-    public String selections(Form form)
+    public void insertMunjinForm(Form form)
     {
-
-        munjinStore.selectionsForm(session, form);
-        return null;
+        munjinStore.insertMunjinForm(session, form);
     }
+
 }

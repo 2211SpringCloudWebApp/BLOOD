@@ -13,14 +13,13 @@ public class MunjinStoreImpl implements MunjinStore
     @Override
     public int insertMunjinMember(SqlSession session, MunjinMember munjinMember)
     {
-        int result = session.insert("MunjinMapper.insertMunjinMember", munjinMember);
-        return result;
+        return session.insert("MunjinMapper.insertMunjinMember", munjinMember);
     }
 
     @Override
-    public String selectionsForm(SqlSession session, Form form)
+    public void insertMunjinForm(SqlSession session, Form form)
     {
         session.insert("MunjinMapper.insertMunjinForm", form);
-        return "선택사항 넣어봄";
     }
+
 }
