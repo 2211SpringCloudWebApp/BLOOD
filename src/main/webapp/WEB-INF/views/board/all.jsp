@@ -21,7 +21,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-		<link rel="stylesheet" href="/resources/css/main.css" />
+		<link rel="stylesheet" href="/resources/css/main2.css" />
 		<script defer src="/resources/js/youtube.js"></script>
 		<script defer src="/resources/js/main.js"></script>
 		<style>
@@ -39,11 +39,11 @@
 			<section>
 				<div style="display : flex; justify-content: center;">
 					<div class="main_image">
-						<a href="/board/faq.bld"><img src="../../../resources/images/칠판.png"/><h1 class="main_image_text" style="font-size:50px">dddd</h1></a>
+						<a href="/board/faq.bld"><img src="../../../resources/images/칠판.png"/><h1 class="main_image_text" style="font-size:50px">FAQ</h1></a>
 					</div>
 					
 					<div class="main_image">
-						<a href="/notice/free.bld"><img src="../../../resources/images/칠판.png"/><h1 class="main_image_text" style="font-size:50px">dddd</h1></a>
+						<a href="/notice/free.bld"><img src="../../../resources/images/칠판.png"/><h1 class="main_image_text" style="font-size:50px">자유게시판</h1></a>
 					</div>				
 				</div>
 			</section>

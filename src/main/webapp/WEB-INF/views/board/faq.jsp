@@ -100,15 +100,17 @@
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<link rel="stylesheet" href="../../../resources/css/main.css" />
+<link rel="stylesheet" href="../../../resources/css/main2.css" />
 <script defer src="../../../resources/js/youtube.js"></script>
-<script defer src="../../../resources/js/main.js"></script>
+<script defer src="../../../resources/js/main2.js"></script>
 
 
 </head>
 <jsp:include page="../layout/header.jsp"></jsp:include>
-<body style="margin-top: 120px;" cz-shortcut-listen="true">
 
+
+
+<body style="margin-top : 120px;" cz-shortcut-listen="true">
 
 	<div id="kakaoIndex">
 		<!-- 웹접근성용 바로가기 링크 모음 -->
@@ -132,8 +134,8 @@
 		<option value="all">전체</option>
 		<option value="title">제목</option>
 		<option value="content">내용</option>
-	</select> <input type="text" name="searchValue" placeholder="검색어를 입력하세요">
-	<input type="submit" value="검색">
+	</select> <input type="text" id="id" name="searchValue" placeholder="검색어를 입력하세요">
+	<input type="submit" value="검색" onclick="return check()">
 </form>
 <c:if test="${loginUser.memberType eq 0 && loginUser ne null}">
 	<button onclick="location.href='/board/faqWriteView.bld'">글쓰기</button>
@@ -173,6 +175,26 @@
 		</div>
 	</div>
 
+			<!-- 유효성 검사  -->
+			<script>
+				
+				function validateId() {
+					var id = document.getElementById("id");
+
+					if (!id.value) {
+						alert("내용을 입력해주세요");
+						id.value = "";
+						return false;
+					}
+					return true;
+				}
+				
+				function check(){
+					var valid = true;
+					valid = valid && validateId();
+					return valid;
+				}
+			</script>
 
 
 </body>

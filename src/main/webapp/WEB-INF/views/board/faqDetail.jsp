@@ -84,14 +84,14 @@
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<link rel="stylesheet" href="../../../resources/css/main.css" />
+<link rel="stylesheet" href="../../../resources/css/main2.css" />
 <script defer src="../../../resources/js/youtube.js"></script>
-<script defer src="../../../resources/js/main.js"></script>
+<script defer src="../../../resources/js/main2.js"></script>
 
 
 </head>
 <jsp:include page="../layout/header.jsp"></jsp:include>
-<body style="margin-top: 120px;" cz-shortcut-listen="true">
+<body style="margin-top:120px;" cz-shortcut-listen="true">
 
 
 <div id="kakaoContent" role="main">
