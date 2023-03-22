@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>찾기 성공</title>
+<title>아이디 찾기</title>
 </head>
 <body>
 	<h1>아이디 찾기</h1>

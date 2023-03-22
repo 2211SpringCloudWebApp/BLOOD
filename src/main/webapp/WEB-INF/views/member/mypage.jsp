@@ -36,7 +36,7 @@
 		<label for="id">아이디</label>
 		</div>
 		<div class="int-area">
-		<input type= "password" id="pw"	name="memberPw" 	value="">
+		<input type= "password" id="pw"	name="memberPw" onchange="validatePw()">
 		<label for="id">비밀번호</label>
 		</div>
 		<div class="int-area">
@@ -56,7 +56,7 @@
 		<label for="id">주민번호</label>
 		</div>
 		<div class="int-area">
-		<input type="text" 	id="email"		name="memberEmail" 	value="${member.memberEmail }"	>
+		<input type="text" 	id="email"		name="memberEmail" 	value="${member.memberEmail }"	onchange="validateEmail()">
 		<label for="id">이메일</label>
 		</div>
 		<div class="int-area">
@@ -87,6 +87,30 @@
 			}
 		}).open();
 	}
+	//비밀번호 유효성 6글자이상 한글 사용못하게
+	function validatePw() {
+			var pw = document.getElementById("pw");
+			var regExp = /^[a-zA-Z0-9!@#$%^&*()_+|{}[\]:'"<>,.?/`~\\-]+$/;  // 비밀번호 정규식
+			
+			if (pw.value.length < 6) {
+	 			alert("비밀번호는 6글자 이상 입력해주세요.");
+	 			pw.value = "";
+			return false;
+				} 
+				return true;
+	}
+				//email 유효성
+				function validateEmail() {
+	  				var email = document.getElementById("email");
+	  				var regExp = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+$/;  // 이메일 주소 정규식
+	  
+	  				if (!regExp.test(email.value)) {
+	    			alert("유효한 이메일 주소를 입력해주세요.");
+	    			email.value = "";
+	    					return false;
+	  					}
+	  						return true;
+					}	
 	//탈퇴 
 	function removeMember() {
 		location.href='/member/out.bld';
