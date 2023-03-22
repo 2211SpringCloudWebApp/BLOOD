@@ -14,16 +14,23 @@
         flex-wrap: wrap;
     }
 
+
+
     /* 	왼쪽 */
  html {
-     background: #000;
+     /*background: #000;*/
      box-sizing: border-box;
      font-family: 'Vollkorn', sans-serif;
      font-size: 1rem;
      color: #000;
  }
     figure {
-        background: #eee;
+        /*background: #eee; 왼쪽 배경 */
+        background: linear-gradient(-45deg, #fffbf4, #ffffff, #dfdfdf, #ffebdb);
+        background-size: 400% 400%;
+        height: 100vh;
+
+
         width: calc(70% + 1px);
         height: 100vh;
         margin: 0 auto 10vh 0;

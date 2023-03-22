@@ -1,0 +1,96 @@
+/*@import "compass/css3";*/
+main{
+    margin-top:200px;
+    margin-bottom:80px;
+}
+.container{
+    height: 100vh;
+    margin: 0;
+}
+.halvsies.container {
+    height: 100vh;
+    margin: 0;
+}
+
+.halvsies {
+    min-height: 100%;
+    height: inherit;
+    overflow: hidden;
+}
+
+.halvsies h1 {
+    font-family: Montserrat;
+
+    text-transform: uppercase;
+    font-size: 4vw;
+    display: inline-block;
+    vertical-align: middle;
+    transition: color 400ms;
+}
+
+.halvsies article {
+    float: left;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+
+.halvsies article:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+
+}
+
+.halvsies article:after {
+    transition: width 400ms;
+    min-height: 205%;
+}
+
+.halvsies article:hover h1 {
+    color: #fefefe;
+}
+
+.halvsies article:hover:after {
+    width: 150%;
+}
+
+.lhalf:after {
+    content: "";
+    position: absolute;
+    top: -108%;
+    right: 0;
+    bottom: -10%;
+    left: -45%;
+    z-index: -1;
+    transform: rotate(30deg);
+    background: #ff5500;
+    width: 0;
+}
+
+.rhalf:after {
+    content: "";
+    position: absolute;
+    top: -30%;
+    right: -45%;
+    bottom: -105%;
+    z-index: -1;
+    transform: rotate(30deg);
+    background: #ff5500;
+    width: 0;
+}
+
+
+.fake_html{
+    display : flex;
+    justify-content: center;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+

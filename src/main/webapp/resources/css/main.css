@@ -330,12 +330,128 @@ main {
 .intro_photo {
   margin-top: 120px;
   background-color: #eaff08;
-  display: flex;
+  /*display: flex;*/
 }
 
 .intro_photo img {
   width: 100%;
 }
+
+/* ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 메인페이지 텍스트 효과 ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐    */
+
+
+/*@font-face {*/
+/*  font-family: "Reforma 1918";*/
+/*}*/
+/*@font-face {*/
+/*  font-family: "Poppins";*/
+/*}*/
+/*html {*/
+/*  font-size: 6.9444444444vw;*/
+/*}*/
+
+/*:root {*/
+/*  --main-font: "Reforma 1918", sans-serif;*/
+/*  --sub-font: "Poppins", sans-serif;*/
+/*  --color-black: #000;*/
+/*  --color-white: #fff;*/
+/*  --font-size-h1: 1.41rem;*/
+/*  --line-height-h1: 1.26rem;*/
+/*}*/
+
+/*.title-h1 {*/
+/*  font-size: var(--font-size-h1);*/
+/*  line-height: var(--line-height-h1);*/
+/*  font-weight: 700;*/
+/*  color: var(--color-white);*/
+/*  font-family: var(--main-font);*/
+/*}*/
+
+/** {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  -webkit-box-sizing: border-box;*/
+/*  box-sizing: border-box;*/
+/*}*/
+
+/*body {*/
+/*  background: var(--color-black);*/
+/*  position: relative;*/
+
+/*}*/
+
+/*.container {*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  margin: 0 auto;*/
+/*  padding: 0 0.32rem;*/
+
+/*}*/
+
+/*.hero*/
+/*{*/
+/*  width: 100vw;*/
+/*  height: 100vh;*/
+/*  position: absolute;*/
+/*  overflow: hidden;*/
+
+/*.container {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*}*/
+
+/*.hero-video {*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  width: 100%;*/
+/*  z-index: -1;*/
+/*}*/
+
+/*.title-block {*/
+/*  padding-left: 1.48rem;*/
+/*  position: relative;*/
+/*.title-h1 {*/
+/*  text-transform: uppercase;*/
+/*span {*/
+/*  -webkit-transform: translate3d(0, 0, 0);*/
+/*  transform: translate3d(0, 0, 0);*/
+/*}*/
+/*u {*/
+/*  text-decoration: none;*/
+/*  overflow-x: hidden;*/
+/*  overflow-y: hidden;*/
+/*}*/
+/*.title-row {*/
+/*  display: flex;*/
+/*}*/
+/*.title-charts-cont {*/
+/*  display: flex;*/
+/*  overflow: hidden;*/
+/*}*/
+/*.title-row-2 {*/
+/*  padding-left: 0.83rem;*/
+/*}*/
+/*#ry {*/
+/*  margin-right: 0.37rem;*/
+/*}*/
+/*#tells {*/
+/*  margin-right: 0.15rem;*/
+/*}*/
+/*#a {*/
+/*  margin-right: 0.15rem;*/
+/*}*/
+/*}*/
+/*}*/
+/*}*/
+
+
+
+
+/*⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 메인페이지 텍스트 효과 ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐*/
+
+
+
 
 /*     REWARDS                                                           */
 .iconmenu {

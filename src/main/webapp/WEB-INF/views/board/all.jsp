@@ -1,64 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="ko">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
-		<title>Insert title here</title>
-		
-	  <meta property="og:type" content="website" />
-	  <meta property="og:site_name" content="heartbeat" />
-	  <meta property="og:title" content="Heart Beat" />
-	  <meta property="og:description" content="의사가 아니어도 생명을 구할 수 있는 방법" />
-	  <meta property="og:description" content="/resources/images/bg.png">		
-		
-		<link rel="icon" href="/resources/images/favicon.png" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" />
-		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-		<link rel="stylesheet" href="/resources/css/main2.css" />
-		<script defer src="/resources/js/youtube.js"></script>
-		<script defer src="/resources/js/main.js"></script>
-		<style>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../../resources/css/all.css">
+</head>
+<body>
+<div class="fake_html"></div>
+<div class="container">
+	<div class="halvsies">
+		<article class="lhalf">
+			<a href="/board/faq.bld"><h1>FAQ</h1></a>
+		</article>
+		<article class="rhalf">
+			<a href="/notice/free.bld"><h1 style="text-decoration: none;">자유게시판</h1></a>
+		</article>
+	</div>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</body>
 
-		
-		</style>
-	</head>
-	<body>
-		<jsp:include page="../layout/header.jsp"></jsp:include>
-		
-		<!-- 메인 스타트 -->
-
-			
-		<main style="margin-top:200px; margin-bottom:80px;">
-			<section>
-				<div style="display : flex; justify-content: center;">
-					<div class="main_image">
-						<a href="/board/faq.bld"><img src="../../../resources/images/칠판.png"/><h1 class="main_image_text" style="font-size:50px">FAQ</h1></a>
-					</div>
-					
-					<div class="main_image">
-						<a href="/notice/free.bld"><img src="../../../resources/images/칠판.png"/><h1 class="main_image_text" style="font-size:50px">자유게시판</h1></a>
-					</div>				
-				</div>
-			</section>
-		</main>
-
-		
-		
-		<jsp:include page="../layout/footer.jsp"></jsp:include>
-		
-		<script>
-			
-		//		window.onload=function() {
-		//			alert("글작성 ok");
-		//		}
-			
-		</script>
-	</body>
 </html>

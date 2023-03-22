@@ -14,11 +14,6 @@ public class Form
     private List<String> rosMosquito;
     private List<String> rosVCJD;
 
-    public Form()
-    {
-        
-    }
-
     public Form(List<String> rosCondition, List<String> rosDay, List<String> rosWeek, List<String> rosMonth, List<String> rosYear, List<String> rosEE, List<String> rosDrug, List<String> rosZrug, List<String> rosMosquito, List<String> rosVCJD)
     {
         this.rosCondition = rosCondition;
@@ -31,6 +26,10 @@ public class Form
         this.rosZrug = rosZrug;
         this.rosMosquito = rosMosquito;
         this.rosVCJD = rosVCJD;
+    }
+
+    public Form()
+    {
     }
 
     public List<String> getRosCondition()
