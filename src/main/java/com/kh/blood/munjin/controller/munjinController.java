@@ -1,8 +1,5 @@
 package com.kh.blood.munjin.controller;
 
-import com.kh.blood.munjin.domain.Form;
-import com.kh.blood.munjin.domain.MunjinMember;
-import com.kh.blood.munjin.service.MunjinService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
+import com.kh.blood.munjin.domain.MunjinMember;
+import com.kh.blood.munjin.service.MunjinService;
 
 @Controller
 public class munjinController
@@ -66,9 +64,8 @@ public class munjinController
     }
 
     @PostMapping(value="/munjin/form.bld")
-    public String registerMunjinData(@ModelAttribute Form form)
+    public String registerMunjinData(Model model)
     {
-        munjinService.insertMunjinForm(form);
         return "redirect:/munjin/thanks.bld";
     }
 

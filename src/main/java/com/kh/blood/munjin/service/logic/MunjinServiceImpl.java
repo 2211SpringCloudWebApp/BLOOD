@@ -23,10 +23,10 @@ public class MunjinServiceImpl implements MunjinService
         return result;
     }
 
-    @Override
-    public void insertMunjinForm(Form form)
-    {
-        munjinStore.insertMunjinForm(session, form);
-    }
+	@Override
+	public void insertMunjinForm(Form form) 
+	{
+		// TODO Auto-generated method stub
+	}
 
 }

@@ -3,31 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="MunjinMapper">
-  	<resultMap type="MunjinMember" id="munjinMemberResultMap">
-		<id property="rosNo" column="ROS_NO"/>
-		<result property="munjinName" column="MUNJIN_NAME"/>
-  		<result property="munjinKn" column="MUNJIN_KN"/>
-  		<result property="rosDate" column="ROS_DATE"/>
-  	</resultMap>
-	<resultMap type="MunjinMapper" id="munjinFormResultMap">
-	<result property="rosCondition" column="ROS_CONDITION" />
-	<result property="rosDay" column="ROS_DAY" />
-	<result property="rosWeek" column="ROS_WEEK" />
-	<result property="rosMonth" column="ROS_MONTH" />
-	<result property="rosYear" column="ROS_YEAR" />
-	<result property="rosEE" column="ROS_EE" />
-	<result property="rosDrug" column="ROS_DRUG" />
-	<result property="rosZrug" column="ROS_ZRUG" />
-	<result property="rosMosquito" column="ROS_MOSQUITO" />
-	<result property="rosVCJD" column="ROS_VCJD" />
-	</resultMap>
-
 	<insert id="insertMunjinMember">
   		INSERT INTO ROS_MEMBER_TBL VALUES(SEQ_ROS_NO.NEXTVAL, #{munjinName}, #{munjinKn},DEFAULT)
   	</insert>
 	<insert id="insertMunjinForm">
-		INSERT INTO ROS_RESULT_TBL VALUES(#{rosCondition},#{rosDay},#{rosWeek},#{rosMonth},#{rosYear},#{rosEE},#{rosDrug},#{rosZrug},#{rosMosquito},#{rosVCJD})
+		INSERT INTO ROS_RESULT_TBL VALUES(SEQ_ROS_RESULT_NO.NEXTVAL, #{rosCondition},#{rosDay},#{rosWeek},#{rosMonth},#{rosYear},#{rosEE},#{rosDrug},#{rosZrug},#{rosMosquito},#{rosVCJD})
 	</insert>
-
-
   </mapper>

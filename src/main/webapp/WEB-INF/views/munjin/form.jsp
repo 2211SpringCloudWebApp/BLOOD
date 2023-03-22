@@ -131,7 +131,7 @@
                     <div class="ros_no">
                         <div>해당사항 없음</div>
                         <div>
-                            <input type="checkbox" name="rosMonth" value="N4" />
+                            <input type="checkbox" name="rosMonth" value="N4" checked/>
                         </div>
                     </div>
                     <div class="top_ros_yes">
