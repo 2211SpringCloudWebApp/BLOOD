@@ -54,7 +54,7 @@
 		            <div class="munjin2__2__top">주민등록번호</div>
 		            <div class="munjin2__2__bottom">
 		              <input type="text" id="kn1" name="member-kn-1" placeholder="주민등록번호(앞)" value="" onchange="validateResidentNumber1()">
-		              <input type="text" id="kn2" name="member-kn-2" placeholder="주민등록번호(뒤)" value="" onchange="validateResidentNumber2()">
+		              <input type="password" id="kn2" name="member-kn-2" placeholder="주민등록번호(뒤)" value="" onchange="validateResidentNumber2()">
 		            </div>
 		          </div>
 		        </div>

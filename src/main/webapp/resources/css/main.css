@@ -51,7 +51,8 @@ header {
 /*   position: fixed; */
   top: 0;
   z-index: 11111;
-  background-color:#eceae4;
+  /* background-color:#eceae4; */
+  background-color: #f2efee;
   border-bottom: 1px solid #c8c8c8;
 }
 

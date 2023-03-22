@@ -20,6 +20,9 @@ body {
 a {
   text-decoration: none;
 }
+ul {
+  list-style: none;
+}
 
 img {
   display: block;
@@ -51,7 +54,7 @@ header {
   position: fixed; 
   top: 0;
   z-index: 9999;
-  background-color:#eceae4;
+  background-color:#f2efee;
   border-bottom: 1px solid #c8c8c8;
 }
 

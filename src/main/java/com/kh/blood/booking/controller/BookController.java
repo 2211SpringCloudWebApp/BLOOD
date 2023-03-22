@@ -58,23 +58,25 @@ public class BookController {
 			// 콘솔확인용~~
 			System.out.println(memberKn1 + "," + memberKn2);
 			
-			if (memberId == null) {
-				// 로그인 알림 로직
-			} else {
-				Member mParam = new Member();
-				mParam.setMemberName(memberName);
-				mParam.setMemberKn(memberKn1 + "," + memberKn2);
-				
-				Member member = bService.selectBookCertify(mParam);
-				if (member != null) {
+			
+			Member mParam = new Member();
+			mParam.setMemberName(memberName);
+			mParam.setMemberKn(memberKn1 + "," + memberKn2);
+			
+			Member member = bService.selectBookCertify(mParam);
+			if (member != null) {
+				if (member.getMemberId().equals(memberId)) {
 					model.addAttribute("loginUser", member);
-					return "book/booking";
+					return "book/booking";					
 				} else {
 					model.addAttribute("msg", "헌혈자인증에 실패하였습니다. 이름과 주민등록번호를 확인해주세요");
 					return "common/error";
 				}
+			} else {
+				model.addAttribute("msg", "헌혈자인증에 실패하였습니다. 이름과 주민등록번호를 확인해주세요");
+				return "common/error";
 			}
-			return null;
+			
 			
 			
 		} catch (Exception e) {
