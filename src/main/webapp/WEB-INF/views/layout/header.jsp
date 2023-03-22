@@ -42,7 +42,7 @@
 	        <ul class="inner">
 	          <li>
 	            <ul>
-	              <li><a href="/book/reserveView.bld">헌혈예약</a></li>
+	              <li><a href="/book/identityView.bld">헌혈예약</a></li>
 	              <li><a href="/book/reservelistView.bld">헌혈내역조회</a></li>
 	            </ul>
 	          </li>

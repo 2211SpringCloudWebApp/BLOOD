@@ -14,8 +14,8 @@ public class BookStoreLogic implements BookStore{
 
 	/* 헌혈자 인증 StoreLogic */
 	@Override
-	public Member selectBookCertify(SqlSession session, String memberId) {
-		Member member = session.selectOne("BookMapper.selectBookCertify", memberId);
+	public Member selectBookCertify(SqlSession session, Member mParam) {
+		Member member = session.selectOne("BookMapper.selectBookCertify", mParam);
 		return member;
 	}	
 	

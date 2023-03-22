@@ -21,8 +21,8 @@ public class BookServiceImpl implements BookService{
 	
 	/* 헌혈자 인증 ServiceImpl */
 	@Override
-	public Member selectBookCertify(String memberId) {
-		Member member = bStore.selectBookCertify(session, memberId);
+	public Member selectBookCertify(Member mParam) {
+		Member member = bStore.selectBookCertify(session, mParam);
 		return member;
 	}
 
@@ -42,10 +42,6 @@ public class BookServiceImpl implements BookService{
 	}
 
 
-
-
-
-	
 	
 
 }

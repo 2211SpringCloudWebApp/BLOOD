@@ -48,7 +48,8 @@
 	
 	<!-- 헌혈자 인증 -->
 	<select id="selectBookCertify" resultMap="memberResultMap">
-		SELECT MEMBER_ID FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberName} AND MEMBER_KN = #{memberKn}
+		SELECT * FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberName} AND MEMBER_KN = #{memberKn}
+		<!-- SELECT MEMBER_NAME, MEMBER_KN FROM MEMBER_TBL WHERE MEMBER_ID = #{memberId} -->
 	</select>
 	
 	<!-- 헌혈예약 등록 -->
