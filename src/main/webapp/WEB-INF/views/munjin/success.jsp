@@ -28,16 +28,13 @@
     <span>전자문진이</span>
     <span>모두 끝났습니다</span>
   </h1>
-
   <h2 class="letter">
     <span>메인 홈으로 돌아가시려면 </span>
     <span>홈으로 </span>
     <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp를 눌러주세요</span>
   </h2>
 </div>
-
 <script src="./thanks.js"></script>
-
 <div class="tohome">
   <button class="cta" type="button" onclick="location.href='/'">
     <span>홈으로</span>
@@ -47,8 +44,6 @@
     </svg>
   </button>
 </div>
-
 <script src="../../../resources/js/munjin/success.js"></script>
 </body>
-
 </html>
