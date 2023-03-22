@@ -1,14 +1,161 @@
 @charset "UTF-8";
-body{
+
+/* body{
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	 min-height: 100vh;
+	min-height: 100vh;
 	background-color: pink; 
-}
-.findid{
+} */
+
+/* .findid {
 	padding:50px;
 	background-color: #fff;
 	
-	
+} */
+/* $background: #efebea;
+$primary: #404040;
+$secondary: #828282;
+$tertiary: #bab6b6;
+$shade: #e5e2e1;
+$red: #ff4c52; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+html {
+  /* background: linear-gradient(to right bottom, #fbdb89, #f48982); */
+  background-color:#ffffff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+  display: flex;
+}
+
+
+.id_container {
+  width: 480px;
+  margin: auto;
+  padding: 36px 48px 48px 48px;
+  background-color: #f2efee;
+
+  /* border: 1px solid #f48982; */
+  border-radius: 11px;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+}
+
+.pw_container {
+  width: 480px;
+  margin: auto;
+  padding: 36px 48px 48px 48px;
+  background-color: #f2efee;
+
+  /* border: 1px solid #f48982; */
+  border-radius: 11px;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+}
+
+.findId-title, .findPw-title {
+  padding: 0 10px;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.findId-subtitle, .findPw-subtitle {
+	padding: 10px;
+  margin-bottom: 20px;
+	font-size: 15px;
+	font-weight: 500;
+	text-align: cencter;
+}
+
+/* .login-findId {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 12px;
+  row-gap: 16px;
+} */
+.field-container {
+  margin-bottom: 20px;
+}
+
+.findId-form label, .findPw-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.findId-form input, .findPw-form input {
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: 9px;
+
+  border: none;
+  /* background-color: #fdf2e9; */
+}
+
+.findId-form input:focus, .findPw-form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(253, 242, 233, 0.5);
+}
+
+.findId-form .input_kn {
+  width: 48%;
+  padding: 1.2rem;
+  border-radius: 9px;
+}
+
+.findPw-form .input_kn {
+  width: 47%;
+  padding: 1.2rem;
+  border-radius: 9px;
+}
+
+.findBtn{
+  background-color: #e4554a;
+  color: #fdf2e9;
+  align-self: end;
+  margin: 0 auto;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn,
+.btn-link,
+.btn-visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 15px;
+  border-radius: 9px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  transition: all 0.3s;
+}
+
+button {
+  outline: 1px solid #e4554a;
+}
+
+.findBtn:hover {
+  background-color: #f8f0ea;
+  color: #ff5e52;
 }

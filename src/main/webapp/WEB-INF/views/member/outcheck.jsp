@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>탈퇴</title>
-  <link rel="stylesheet" href="../../../resources/css/member/outcheck.css">
+	<link rel="stylesheet" href="../../../resources/css/member/outcheck.css">
 </head>
 <body>
 	<form action="/member/out.bld" method="post" style="margin-top:250px">

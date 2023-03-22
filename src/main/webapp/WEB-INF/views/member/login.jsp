@@ -15,7 +15,7 @@
   <meta property="og:title" content="Heart Beat" />
   <meta property="og:description" content="의사가 아니어도 생명을 구할 수 있는 방법" />
   <meta property="og:description" content="./resources/images/bg.png">
-  <link rel="stylesheet" href="/resources/css/member/login.css">
+  <link rel="stylesheet" href="../../../resources/css/member/login.css">
   <link rel="icon" href="./resources/images/favicon.png" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -35,12 +35,12 @@
 		<form action="/member/login.bld" method="post" class="form" >
 				
 				<div class="int-area">
-					<input type="text" name="member-id" id="id"
+					<input type="text" name="member-id" id="id" class="login-input"
 					autocomplete="off" required>
 					<label for="id">로그인</label>
 				</div>
 				<div class="int-area">
-					<input type="password" name="member-pw" id="pw"
+					<input type="password" name="member-pw" id="pw" class="login-input"
 					autocomplete="off" required>
 					<label for="pw">비밀번호</label>
 				</div>
@@ -48,9 +48,9 @@
 					<button type="submit">로그인</button>
 				</div>
 		</form>
-					<ul>
-						<li>아이디를 잊으셨나요?<a href="findId.bld">아이디 찾기</a></li>
-						<li>비밀번호를 잊으셨나요?<a href="findPw.bld">비밀번호 찾기</a></li>
+					<ul class="find">
+						<li>아이디를 잊으셨나요?<a href="findId.bld"> 아이디 찾기</a></li>
+						<li>비밀번호를 잊으셨나요?<a href="findPw.bld"> 비밀번호 찾기</a></li>
 					</ul>
 					
 	</section>

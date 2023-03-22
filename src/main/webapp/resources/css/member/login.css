@@ -8,7 +8,7 @@ body{
 	justify-content: center;
 	align-items: center;
 	height: 100%;
- 	 background-image:url('../../images/301390_71122_5312.jpg');
+ 	background-image:url('../../images/301390_71122_5312.jpg');
 	background-repeat : no-repeat;	 
 	background-size : 100% 100%; 
 	
@@ -29,10 +29,16 @@ body::after{
 }
 
 .login-form{
-	
-	
-	position: relative; z-index: 2;
+	position: relative;
+	z-index: 2;
 }
+.form {
+	padding: 50px;
+}
+.find {
+	padding: 0 50px;
+}
+
 .int-area{
 	width: 400px;
 	position: relative;
@@ -59,13 +65,16 @@ body::after{
 .int-area input:valid +label {
 	top: 0;
 }
+
+
+
 .btn-area {
 	margin-top: 30px;
 }
 .btn-area button{
 	width: 100%;
 	height: 50px;
-	background: #E48E58;
+	background: firebrick;
 	color: beige;
 	font-size: 20px;
 	border: none;

@@ -341,8 +341,8 @@ main .munjin .inner .munjin1 {
   height: 300px;
   margin-bottom: 15px;
 }
-main .munjin .inner .munjin1 img{
-}
+/* main .munjin .inner .munjin1 img{
+} */
 
 main .munjin .inner .munjin2 {
   width: 700px;
@@ -385,10 +385,14 @@ main .munjin .inner .munjin2 .munjin2__2 .munjin2__2__bottom{
   display: flex;
 }
 main .munjin .inner .munjin2 .munjin2__2 .munjin2__2__bottom input{
- width: 200px;
- padding-right: 20px;
- margin-right: 20px;
+  width: 200px;
+  padding-right: 20px;
+  margin-right: 20px;
 }
+/* main .munjin .inner .munjin2 .munjin2__2 .munjin2__2__bottom p{
+  font-size: 100px;
+  font-weight: 200;
+} */
 
 
 main .munjin .inner .munjin3 {
