@@ -25,9 +25,10 @@
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<link rel="stylesheet" href="/resources/css/main.css" />
+<link rel="stylesheet" href="/resources/css/main2.css" />
 <script defer src="/resources/js/youtube.js"></script>
 <script defer src="/resources/js/main.js"></script>
+
 
 <style>
 			table {
@@ -38,12 +39,14 @@
 			}
 		</style>
 </head>
-<body>
+<body style="    display: flex;
+    flex-direction: column;
+    align-items: center; background-color:pink;">
 
 	<jsp:include page="../layout/header.jsp"></jsp:include>
 
-	<main style="margin-top: 150px; margin-left: 50px;">
-		<section>
+<main style="margin-top:150px; width:90%;">
+<section>
 
 			<h1 style="font-size: 45px; text-align: center; color: #FF0080;">"${notice.noticeNo}"번
 				게시글 상세페이지</h1>
@@ -70,8 +73,9 @@
 			<div style="margin-left: 50px; margin-bottom:50px;">
 			<h2 style="font-size: 25px;">제목 : ${notice.noticeTitle }</h2>
 			<br><br>
-			<textarea style="font-size: 18px;" rows="10" cols="70">${notice.noticeContent }</textarea>			
-			
+			<textarea style="font-size: 18px;" rows="10" cols="70">${notice.noticeContent }</textarea>	
+			<br><br>		
+			<a href="/notice/free.bld" id="linkList" data-locale="ko" class="link_list">목록</a>
 			</div>
 
 
@@ -123,21 +127,21 @@
 						<div class="eachComment">
 							<div class="name">ID : ${reply.memberId }</div>
 							<div class="inputValue">${reply.replyContent }</div>
+							
 							<c:if test="${reply.memberId eq loginUser.memberId }">
-
 								<a href="javascript:void(0);"
 									onclick="removeCheck2(${reply.replyNo});">삭제하기</a>
-
 							</c:if>
 						</div>
 
-						</ul>
-					</div>
+
 				</c:forEach>
 			</form>
-		</section>
-	</main>
 
+</section>
+</main>
+
+<br><br><br>
 
 
 	<c:url var="nModify" value="/notice/modifyView.bld">

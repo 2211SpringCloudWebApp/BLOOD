@@ -1,32 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Insert title here</title>
-		<link rel="icon" href="../../../resources/images/favicon.png" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" />
-		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-		<link rel="stylesheet" href="../../../resources/css/main.css" />
-		<script defer src="../../../resources/js/youtube.js"></script>
-		<script defer src="../../../resources/js/main.js"></script>
-		
-		<link rel="stylesheet" href="../../../resources/css/table.css" />
-		
-	</head>
-	<body>
-		<jsp:include page="../layout/header.jsp"></jsp:include>
-			
-		<!-- 메인 스타트 -->
-		<main style="margin-top: 150px; width:85%; ">
-			<section>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="icon" href="../../../resources/images/favicon.png" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap"
+	rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="stylesheet" href="../../../resources/css/main2.css" />
+<script defer src="../../../resources/js/youtube.js"></script>
+<script defer src="../../../resources/js/main.js"></script>
 
-			<h1 style="text-align:center;">"${search.searchValue }"의 검색 결과</h1>
+<link rel="stylesheet" href="../../../resources/css/table.css" />
+
+</head>
+<body style="    display: flex;
+    flex-direction: column;
+    align-items: center;">
+	<jsp:include page="../layout/header.jsp"></jsp:include>
+
+	<!-- 메인 스타트 -->
+	<main style="margin-top: 150px; width: 90%;">
+		<section>
+			<h1 style="text-align: center;">"${search.searchValue }"의 검색 결과</h1>
 			<table>
 				<thead>
 					<tr>
@@ -60,8 +66,7 @@
 										value="${search.searchCondition }"></c:param>
 								</c:url>
 								<a href="${pageUrl }">${p }</a>&nbsp;
-								</c:forEach> <br>
-						<br> <input type="button" value="목록"
+								</c:forEach> <br> <br> <input type="button" value="목록"
 							onclick="location='/notice/free.bld'"></td>
 					</tr>
 					<tr>
@@ -72,8 +77,9 @@
 									<option value="id">작성자Id</option>
 									<option value="title">제목</option>
 									<option value="content">내용</option>
-								</select> <input type="text" name="searchValue" placeholder="검색어를 입력하세요">
-								<input type="submit" value="검색">
+								</select> <input type="text" id="id" name="searchValue"
+									placeholder="검색어를 입력하세요"> <input type="submit"
+									value="검색" onclick="return check()">
 							</form>
 						</td>
 						<c:if test="${loginUser eq null }">
@@ -89,10 +95,30 @@
 					</tr>
 				</tfoot>
 			</table>
-
-		</section>
-		</main>	
 			
-		<%-- <jsp:include page="../layout/footer.jsp"></jsp:include> --%>
-	</body>
+			</section>
+			</main>
+
+			<!-- 유효성 검사  -->
+			<script>
+				function validateId() {
+					var id = document.getElementById("id");
+
+					if (!id.value) {
+						alert("내용을 입력해주세요");
+						id.value = "";
+						return false;
+					}
+					return true;
+				}
+
+				function check() {
+					var valid = true;
+					valid = valid && validateId();
+					return valid;
+				}
+			</script>
+
+			<%-- <jsp:include page="../layout/footer.jsp"></jsp:include> --%>
+</body>
 </html>

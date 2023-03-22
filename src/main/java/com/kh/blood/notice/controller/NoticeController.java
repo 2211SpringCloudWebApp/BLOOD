@@ -62,7 +62,7 @@ public class NoticeController {
 			, HttpServletRequest request
 			, Model model, HttpSession session) {
 		
-		// Member에서 loginUser로 된 key값 가져오기
+		// Member에서 loginUser로 된 key값 가져오기(명시적 형변환)
 		Member member = (Member)session.getAttribute("loginUser");
 		notice.setMemberId(member.getMemberId());
 		
@@ -97,8 +97,10 @@ public class NoticeController {
 	
 	//자유게시판 수정화면
 	@RequestMapping(value="/notice/modifyView.bld", method = RequestMethod.GET)
-	public String noticeModifyView(@RequestParam("noticeNo") Integer noticeNo, Model model) {
+	public String noticeModifyView(@RequestParam("noticeNo") Integer noticeNo
+			, Model model) {
 		try {
+			
 			Notice notice = nService.selectOneById(noticeNo);
 			if(notice != null) {
 				model.addAttribute("notice", notice);

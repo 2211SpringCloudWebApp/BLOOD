@@ -1,19 +1,23 @@
 body {
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   background-color: #fff;
-  color: #000; }
+  color: #999;
+  line-height: 2; }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Poppins", sans-serif; }
+  font-family: "Poppins", sans-serif;
+  color: #000; }
 
 a {
-  color: red;
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease; }
   a, a:hover {
     text-decoration: none !important; }
+
+.text-black {
+  color: #000; }
 
 .content {
   padding: 7rem 0; }
@@ -28,9 +32,7 @@ h3 {
 
 .form-control {
   border: none;
-  border-bottom: 1px solid #d9d9d9;
-  padding-left: 0;
-  padding-right: 0;
+  border: 1px solid #d9d9d9;
   border-radius: 0; }
   .form-control:active, .form-control:focus {
     outline: none;
@@ -38,15 +40,16 @@ h3 {
     box-shadow: none;
     border-color: #000; }
 
+.col-form-label {
+  color: #000; }
+
 .btn, .form-control {
   height: 55px; }
 
-form.border-right {
-  padding-right: 6rem !important; }
-  @media (max-width: 991.98px) {
-    form.border-right {
-      padding-right: 0 !important;
-      border-right: none !important; } }
+.btn:active, .btn:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
 
 label.error {
   font-size: 12px;

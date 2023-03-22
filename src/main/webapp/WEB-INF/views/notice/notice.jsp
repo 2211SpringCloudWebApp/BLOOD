@@ -24,7 +24,7 @@
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<link rel="stylesheet" href="/resources/css/main.css" />
+<link rel="stylesheet" href="/resources/css/main2.css" />
 <script defer src="/resources/js/youtube.js"></script>
 <script defer src="/resources/js/main.js"></script>
 
@@ -32,13 +32,14 @@
 
 
 </head>
-<body>
+<body style="    display: flex;
+    flex-direction: column;
+    align-items: center;">
 	<jsp:include page="../layout/header.jsp"></jsp:include>
 
 	<!-- 메인 스타트 -->
-	<main style="margin-top: 150px; width:85%; ">
+		<main style="margin-top:150px; width:90%; ">
 		<section>
-		
 			<h1 style="text-align:center;">자유게시판</h1>
 			<table>
 				<thead>
@@ -80,8 +81,8 @@
 									<option value="id">작성자id</option>
 									<option value="title">제목</option>
 									<option value="content">내용</option>
-								</select> <input type="text" name="searchValue" placeholder="검색어를 입력하세요">
-								<input type="submit" value="검색">
+								</select> <input type="text" id="id" name="searchValue" placeholder="검색어를 입력하세요">
+								<input type="submit" value="검색" onclick="return check()">
 							</form>
 						</td>
 						<c:if test="${loginUser eq null }">
@@ -97,9 +98,29 @@
 					</tr>
 				</tfoot>
 			</table>
+			
 		</section>
-	</main>
+		</main>
+			<!-- 유효성 검사  -->
+			<script>
+				
+				function validateId() {
+					var id = document.getElementById("id");
 
+					if (!id.value) {
+						alert("내용을 입력해주세요");
+						id.value = "";
+						return false;
+					}
+					return true;
+				}
+				
+				function check(){
+					var valid = true;
+					valid = valid && validateId();
+					return valid;
+				}
+			</script>
 
 	<%-- <jsp:include page="../layout/footer.jsp"></jsp:include> --%>
 </body>
