@@ -4,13 +4,15 @@ body{
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
- 	
+	 min-height: 100vh;
+ 	background-image:url('../../images/mypage back.jpg');
+	background-repeat : no-repeat;	 
+	background-size : 100% 100%; 
 	
 }
 
 .int-area{
-	width: 400px;
+	width: 300px;
 	position: relative;
 }
 .int-area input{
