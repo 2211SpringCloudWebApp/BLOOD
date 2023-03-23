@@ -276,11 +276,13 @@ header .main-menu .item:hover .item__contents {
 
 header .main-menu .item .item__contents .contents__menu {
   background-color: #ffffff;
+
 }
 
 header .main-menu .item .item__contents .contents__menu>ul {
   padding: 20px 0;
   display: flex;
+  justify-content: center;
 }
 
 header .main-menu .item .item__contents .contents__menu>ul>li {
