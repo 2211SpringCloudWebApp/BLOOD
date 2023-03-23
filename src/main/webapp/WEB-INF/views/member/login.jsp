@@ -28,7 +28,9 @@
   <script type="jquery-3.4.1.js"></script>
 </head>
 <body>
-	<jsp:include page="../layout/header.jsp"></jsp:include>
+
+
+
 	<c:if test= "${loginUser eq null }">
 	
 	<section class="login-form">

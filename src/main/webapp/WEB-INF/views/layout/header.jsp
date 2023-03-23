@@ -33,6 +33,8 @@
 	     </ul>
      	</c:if>
    	</div>
+
+<%--	 드롭 네비바  --%>
 	<ul class="main-menu">
 	  <li class="item">
 	    <!-- <div class="item__name"><a href="/book/identityView.bld">헌혈예약</a></div> -->

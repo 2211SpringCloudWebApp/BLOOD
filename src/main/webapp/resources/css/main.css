@@ -31,8 +31,11 @@ img {
   margin: 0 auto;
   position: relative;
 }
+main{
+  margin-top: -120px;
+}
 
-/* .main_image {
+.main_image {
     position: relative;
   }
   .main_image_text {
@@ -41,7 +44,7 @@ img {
     left: 50%;
     transform: translate( -50%, -50% );
     color: white;
-  } */
+  }
 
 
 
@@ -51,8 +54,7 @@ header {
 /*   position: fixed; */
   top: 0;
   z-index: 11111;
-  /* background-color:#eceae4; */
-  background-color: #f2efee;
+  background-color:#fff
   border-bottom: 1px solid #c8c8c8;
 }
 
@@ -86,7 +88,7 @@ header .logo {
 
 .heartbeat span:nth-child(2) {
   color: #EC524B;
-  -webkit-text-stroke: 1pxrgb(255, 99, 99);
+  -webkit-text-stroke: 1px rgb(255, 99, 99);
   animation: uiverse723 3s ease-in-out infinite;
 }
 
@@ -144,6 +146,7 @@ header .sub-menu ul.menu li a {
 
 header .sub-menu ul.menu li a:hover {
   color: #000;
+  text-decoration: none;
 }
 
 header .sub-menu .search {
@@ -267,9 +270,10 @@ header .main-menu .item .item__name {
 }
 
 header .main-menu .item:hover .item__name {
-  background-color: #ffffff;
+  background-color: #ff6d62;
   color: #ff0000;
   border-radius: 6px 6px 0 0;
+  text-decoration: none;
 }
 
 header .main-menu .item .item__contents {
@@ -281,19 +285,24 @@ header .main-menu .item .item__contents {
 
 header .main-menu .item:hover .item__contents {
   display: block;
+  text-decoration: none;
 }
 
 header .main-menu .item .item__contents .contents__menu {
-  background-color: #ffffff;
+  background-color: #ff6d62;
 }
-
 header .main-menu .item .item__contents .contents__menu>ul {
   padding: 20px 0;
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #3b3b3b;
 }
 
 header .main-menu .item .item__contents .contents__menu>ul>li {
   width: 220px;
+  justify-content: center;
 }
 
 header .main-menu .item .item__contents .contents__menu>ul>li h4 {
@@ -307,10 +316,13 @@ header .main-menu .item .item__contents .contents__menu>ul>li ul li {
   font-size: 12px;
   color: #999;
   cursor: pointer;
+  color: #3b3b3b;
 }
 
 header .main-menu .item .item__contents .contents__menu>ul>li ul li:hover {
-  color: #ff6f00;
+  color: #3b3b3b;;
+  text-decoration: none;
+
 }
 
 /*BADGES*/
@@ -462,7 +474,7 @@ main {
 .iconmenu .bg-left {
   width: 50%;
   height: 100%;
-  background-color: #eceae4;
+  background-color: #fff;
   position: absolute;
   top: 0;
   left: 0;
@@ -471,14 +483,14 @@ main {
 .iconmenu .bg-right {
   width: 50%;
   height: 100%;
-  background-color: #eceae4;
+  background-color: #fff;
   position: absolute;
   top: 0;
   right: 0;
 }
 
 .iconmenu .inner {
-  background-color:#eceae4;
+  background-color:#fff;
   height: 241px;
   display: flex;
 }
@@ -562,7 +574,7 @@ main {
 /* blood drop */
 
 .blood_drop {
-  background-color: rgb(234,254,246);
+  background-color: #fff;
 }
 
 .blood_drop .inner {
@@ -711,7 +723,7 @@ span {
 .bumper {
   background: transparent;
   position: relative;
-
+margin-bottom: 100px;
 }
 
 .bumper>img {
@@ -731,8 +743,9 @@ footer img {
 footer {
   background-color: #a4152d;
   /* 메인 뒤에 푸터 붙이기 */
-  /* position: relative; */
+   position: relative;
   top: -300px;
+  bottom: 0px;
 }
 
 footer .inner {

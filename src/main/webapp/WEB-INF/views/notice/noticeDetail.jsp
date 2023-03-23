@@ -41,7 +41,7 @@
 </head>
 <body style="    display: flex;
     flex-direction: column;
-    align-items: center; background-color:pink;">
+    align-items: center; background-color:#fff;">
 
 	<jsp:include page="../layout/header.jsp"></jsp:include>
 
@@ -120,7 +120,7 @@
 						type="hidden" name="memberId" value="${loginUser.memberId }">
 					<input type="hidden" name="noticeNo" value="${notice.noticeNo }">
 
-					<button type="submit" id="submit">등록</button>
+					<button type="submit" id="submit" style="background-color:#73685d;" >등록</button>
 				</div>
 
 				<c:forEach items="${rList }" var="reply" varStatus="i">

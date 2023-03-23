@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -30,60 +30,70 @@
 <jsp:include page="./WEB-INF/views/layout/header.jsp"></jsp:include>
 
 
-  <!--     MAIN                                                       -->
-  <main>
+<!--     MAIN                                                       -->
+<main>
 
-    <section class="intro_photo">
-      <img src="./resources/images/threepeopleback.png" alt="">
+  <section class="intro_photo">
+    <img src="../resources/images/mainfirst.png" alt="mainfirst">
 
 
 
-    </section>
+  </section>
 
-    <!--     ICONMENU                                                       -->
-    <section class="iconmenu">
-      <div class="bg-left"></div>
-      <div class="bg-right"></div>
+  <!--     ICONMENU                                                       -->
+  <section class="iconmenu">
+    <div class="bg-left"></div>
+    <div class="bg-right"></div>
+    <div class="inner">
+      <div class="iconmenu__bg">
+        <button class="material-symbols-outlined">calendar_month</button>
+        <button class="material-symbols-outlined">format_ink_highlighter</button>
+        <button class="material-symbols-outlined">diagnosis</button>
+        <button class="material-symbols-outlined">event_note</button>
+        <button class="material-symbols-outlined">empty_dashboard</button>
+        <button class="material-symbols-outlined">print</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!--     YOUTUBE VIDEO                                               -->
+
+  <section class="youtube">
+    <div class="youtube__area">
+      <div id="player"></div>
+    </div>
+    <div class="youtube__cover"></div>
+    <div class="inner">
+    </div>
+  </section>
+
+  <!--     GET DETAIL                                               -->
+  <section class="getdetail">
+
+    <!--blood droop-->
+
+    <section class="blood_drop">
       <div class="inner">
-        <div class="iconmenu__bg">
-          <button class="material-symbols-outlined">calendar_month</button>
-          <button class="material-symbols-outlined">format_ink_highlighter</button>
-          <button class="material-symbols-outlined">diagnosis</button>
-          <button class="material-symbols-outlined">event_note</button>
-          <button class="material-symbols-outlined">empty_dashboard</button>
-          <button class="material-symbols-outlined">print</button>
+        <div style="padding-top: 40px;">
+
+
+          <h2 style="font-size: x-large; text-align: center; font-weight: 900;">National blood inventory</h2><br>
+          <p style="font-size: medium; text-align: center; font-weight: 900;">We manage the national supply of blood
+            products for all the provinces and territories (excluding Quebec). Many variables can impact our inventory
+            such as weather, holidays or tragic events. Below is an overview of our inventory levels across all blood
+            types. </p>
+
         </div>
-      </div>
-    </section>
-
-
-    <!--     YOUTUBE VIDEO                                               -->
-
-    <section class="youtube">
-      <div class="youtube__area">
-        <div id="player"></div>
-      </div>
-      <div class="youtube__cover"></div>
-      <div class="inner">
-      </div>
-    </section>
-
-    <!--     GET DETAIL                                               -->
-    <section class="getdetail">
-
-      <!--blood droop-->
-
-      <section class="blood_drop">
-        <div class="inner">
-          <div style="padding-top: 40px;">
-
-
-            <h2 style="font-size: x-large; text-align: center; font-weight: 900;">National blood inventory</h2><br>
-            <p style="font-size: medium; text-align: center; font-weight: 900;">We manage the national supply of blood
-              products for all the provinces and territories (excluding Quebec). Many variables can impact our inventory
-              such as weather, holidays or tragic events. Below is an overview of our inventory levels across all blood
-              types. </p>
-
+        <div class="BLDROP">
+          <div class="BLDROP1" style="height: 87.5%;"><span class="span-bl">A형</span><img
+                  src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop-nomask.svg">
+          </div>
+          <div class="BLDROP2" style="height: 87.5%;"><span class="span-bl">B형</span> <img
+                  src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop.svg">
+          </div>
+          <div class="BLDROP3" style="height: 87.5%;"><span class="span-bl">O형</span><img
+                  src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop-nomask.svg">
           </div>
           <div class="BLDROP">
             <div class="BLDROP1" style="height: 87.5%;"><span class="span-bl">A형</span><img
@@ -100,124 +110,119 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!--     CARD                                               -->
-      <section class="cards">
-        <div class="inner">
-          <div style="padding-top: 150px;">
-            <h2 style="font-size: x-large; text-align: center; font-weight: 900;">
-              Make All The Difference
-            </h2><br>
-            <p style="font-size: medium; text-align: center; font-weight: 900;">
-              The greatest human connection is made when we give to each other. Whether it’s time, knowledge, expertise,
-              or a lifesaving donation. These connections are what make us South-Korea's Lifeline.
-            </p>
-            <p style="font-size: medium; text-align: center; font-weight: 900;">
-              Join us. You won’t just make a difference, you’ll make all the difference.
-            </p>
-          </div>
-          <div class="cards_container">
-            <section class="cards_layer1">
-              <div class="single_card">
-                <div class="card_top">
-                  <img src="./resources/images/card1.png" alt="firstCard">
-                </div>
-                <div class="card_bottom">
-                  <h5>Lancer</h5>
-                  <p class="card_text">
-                    "See if you are eligible to donate blood today, or find answers to frequestly asked questions."
-                  </p>
-                  <a class="card_link" href="#">
-                    <span>Check your eligibility</span>
-                  </a>
-                </div>
+    <!--     CARD                                               -->
+    <section class="cards">
+      <div class="inner">
+        <div style="padding-top: 150px;">
+          <h2 style="font-size: x-large; text-align: center; font-weight: 900;">
+          헌혈의 집에서 알립니다
+          </h2><br>
+          <p style="font-size: medium; text-align: center; font-weight: 900; margin: 0 100px;">
+            대한적십자사 지사에 소속되어 있던 혈액원은 2002년 혈액사업본부 체계가 출범하게 됨에 따라 본부소속기관으로 개편되어 독립적인 혈액사업조직체계를 이루게 되었습니다. 현재 전국 15개 주요 지역에 설치된 대한적십자사의 혈액원은 헌혈자 모집 및 관리, 채혈, 제제, 보존, 공급 및 품질관리 등의 업무를 수행하고 있습니다. 각 혈액원에서는 관할 지역 내 헌혈의집과 헌혈버스, 혈액공급소를 운영하고 있습니다.
+          </p>
+          <p style="font-size: medium; text-align: center; font-weight: 900;">
+            혈액은 생명입니다
+          </p>
+        </div>
+        <div class="cards_container">
+          <section class="cards_layer1">
+            <div class="single_card">
+              <div class="card_top">
+                <img src="./resources/images/card1.png" alt="firstCard">
               </div>
+              <div class="card_bottom">
+                <h5>단체 헌혈</h5>
+                <p class="card_text">
+                  단체 헌혈의 소개와 신청 방법을 알려드립니다.
+                </p>
+                <a class="card_link" href="#">
+                  <span> 단체 헌혈 방법 확인하기</span>
+                </a>
+              </div>
+            </div>
 
-              <div class="single_card">
-                <div class="card_top">
-                  <img src="./resources/images/card2.png" alt="firstCard">
-                </div>
-                <div class="card_bottom">
-                  <h5>Making your donation</h5>
-                  <p class="card_text">
-                    Discover how you can give blood, plasma or platelets, and book your next donation.
-                  </p>
-                  <a class="card_link" href="#">
-                    <span>Know how to donate</span>
-                  </a>
-                </div>
+            <div class="single_card">
+              <div class="card_top">
+                <img src="./resources/images/card2.png" alt="firstCard">
               </div>
+              <div class="card_bottom">
+                <h5> 헌혈의 필요성</h5>
+                <p class="card_text">
+                  헌혈이 필요한 이유와 헌혈의 영향을 알려드립니다.                </p>
+                <a class="card_link" href="#">
+                  <span>헌혈의 필요성 확인하기</span>
+                </a>
+              </div>
+            </div>
 
-              <div class="single_card">
-                <div class="card_top">
-                  <img src="./resources/images/card3.png" alt="firstCard">
-                </div>
-                <div class="card_bottom">
-                  <h5>Find a blood donor centre</h5>
-                  <p class="card_text">
-                    There are donor centres all across the country. Find one that's closest to you.
-                  </p>
-                  <a class="card_link" href="#">
-                    <span>Find a donor centre</span>
-                  </a>
-                </div>
+            <div class="single_card">
+              <div class="card_top">
+                <img src="./resources/images/card3.png" alt="firstCard">
               </div>
-            </section>
-            <section class="cards_layer2">
-              <div class="single_card">
-                <section class="card_top">
-                  <img src="./resources/images/card4.png" alt="firstCard">
-                </section>
-                <section class="card_bottom">
-                  <h5>Learn about blood</h5>
-                  <p class="card_text">
-                    Know the fine details about blood, like what’s in it, who needs it, and where it goes after you give
-                    it.
-                  </p>
-                  <a class="card_link" href="#">
-                    <span>See the details</span>
-                  </a>
-                </section>
+              <div class="card_bottom">
+                <h5>헌혈에 대한 오해와 진실</h5>
+                <p class="card_text">
+                  헌혈에 대한 오해와 진실 확인하기                </p>
+                <a class="card_link" href="#">
+                  <span>헌혈과정 헌혈과정을 자세히 알려드립니다</span>
+                </a>
               </div>
+            </div>
+          </section>
+          <section class="cards_layer2">
+            <div class="single_card">
+              <section class="card_top">
+                <img src="./resources/images/card4.png" alt="firstCard">
+              </section>
+              <section class="card_bottom">
+                <h5>헌혈과정 알아보기</h5>
+                <p class="card_text">
+                  뉴스 보도자료 언론보도 뉴스레터를 확인할 수 있습니다.
+                </p>
+                <a class="card_link" href="#">
+                  <span>관련 뉴스 확인하기</span>
+                </a>
+              </section>
+            </div>
 
-              <div class="single_card">
-                <div class="card_top">
-                  <img src="./resources/images/card5.png" alt="firstCard">
-                </div>
-                <div class="card_bottom">
-                  <h5>Blood testing and safety</h5>
-                  <p class="card_text">
-                    Australia has one of the safest blood supplies in the world. Find out what we test, and how.
-                  </p>
-                  <a class="card_link" href="#">
-                    <span>Learn about safety</span>
-                  </a>
-                </div>
+            <div class="single_card">
+              <div class="card_top">
+                <img src="./resources/images/card5.png" alt="firstCard">
               </div>
-              <div class="single_card">
-                <div class="card_top">
-                  <img src="./resources/images/card6.png" alt="firstCard">
-                </div>
-                <div class="card_bottom">
-                  <h5>Donate as a group</h5>
-                  <p class="card_text">
-                    Be part of our group donation program, Lifeblood Teams. It’s about friendship, community and making
-                    a
-                    bigger difference together.
-                  </p>
-                  <a class="card_link" href="#">
-                    <span>Join Lifeblood Teams</span>
-                  </a>
-                </div>
+              <div class="card_bottom">
+                <h5> 헌혈관리본부 소개 </h5>
+                <p class="card_text">
+                 안전보건 경영방침을 알려드립니다. </p>
+                <a class="card_link" href="#">
+                  <span> 헌혈관리본부 소개</span>
+                </a>
               </div>
+            </div>
+            <div class="single_card">
+              <div class="card_top">
+                <img src="./resources/images/card6.png" alt="firstCard">
+              </div>
+              <div class="card_bottom">
+                <h5>전혈 혈청과 혈액비교</h5>
+                <p class="card_text">
+                  전혈혈청은 노란색입니다
+                </p>
+                <a class="card_link" href="#">
+                  <span>노란피도 하얀피도 혈액으로 분류됩니다</span>
+                </a>
+              </div>
+            </div>
 
             </section>
           </div>
         </div>
-      </section>
+      </div>
     </section>
-  </main>
+  </section>
+</main>
 <jsp:include page="./WEB-INF/views/layout/main_footer.jsp"></jsp:include>
 </body>
 </html>
