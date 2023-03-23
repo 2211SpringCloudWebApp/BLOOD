@@ -54,7 +54,8 @@
 				<c:param name="noticeNo" value="${notice.noticeNo }" />
 			</c:url>
 			<br>
-			<c:if test="${notice.memberId eq loginUser.memberId }">
+			
+			<c:if test="${notice.memberId eq loginUser.memberId || loginUser.memberType eq '0'}">
 				<div style="text-align: right; margin-right: 40px;" >
 					<div style="margin-bottom: 10px;">
 						<a href="${nModify }">Update</a>
@@ -73,7 +74,7 @@
 			<div style="margin-left: 50px; margin-bottom:50px;">
 			<h2 style="font-size: 25px;">제목 : ${notice.noticeTitle }</h2>
 			<br><br>
-			<textarea style="font-size: 18px;" rows="10" cols="70">${notice.noticeContent }</textarea>	
+			<textarea style="font-size: 18px;" rows="10" cols="70" readonly>${notice.noticeContent }</textarea>	
 			<br><br>		
 			<a href="/notice/free.bld" id="linkList" data-locale="ko" class="link_list">목록</a>
 			</div>
@@ -123,12 +124,12 @@
 				</div>
 
 				<c:forEach items="${rList }" var="reply" varStatus="i">
-					<div id=comments>
+					<div style="margin-bottom:50px;" id=comments>
 						<div class="eachComment">
 							<div class="name">ID : ${reply.memberId }</div>
-							<div class="inputValue">${reply.replyContent }</div>
+							<div class="inputValue" readonly>${reply.replyContent }</div>
 							
-							<c:if test="${reply.memberId eq loginUser.memberId }">
+							<c:if test="${reply.memberId eq loginUser.memberId || loginUser.memberType eq '0'}">
 								<a href="javascript:void(0);"
 									onclick="removeCheck2(${reply.replyNo});">삭제하기</a>
 							</c:if>

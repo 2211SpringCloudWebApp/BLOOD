@@ -106,7 +106,7 @@
       <span class="txt_date">${faq.faqNo }</span>
     </div>
     <div class="detail_notice">
-      <p><span style="font-family:Arial,Helvetica,sans-serif">${faq.faqContent }</span></p>
+      <p><span style="font-family:Arial,Helvetica,sans-serif;">${faq.faqContent }</span></p>
 
 
 
@@ -114,7 +114,7 @@
 
 <br><br><br><br><br>
 
-<h4><span style="font-family:Arial,Helvetica,sans-serif"><strong>&nbsp; #신선한 가치, 건강한 습관</strong></span></h4>
+<h4><span style="font-family:Arial,Helvetica,sans-serif"><strong style="color:black;">&nbsp; #신선한 가치, 건강한 습관</strong></span></h4>
 
 <p><span style="font-family:Arial,Helvetica,sans-serif"><img alt="" src="https://www.bloodinfo.net/upload/bloodinfo/knrcbs/knrcbs/ba/img_290f6ac1-de9f-43ee-b870-c0788b146c681678244109623.jpg" style="max-width:100%"></span></p>
 
@@ -128,7 +128,7 @@
 
 <p>&nbsp;</p>
 
-<h4><span style="font-family:Arial,Helvetica,sans-serif"><strong>&nbsp; #튀르키예ㆍ시리아 지진 피해</strong></span></h4>
+<h4><span style="font-family:Arial,Helvetica,sans-serif"><strong style="color:black;">&nbsp; #튀르키예ㆍ시리아 지진 피해</strong></span></h4>
 
 <p><span style="font-family:Arial,Helvetica,sans-serif"><img alt="" src="https://www.bloodinfo.net/upload/bloodinfo/knrcbs/knrcbs/ba/img_09f96062-729b-4b11-9ac9-170c218e203a1675921264938.jpg" style="max-width:100%"></span></p>
 
@@ -163,10 +163,22 @@
     </div>
     <a href="/board/faq.bld" id="linkList" data-locale="ko" class="link_list">목록</a>
 
-      </div>
+				<c:if test="${loginUser.memberType eq 0 && loginUser ne null}">
+					<a id="linkList" data-locale="ko" class="link_list" href="javascript:void(0);" onclick="removeCheck(${faq.faqNo});">삭제하기</a>
+				</c:if>
+
+			</div>
     </div>
   </div>
 
+
+	<script>
+		function removeCheck(faqNo) {
+			if (confirm("정말 삭제하시겠습니까?")) {
+				location.href = "/board/faqRemove.bld?faqNo=" + faqNo;
+			}
+		}
+	</script>
 
 
 </body>

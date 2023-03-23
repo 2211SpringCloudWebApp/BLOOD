@@ -78,7 +78,7 @@ public class NoticeController {
 	
 	// 자유게시판 상세페이지
 	@RequestMapping(value="/notice/detail.bld", method=RequestMethod.GET)
-	public String faqDetailView(@RequestParam("noticeNo") int noticeNo, Model model) {
+	public String noticeDetailView(@RequestParam("noticeNo") int noticeNo, Model model) {
 		try {
 			Notice notice = nService.selectOneById(noticeNo);
 			
