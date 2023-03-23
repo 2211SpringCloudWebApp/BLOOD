@@ -6,6 +6,6 @@ import com.kh.blood.munjin.domain.MunjinMember;
 public interface MunjinService
 {
     int insertMunjinMember(MunjinMember munjinMember);
-    void insertMunjinForm(Form form);
+    int insertMunjinForm(Form form);
 
 }

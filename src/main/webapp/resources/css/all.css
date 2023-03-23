@@ -67,7 +67,7 @@ main{
     left: -45%;
     z-index: -1;
     transform: rotate(30deg);
-    background: #ff5500;
+    background: #e4554a;
     width: 0;
 }
 
@@ -79,7 +79,7 @@ main{
     bottom: -105%;
     z-index: -1;
     transform: rotate(30deg);
-    background: #ff5500;
+    background: #e4554a;
     width: 0;
 }
 

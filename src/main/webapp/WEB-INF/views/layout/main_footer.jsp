@@ -10,7 +10,7 @@
 	<body>
 		<!--     FOOTER                                               -->
 		<section class="bumper">
-		  <img src="./resources/images/footer.png" class="fimage" alt="dd">
+			<img src="./resources/images/footer.png" class="fimage" alt="dd" style="height:400px; ">
 		  <div class="inner">
 		
 		  </div>

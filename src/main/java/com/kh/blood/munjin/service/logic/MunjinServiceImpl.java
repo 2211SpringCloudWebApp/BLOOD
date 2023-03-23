@@ -24,9 +24,10 @@ public class MunjinServiceImpl implements MunjinService
     }
 
 	@Override
-	public void insertMunjinForm(Form form) 
+	public int insertMunjinForm(Form form)
 	{
-		// TODO Auto-generated method stub
-	}
+		int result = munjinStore.insertMunjinForm(session, form);
+        return result;
+    }
 
 }
