@@ -78,47 +78,57 @@
         <div style="padding-top: 40px;">
 
 
-          <h2 style="font-size: x-large; text-align: center; font-weight: 900;">National blood inventory</h2><br>
-          <p style="font-size: medium; text-align: center; font-weight: 900;">We manage the national supply of blood
-            products for all the provinces and territories (excluding Quebec). Many variables can impact our inventory
-            such as weather, holidays or tragic events. Below is an overview of our inventory levels across all blood
-            types. </p>
+          <h2 style="font-size: x-large; text-align: center; font-weight: 900;">국가 혈액 인벤토리</h2><br>
+          <p style="font-size: medium; text-align: center; font-weight: 900;">
+            우리는 모든 주 및 준주(퀘벡 제외)에 대한 혈액 제품의 전국 공급을 관리합니다.<br>
+            날씨, 휴일 또는 비극적인 사건과 같은 많은 변수가 재고에 영향을 미칠 수 있습니다.<br>
+            아래는 모든 혈액형의 재고 수준에 대한 개요입니다. </p>
 
         </div>
+
         <div class="BLDROP">
-          <div class="BLDROP1" style="height: 87.5%;"><span class="span-bl">A형</span><img
-                  src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop-nomask.svg">
-          </div>
-          <div class="BLDROP2" style="height: 87.5%;"><span class="span-bl">B형</span> <img
-                  src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop.svg">
-          </div>
-          <div class="BLDROP3" style="height: 87.5%;"><span class="span-bl">O형</span><img
-                  src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop-nomask.svg">
-          </div>
-          <div class="BLDROP">
-            <div class="BLDROP1" style="height: 87.5%;"><span class="span-bl">A형</span><img
-                src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop-nomask.svg">
+
+              <div class="BLDROP1" style="height: 87.5%;"><span class="span-bl">A형</span><img
+                      src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop-nomask.svg">
+              </div>
+
+              <div class="BLDROP2" style="height: 87.5%;"><span class="span-bl">B형</span> <img
+                      src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop.svg">
+              </div>
+
+              <div class="BLDROP3" style="height: 87.5%;"><span class="span-bl">O형</span><img
+                      src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop-nomask.svg">
+              </div>
+
+              <div class="BLDROP1" style="height: 87.5%;"><span class="span-bl">A형</span><img
+                      src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop-nomask.svg">
+              </div>
+
+              <div class="BLDROP2" style="height: 87.5%;"><span class="span-bl">B형</span> <img
+                      src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop.svg">
+              </div>
+
+              <div class="BLDROP3" style="height: 87.5%;"><span class="span-bl">O형</span><img
+                      src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop-nomask.svg">
+              </div>
+
+              <div class="BLDROP4" style="height: 87.5%;"><span class="span-bl">AB형</span> <img
+                      src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop.svg">
+              </div>
             </div>
-            <div class="BLDROP2" style="height: 87.5%;"><span class="span-bl">B형</span> <img
-                src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop.svg">
-            </div>
-            <div class="BLDROP3" style="height: 87.5%;"><span class="span-bl">O형</span><img
-                src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop-nomask.svg">
-            </div>
-            <div class="BLDROP4" style="height: 87.5%;"><span class="span-bl">AB형</span> <img
-                src="https://www.blood.ca/modules/custom/cbs_blood_inventory_block/assets/icons/icon-inventory-drop.svg">
-            </div>
-          </div>
-        </div>
+      </div>
+
       </div>
     </section>
+  </section>
+
 
     <!--     CARD                                               -->
     <section class="cards">
       <div class="inner">
         <div style="padding-top: 150px;">
           <h2 style="font-size: x-large; text-align: center; font-weight: 900;">
-          헌혈의 집에서 알립니다
+            헌혈의 집에서 알립니다
           </h2><br>
           <p style="font-size: medium; text-align: center; font-weight: 900; margin: 0 100px;">
             대한적십자사 지사에 소속되어 있던 혈액원은 2002년 혈액사업본부 체계가 출범하게 됨에 따라 본부소속기관으로 개편되어 독립적인 혈액사업조직체계를 이루게 되었습니다. 현재 전국 15개 주요 지역에 설치된 대한적십자사의 혈액원은 헌혈자 모집 및 관리, 채혈, 제제, 보존, 공급 및 품질관리 등의 업무를 수행하고 있습니다. 각 혈액원에서는 관할 지역 내 헌혈의집과 헌혈버스, 혈액공급소를 운영하고 있습니다.
@@ -195,7 +205,7 @@
               <div class="card_bottom">
                 <h5> 헌혈관리본부 소개 </h5>
                 <p class="card_text">
-                 안전보건 경영방침을 알려드립니다. </p>
+                  안전보건 경영방침을 알려드립니다. </p>
                 <a class="card_link" href="#">
                   <span> 헌혈관리본부 소개</span>
                 </a>
@@ -216,9 +226,9 @@
               </div>
             </div>
 
-            </section>
-          </div>
+          </section>
         </div>
+      </div>
       </div>
     </section>
   </section>
