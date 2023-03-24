@@ -43,7 +43,7 @@
             <div class="munjin2__2__top">주민등록번호</div>
             <div class="munjin2__2__bottom">
               <input type="text" id="id_num1" name="idNum1" placeholder="주민등록번호(앞)" onchange="validateResidentNumber1()">
-              <input type="text" id="id_num2" name="idNum2" placeholder="주민등록번호(뒤)" onchange="validateResidentNumber2()">
+              <input type="password" id="id_num2" name="idNum2" placeholder="주민등록번호(뒤)" onchange="validateResidentNumber2()">
             </div>
           </div>
         </div>

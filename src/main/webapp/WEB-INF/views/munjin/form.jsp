@@ -49,7 +49,7 @@
                     </div>
                 </div>
             </div>
-            <div class="inner">
+            <div class="inner" style="margin-top:50px;">
                 <div class="ros">
                     <h2>2. 최근 3일 이내</h2>
                     <pre>
@@ -119,7 +119,7 @@
                     </div>
                 </div>
             </div>
-            <div class="inner">
+            <div class="inner" style="margin-top:50px;">
                 <div class="ros">
                     <h2>4. 최근 1개월 이내</h2>
                     <pre>
@@ -193,7 +193,7 @@
                     </div>
                 </div>
             </div>
-            <div class="inner">
+            <div class="inner" style="margin-top:50px;">
                 <div class="ros">
                     <h2>6. 기한에 관계없이</h2>
                     <pre>
@@ -261,6 +261,19 @@
                     </div>
                 </div>
             </div>
+
+        </figure>
+        <!--8 	우 3 -->
+        <section>
+            <div>
+                <h1>LEVEL 4</h1>
+                <div>
+                    <div class="triple-spinner"></div>
+                </div>
+            </div>
+        </section>
+        <!--9 	왼 4-->
+        <figure>
             <div class="inner">
                 <div class="ros">
                     <h2>8. 감염병</h2>
@@ -291,16 +304,18 @@
                 </div>
             </div>
         </figure>
-        <!--8 	우 3 -->
+        <!--10 	 우 4-->
         <section>
             <div>
-                <h1>LEVEL 4</h1>
+                <h1>LEVEL 5</h1>
                 <div>
-                    <div class="triple-spinner"></div>
+                    <div class="half_loader">
+                        <div class="waves"></div>
+                    </div>
                 </div>
             </div>
         </section>
-        <!--9 	왼 4-->
+        <!--11 	 우5 -->
         <figure>
             <div class="inner">
                 <div class="ros">
@@ -334,18 +349,15 @@
                 </div>
             </div>
         </figure>
-        <!--10 	 우 4-->
         <section>
             <div>
-                <h1>LEVEL 5</h1>
+                <h1>LEVEL 6</h1>
                 <div>
-                    <div class="half_loader">
-                        <div class="waves"></div>
-                    </div>
+                    <span class="blood_loader"></span>
                 </div>
             </div>
         </section>
-        <!--11 	 우5 -->
+        <!--13 	왼6 -->
         <figure>
             <div class="inner">
                 <div class="ros">
@@ -390,21 +402,6 @@
                     </div>
                 </div>
             </div>
-        </figure>
-        <section>
-            <div>
-                <h1>LEVEL 6</h1>
-                <div>
-                    <span class="blood_loader"></span>
-                </div>
-            </div>
-        </section>
-        <!--13 	왼6 -->
-        <figure>
-            [ 위의 문진 선택사항들 출력 ]
-
-            선택사항들을 확인해주세요
-            우측의 완성된 구체를 클릭해주세요
         </figure>
         <!--14 	 우6-->
         <section>

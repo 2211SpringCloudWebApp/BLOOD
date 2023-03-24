@@ -34,7 +34,7 @@
 
 	
 		<!-- main -->
-		<main>
+		<main style="height: 700px">
 			<section class="form_section">
 				<h1 class="pageTitle">헌혈의집 헌혈예약</h1>
 				<div class="divContainer">
@@ -67,7 +67,7 @@
 						</form>
 					</div>
 					<div class="divImg">
-						<img alt="헌혈권장" src="../../../resources/images/card_img1.png" style="width:auto; height:auto;">
+						<img alt="헌혈권장" src="../../../resources/images/card_img1.png" style="width:auto; height:70%;">
 					</div>
 				</div>
 			</section>
