@@ -1,7 +1,5 @@
-<p align="center">
-  <img src="![HEARTBEAT로고](https://user-images.githubusercontent.com/119032817/227707324-440bfd52-0c90-4e15-9974-01659f9c9458.PNG)">
-</p>  
 
+![HEARTBEAT로고](https://user-images.githubusercontent.com/119032817/227707324-440bfd52-0c90-4e15-9974-01659f9c9458.PNG)
 # ❤️ HAERTBEAT : 마음과 마음을 연결하는 헌혈사이트  
 </br>
 
