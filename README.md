@@ -129,6 +129,10 @@ FAQ(자주묻는질문)|FAQ(자주묻는질문)페이지는 관리자계정(admi
 ### 전자문진
 -----
 ![munjin](https://user-images.githubusercontent.com/119032817/227757147-d5c076fa-6c0e-4716-8042-3c05e9dbaa54.PNG)
+![전자문진 notice](https://user-images.githubusercontent.com/119032649/227820636-61696ac0-eb89-4dbb-8f6e-77782b0448a8.jpg)
+![전자문진 form](https://user-images.githubusercontent.com/119032649/227820670-f22cb763-0ac5-4567-9cc9-8768ecf8f9f9.jpg)
+![전자문진 ending](https://user-images.githubusercontent.com/119032649/227820689-06f1757d-a7fe-448a-a6bf-a2560c3c90d0.jpg)
+
 
 ### 헌혈자인증
 -----
