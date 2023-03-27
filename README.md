@@ -1,6 +1,6 @@
 
 ![HEARTBEATlogo](https://user-images.githubusercontent.com/119032817/227755306-8ff53025-7aa1-4225-9d98-1fe0f01ee253.PNG)
-# ❤️ HAERTBEAT : 마음과 마음을 연결하는 헌혈사이트  
+# ❤️ HEARTBEAT : 마음과 마음을 연결하는 헌혈사이트  
 ![mainpage](https://user-images.githubusercontent.com/119032817/227756646-9c3c88ef-cebf-44a3-8789-d813be36003f.jpg)
 </br></br>
 
